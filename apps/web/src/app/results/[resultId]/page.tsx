@@ -5,12 +5,22 @@ import { apiRequest } from "@/lib/api-client";
 import { useAuthStore } from "@/stores/auth.store";
 import { ResultSharing } from "@/components/result-sharing";
 import { GuidanceNotes } from "@/components/guidance-notes";
+import { AI_RESULT_LABELS } from "@/config/result.constants";
 interface Result {
   userId: string;
   reportStatus: string;
   dimensions: Record<string, number>;
   careerMatches: Array<{ code?: string; title?: string }>;
-  aiInterpretation?: { summary?: string; actionPlan?: string[] };
+  aiInterpretation?: {
+    summary?: string;
+    actionPlan?: string[];
+    strengths?: string[];
+    growthAreas?: string[];
+    limitations?: string[];
+    evidence?: Array<{ dimension: string; value: number }>;
+    careerExplanations?: Array<{ careerCode: string; explanation: string }>;
+  };
+  aiProvenance?: { promptVersion: string; model: string };
 }
 export default function ResultPage({
   params,
@@ -19,6 +29,7 @@ export default function ResultPage({
 }) {
   const { resultId } = use(params);
   const user = useAuthStore((s) => s.user);
+  const labels = AI_RESULT_LABELS[user?.preferredLanguage ?? "en"];
   const [error, setError] = useState("");
   const result = useQuery({
     queryKey: ["result", user?.id, resultId],
@@ -53,6 +64,46 @@ export default function ResultPage({
             ))}
           </dl>
           <p>{result.data.aiInterpretation?.summary}</p>
+          {(["strengths", "growthAreas", "limitations"] as const).map((key) =>
+            result.data.aiInterpretation?.[key]?.length ? (
+              <section key={key}>
+                <h2>{labels[key]}</h2>
+                <ul>
+                  {result.data.aiInterpretation[key].map((line, index) => (
+                    <li key={index}>{line}</li>
+                  ))}
+                </ul>
+              </section>
+            ) : null,
+          )}
+          {!!result.data.aiInterpretation?.careerExplanations?.length && (
+            <section>
+              <h2>{labels.careerExplanations}</h2>
+              {result.data.aiInterpretation.careerExplanations.map((career) => (
+                <p key={career.careerCode}>
+                  {career.careerCode}: {career.explanation}
+                </p>
+              ))}
+            </section>
+          )}
+          {!!result.data.aiInterpretation?.evidence?.length && (
+            <details>
+              <summary>{labels.evidence}</summary>
+              <ul>
+                {result.data.aiInterpretation.evidence.map((item) => (
+                  <li key={item.dimension}>
+                    {item.dimension}: {item.value}
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )}
+          {result.data.aiProvenance && (
+            <small>
+              {labels.version}: {result.data.aiProvenance.promptVersion} (
+              {result.data.aiProvenance.model})
+            </small>
+          )}
           <ul>
             {result.data.careerMatches.map((career, index) => (
               <li key={career.code ?? index}>{career.title ?? career.code}</li>

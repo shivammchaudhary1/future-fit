@@ -286,7 +286,7 @@ export class AssessmentsService {
   }
 
   async result(userId: string, attemptId: string) {
-    const result = await this.results.findOne({ attemptId, userId }).lean();
+    const result = await this.results.findOne({ attemptId, userId }).select("-providerResult -reportKey").lean();
     if (!result) throw new NotFoundException("Result not found.");
     return result;
   }

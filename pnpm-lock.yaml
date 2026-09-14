@@ -238,6 +238,9 @@ importers:
       pdfkit:
         specifier: ^0.17.2
         version: 0.17.2
+      zod:
+        specifier: 'catalog:'
+        version: 4.6.4
     devDependencies:
       '@types/node':
         specifier: ^22.18.0
