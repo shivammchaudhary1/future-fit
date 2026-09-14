@@ -12,7 +12,8 @@ import type { AssessmentScoringJob } from "@future-fit/types";
 import { Queue, Worker } from "bullmq";
 import { Redis } from "ioredis";
 import { MongoClient, ObjectId, type Document } from "mongodb";
-import { createReport, interpret, type Interpretation } from "./report.js";
+import { createReport } from "./report.js";
+import { generateInterpretation, type AIProvenance } from "./ai/service.js";
 import {
   COLLECTIONS,
   DEFAULT_MONGO_URL,
@@ -142,13 +143,24 @@ const worker = new Worker<AssessmentScoringJob>(
         language: attempt.language,
         dimensions,
         careerMatches,
+        scoringVersion:
+          version.version + ":" + version.scoringConfiguration.scoringModel,
       };
-      const interpretation =
-        (existing?.aiInterpretation as Interpretation | undefined) ??
-        (await interpret(reportInput));
+      const generated = await generateInterpretation(reportInput, {
+        cached: {
+          interpretation: existing?.aiInterpretation,
+          provenance: existing?.aiProvenance as AIProvenance | undefined,
+        },
+      });
+      const interpretation = generated.interpretation;
       await results.updateOne(
         { attemptId },
-        { $set: { aiInterpretation: interpretation } },
+        {
+          $set: {
+            aiInterpretation: interpretation,
+            aiProvenance: generated.provenance,
+          },
+        },
       );
       await stage("REPORT_GENERATION");
       const reportKey = await createReport({ ...reportInput, interpretation });

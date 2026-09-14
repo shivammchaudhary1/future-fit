@@ -7,10 +7,12 @@ export class AssessmentResult {
   attemptId!: Types.ObjectId;
   @Prop({ type: SchemaTypes.ObjectId, required: true, index: true })
   userId!: Types.ObjectId;
-  @Prop({ type: SchemaTypes.ObjectId, index: true }) organizationId?: Types.ObjectId;
+  @Prop({ type: SchemaTypes.ObjectId, index: true })
+  organizationId?: Types.ObjectId;
   @Prop() reportKey?: string;
   @Prop() generatedAt?: Date;
   @Prop({ type: SchemaTypes.Mixed }) aiInterpretation?: Record<string, unknown>;
+  @Prop({ type: SchemaTypes.Mixed }) aiProvenance?: Record<string, unknown>;
   @Prop({ required: true }) scoringVersion!: string;
   @Prop({ type: SchemaTypes.Mixed, required: true }) dimensions!: Record<
     string,

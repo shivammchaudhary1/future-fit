@@ -45,3 +45,15 @@ test("finished submissions do not create more scoring jobs", async () => {
     status: "RESULT_READY",
   });
 });
+
+test("attempt result endpoint remains owner-scoped and excludes private provider/storage fields", async () => {
+  let filter, projection;
+  const service = new AssessmentsService(null, null, null, {
+    findOne: (value) => { filter = value; return {
+      select: (fields) => { projection = fields; return { lean: async () => ({ reportStatus: "READY" }) }; },
+    }; },
+  });
+  assert.deepEqual(await service.result("student", "attempt"), { reportStatus: "READY" });
+  assert.deepEqual(filter, { attemptId: "attempt", userId: "student" });
+  assert.equal(projection, "-providerResult -reportKey");
+});
