@@ -1,0 +1,29 @@
+{
+  "name": "@future-fit/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "start": "node dist/main.js",
+    "lint": "echo api-lint-pending",
+    "typecheck": "tsc --noEmit",
+    "test": "echo api-tests-pending"
+  },
+  "dependencies": {
+    "@future-fit/types": "workspace:*",
+    "@future-fit/validation": "workspace:*",
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/platform-express": "^11.1.6",
+    "@nestjs/swagger": "^11.2.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.10",
+    "@types/node": "^22.18.0",
+    "typescript": "catalog:"
+  }
+}

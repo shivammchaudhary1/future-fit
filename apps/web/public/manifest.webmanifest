@@ -1,0 +1,11 @@
+{
+  "name": "Future Fit",
+  "short_name": "FutureFit",
+  "description": "Career guidance for Indian students",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFCFD",
+  "theme_color": "#173B57",
+  "lang": "en",
+  "icons": []
+}
