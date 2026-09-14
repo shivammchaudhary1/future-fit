@@ -1,10 +1,14 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["eslint.config.mjs", "tsconfig.base.json"],
   "tasks": {
     "dev": { "cache": false, "persistent": true },
-    "build": { "dependsOn": ["^build"], "outputs": [".next/**", "!.next/cache/**", "dist/**"] },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
     "lint": { "dependsOn": ["^lint"] },
-    "typecheck": { "dependsOn": ["^typecheck"] },
+    "typecheck": { "dependsOn": ["^build", "^typecheck"] },
     "test": { "dependsOn": ["^build"], "outputs": ["coverage/**"] }
   }
 }
