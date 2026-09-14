@@ -4,6 +4,7 @@ export const HTTP_LIMITS = {
   apiRequests: 300,
   requestIdLength: 64,
 } as const;
+export const HEALTH_ROUTE_PATTERN = /^\/api\/v1\/health(?:\/(?:live|ready))?\/?$/;
 export const HTTP_ERROR_CODES: Record<number, string> = {
   400: "INVALID_REQUEST",
   401: "UNAUTHENTICATED",

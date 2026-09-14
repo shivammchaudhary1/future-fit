@@ -18,6 +18,25 @@ import {
   type AssessmentVersionDocument,
 } from "./assessment-version.schema.js";
 import { Question, type QuestionDocument } from "./question.schema.js";
+import { z } from "zod";
+import { AUTHORING_LIMITS, QUESTION_STATUSES } from "./authoring.constants.js";
+const questionEditSchema = z
+  .object({ revision: z.number().int().nonnegative(), content: questionSchema })
+  .strict();
+const questionStatusSchema = z
+  .object({
+    revision: z.number().int().nonnegative(),
+    status: z.enum(QUESTION_STATUSES),
+  })
+  .strict();
+const questionImportSchema = z
+  .object({
+    questions: z
+      .array(questionSchema)
+      .min(1)
+      .max(AUTHORING_LIMITS.importQuestions),
+  })
+  .strict();
 @Injectable()
 export class AuthoringService {
   constructor(
@@ -32,12 +51,81 @@ export class AuthoringService {
     return this.assessments.find().sort({ _id: -1 }).limit(100).lean();
   }
   listQuestions() {
-    return this.questions.find().sort({ _id: -1 }).limit(100).lean();
+    return this.questions
+      .find()
+      .sort({ _id: -1 })
+      .limit(AUTHORING_LIMITS.pageSize)
+      .lean();
+  }
+  async getQuestion(id: string): Promise<Question & { _id: Types.ObjectId }> {
+    const question = await this.questions
+      .findById(id)
+      .lean<Question & { _id: Types.ObjectId }>();
+    if (!question) throw new NotFoundException("Question not found.");
+    return {
+      ...question,
+      revision: question.revision ?? 0,
+      status: question.status ?? "ACTIVE",
+    };
+  }
+  private revisionFilter(id: string, revision: number) {
+    return {
+      _id: id,
+      ...(revision === 0
+        ? { $or: [{ revision: 0 }, { revision: { $exists: false } }] }
+        : { revision }),
+    };
+  }
+  async editQuestion(id: string, body: unknown) {
+    const parsed = questionEditSchema.safeParse(body);
+    if (!parsed.success) throw new BadRequestException(parsed.error.issues);
+    const question = await this.questions.findOneAndUpdate(
+      {
+        ...this.revisionFilter(id, parsed.data.revision),
+        status: { $ne: "ARCHIVED" },
+      },
+      { $set: { content: parsed.data.content }, $inc: { revision: 1 } },
+      { new: true, runValidators: true },
+    );
+    if (!question)
+      throw new ConflictException(
+        "Question changed, is archived, or no longer exists. Reload before editing.",
+      );
+    return question;
+  }
+  async setQuestionStatus(id: string, body: unknown) {
+    const parsed = questionStatusSchema.safeParse(body);
+    if (!parsed.success) throw new BadRequestException(parsed.error.issues);
+    const question = await this.questions.findOneAndUpdate(
+      this.revisionFilter(id, parsed.data.revision),
+      { $set: { status: parsed.data.status }, $inc: { revision: 1 } },
+      { new: true, runValidators: true },
+    );
+    if (!question)
+      throw new ConflictException(
+        "Question changed or no longer exists. Reload before changing its status.",
+      );
+    return question;
+  }
+  async importQuestions(body: unknown) {
+    const parsed = questionImportSchema.safeParse(body);
+    if (!parsed.success) throw new BadRequestException(parsed.error.issues);
+    // Validate the whole batch before writing, and roll back all records if a write fails.
+    return this.questions.db.transaction(async (session) =>
+      this.questions.insertMany(
+        parsed.data.questions.map((content) => ({ content })),
+        { session },
+      ),
+    );
   }
   async listVersions(assessmentId: string) {
     if (!(await this.assessments.exists({ _id: assessmentId })))
       throw new NotFoundException("Assessment not found.");
-    return this.versions.find({ assessmentId }).sort({ _id: -1 }).limit(100).lean();
+    return this.versions
+      .find({ assessmentId })
+      .sort({ _id: -1 })
+      .limit(100)
+      .lean();
   }
   async create(userId: string, body: unknown) {
     const parsed = assessmentSchema.safeParse(body);
@@ -62,10 +150,15 @@ export class AuthoringService {
       [...s.questions].sort((a, b) => a.order - b.order),
     );
     const questions = await this.questions
-      .find({ _id: { $in: references.map((q) => q.questionId) } })
+      .find({
+        _id: { $in: references.map((q) => q.questionId) },
+        status: { $ne: "ARCHIVED" },
+      })
       .lean();
     if (questions.length !== references.length)
-      throw new BadRequestException("One or more questions do not exist.");
+      throw new BadRequestException(
+        "One or more questions do not exist or are archived.",
+      );
     const snapshots: QuestionSnapshot[] = references.map((reference) => {
       const question = questions.find(
         (q) => q._id.toString() === reference.questionId,

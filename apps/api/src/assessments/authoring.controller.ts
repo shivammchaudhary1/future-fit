@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Patch,
+  Post,
+  UseGuards,
+} from "@nestjs/common";
 import { AccessTokenGuard } from "../auth/access-token.guard.js";
 import { SuperAdminGuard } from "../auth/super-admin.guard.js";
 import { CsrfGuard } from "../auth/csrf.guard.js";
@@ -14,6 +22,28 @@ export class AuthoringController {
   }
   @Get("questions") async questions() {
     return { success: true, data: await this.authoring.listQuestions() };
+  }
+  @Get("questions/:questionId")
+  async getQuestion(@Param("questionId") id: string) {
+    return { success: true, data: await this.authoring.getQuestion(id) };
+  }
+  @Patch("questions/:questionId")
+  @UseGuards(CsrfGuard)
+  async editQuestion(@Param("questionId") id: string, @Body() body: unknown) {
+    return { success: true, data: await this.authoring.editQuestion(id, body) };
+  }
+  @Post("questions/:questionId/status")
+  @UseGuards(CsrfGuard)
+  async questionStatus(@Param("questionId") id: string, @Body() body: unknown) {
+    return {
+      success: true,
+      data: await this.authoring.setQuestionStatus(id, body),
+    };
+  }
+  @Post("questions/import")
+  @UseGuards(CsrfGuard)
+  async importQuestions(@Body() body: unknown) {
+    return { success: true, data: await this.authoring.importQuestions(body) };
   }
   @Get("assessments/:assessmentId/versions")
   async versions(@Param("assessmentId") id: string) {

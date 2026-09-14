@@ -56,9 +56,51 @@ after(async () => {
   } finally { await connection.close(); }
 });
 test("published snapshot is independent of later question-bank changes", async () => {
-  await models.Question.updateOne({ _id: question._id }, { $set: { "content.options.0.scoring.sample": 999 } });
+  const content = structuredClone(question.content);
+  content.options[0].scoring.sample = 99;
+  await authoring.editQuestion(question._id.toHexString(), { revision: 0, content });
   const snapshot = await models.AssessmentVersion.findById(version._id).lean();
   assert.equal(snapshot.questionSnapshots[0].options[0].scoring.sample, 1);
+});
+
+test("question edits use optimistic concurrency and preserve published snapshots after archive", async () => {
+  const id = question._id.toHexString();
+  const current = await authoring.getQuestion(id);
+  const writes = await Promise.allSettled([
+    authoring.editQuestion(id, { revision: current.revision, content: current.content }),
+    authoring.editQuestion(id, { revision: current.revision, content: current.content }),
+  ]);
+  assert.equal(writes.filter((result) => result.status === "fulfilled").length, 1);
+  const updated = await authoring.getQuestion(id);
+  const archived = await authoring.setQuestionStatus(id, { revision: updated.revision, status: "ARCHIVED" });
+  await assert.rejects(authoring.editQuestion(id, { revision: archived.revision, content: current.content }), { status: 409 });
+  const source = await models.AssessmentVersion.findById(version._id).lean();
+  await assert.rejects(authoring.createVersion(assessment._id.toHexString(), { version: "archived-source", sections: source.sections, scoringConfiguration: source.scoringConfiguration }), { status: 400 });
+  assert.equal(source.questionSnapshots[0].options[0].scoring.sample, 1);
+  await authoring.setQuestionStatus(id, { revision: archived.revision, status: "ACTIVE" });
+});
+
+test("question import validates the entire batch before any inserts", async () => {
+  const content = question.content;
+  const initial = await models.Question.countDocuments();
+  await assert.rejects(authoring.importQuestions({ questions: [content, { type: "INVALID" }] }), { status: 400 });
+  assert.equal(await models.Question.countDocuments(), initial);
+  const imported = await authoring.importQuestions({ questions: [content, content] });
+  assert.equal(imported.length, 2);
+  assert.equal(await models.Question.countDocuments(), initial + 2);
+});
+
+test("question import rolls back earlier inserts when a later write fails", async () => {
+  const marker = "synthetic-rollback-category";
+  const content = structuredClone(question.content);
+  content.metadata.category = marker;
+  await models.Question.collection.createIndex(
+    { "content.metadata.category": 1 },
+    { unique: true, partialFilterExpression: { "content.metadata.category": marker }, name: "synthetic_import_rollback" },
+  );
+  const initial = await models.Question.countDocuments();
+  await assert.rejects(authoring.importQuestions({ questions: [content, content] }), { code: 11000 });
+  assert.equal(await models.Question.countDocuments(), initial);
 });
 test("MongoDB autosave revision permits only one concurrent writer", async () => {
   const attempt = await assessments.start(studentId.toHexString(), assessment._id.toHexString(), { context: "PERSONAL", language: "en" });

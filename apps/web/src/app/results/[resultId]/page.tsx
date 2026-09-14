@@ -3,7 +3,10 @@ import { use, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/api-client";
 import { useAuthStore } from "@/stores/auth.store";
+import { ResultSharing } from "@/components/result-sharing";
+import { GuidanceNotes } from "@/components/guidance-notes";
 interface Result {
+  userId: string;
   reportStatus: string;
   dimensions: Record<string, number>;
   careerMatches: Array<{ code?: string; title?: string }>;
@@ -66,6 +69,10 @@ export default function ResultPage({
           >
             Download PDF
           </button>
+          {result.data.userId === user?.id && (
+            <ResultSharing key={resultId} resultId={resultId} />
+          )}
+          <GuidanceNotes key={`notes-${resultId}`} resultId={resultId} />
         </>
       )}
     </main>

@@ -33,6 +33,6 @@ import { AuthSession, AuthSessionSchema } from "./session.schema.js";
     TurnstileGuard,
     SuperAdminGuard,
   ],
-  exports: [AccessTokenGuard, CsrfGuard, SuperAdminGuard, MongooseModule],
+  exports: [AccessTokenGuard, CsrfGuard, SuperAdminGuard, MongooseModule, JwtModule],
 })
 export class AuthModule {}

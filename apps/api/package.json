@@ -12,6 +12,7 @@
     "test:integration": "pnpm build && node --test test/integration/database.cjs"
   },
   "dependencies": {
+    "zod": "catalog:",
     "@aws-sdk/client-s3": "^3.0.0",
     "@aws-sdk/s3-request-presigner": "^3.0.0",
     "@future-fit/config": "workspace:*",

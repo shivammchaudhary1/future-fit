@@ -6,6 +6,7 @@ import { useAuthStore } from "@/stores/auth.store";
 export interface ManagementAction {
   label: string;
   path: string;
+  method?: "POST" | "PATCH";
   template: Record<string, unknown>;
 }
 export function ManagementPanel({
@@ -39,7 +40,7 @@ export function ManagementPanel({
     try {
       const body: unknown = JSON.parse(input);
       const result = await apiRequest<unknown>(action.path, {
-        method: "POST",
+        method: action.method ?? "POST",
         body: JSON.stringify(body),
       });
       setLastResult(result);

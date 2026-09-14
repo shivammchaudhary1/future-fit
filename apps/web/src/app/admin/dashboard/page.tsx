@@ -11,6 +11,7 @@ export default function AdminDashboard() {
   const user = useAuthStore((s) => s.user);
   const [assessmentId, setAssessmentId] = useState("");
   const [versionId, setVersionId] = useState("");
+  const [questionId, setQuestionId] = useState("");
   if (!user?.globalRoles.includes("SUPER_ADMIN"))
     return <main>Super administrator sign-in required.</main>;
   return (
@@ -40,8 +41,45 @@ export default function AdminDashboard() {
             path: "/admin/questions",
             template: ADMIN_QUESTION_TEMPLATE,
           },
+          {
+            label: "Import questions (maximum 100)",
+            path: "/admin/questions/import",
+            template: { questions: [ADMIN_QUESTION_TEMPLATE] },
+          },
         ]}
       />
+      <label>
+        Question ID to manage{" "}
+        <input
+          value={questionId}
+          onChange={(event) => setQuestionId(event.target.value)}
+        />
+      </label>
+      {/^[a-f\d]{24}$/i.test(questionId) && (
+        <ManagementPanel
+          key={questionId}
+          title="Edit or archive question (copy its current revision and content below)"
+          readPath={`/admin/questions/${questionId}`}
+          actions={[
+            {
+              label: "Replace question content",
+              path: `/admin/questions/${questionId}`,
+              method: "PATCH",
+              template: { revision: 0, content: ADMIN_QUESTION_TEMPLATE },
+            },
+            {
+              label: "Archive question",
+              path: `/admin/questions/${questionId}/status`,
+              template: { revision: 0, status: "ARCHIVED" },
+            },
+            {
+              label: "Restore question",
+              path: `/admin/questions/${questionId}/status`,
+              template: { revision: 0, status: "ACTIVE" },
+            },
+          ]}
+        />
+      )}
       <label>
         Assessment ID{" "}
         <input
