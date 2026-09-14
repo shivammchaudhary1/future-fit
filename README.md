@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Future Fit
 
 Assessment-first career guidance for Indian students in Classes 9–12.
@@ -23,3 +24,6 @@ Assessment-first career guidance for Indian students in Classes 9–12.
 4. Run `pnpm dev`.
 
 The previous Phase 2 implementation lives in `Ce-Phase2Backup` and is reference-only.
+=======
+# future-fit
+>>>>>>> 5bbae01d4d3bfbf6ec5ba48aec11dd380bd303d1
