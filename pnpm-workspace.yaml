@@ -3,11 +3,13 @@ packages:
   - "packages/*"
 
 allowBuilds:
-  '@parcel/watcher': set this to true or false
-  '@scarf/scarf': set this to true or false
-  '@swc/core': set this to true or false
-  esbuild: set this to true or false
-  msgpackr-extract: set this to true or false
+  "@parcel/watcher": true
+  "@scarf/scarf": true
+  "@swc/core": true
+  argon2: true
+  esbuild: true
+  msgpackr-extract: true
+  unrs-resolver: true
 
 catalog:
   typescript: ^5.9.2

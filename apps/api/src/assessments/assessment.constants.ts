@@ -1,0 +1,15 @@
+export const ASSESSMENT_CONTEXTS = ["PERSONAL", "SCHOOL"] as const;
+export const ATTEMPT_STATUSES = [
+  "NOT_STARTED",
+  "IN_PROGRESS",
+  "SUBMITTED",
+  "SCORING",
+  "MATCHING",
+  "AI_INTERPRETATION",
+  "REPORT_GENERATION",
+  "RESULT_READY",
+  "FAILED",
+] as const;
+export const ATTEMPT_SYNC_LIMIT = 100;
+export const PUBLISHED_STATUS = "PUBLISHED";
+export const PERSONAL_CONTEXT = "PERSONAL";

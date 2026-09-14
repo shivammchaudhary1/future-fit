@@ -1,0 +1,11 @@
+export const GRADES = ["9", "10", "11", "12"] as const;
+export const ACADEMIC_YEAR_STATUSES = ["ACTIVE", "ARCHIVED"] as const;
+export const ACTIVE_ACADEMIC_YEAR = "ACTIVE";
+export const CLASS_MANAGER_ROLES = ["SCHOOL_ADMIN"] as const;
+export const ASSIGNMENT_CREATOR_ROLES = ["SCHOOL_ADMIN", "TEACHER"] as const;
+export const ASSIGNMENT_TARGET_TYPES = ["CLASS", "STUDENT"] as const;
+export const ASSIGNMENT_STATUSES = ["ACTIVE", "CLOSED"] as const;
+export const ACTIVE_ASSIGNMENT = "ACTIVE";
+export const ACTIVE_MEMBERSHIP = "ACTIVE";
+export const STUDENT_ROLE = "STUDENT";
+export const TEACHER_ROLE = "TEACHER";

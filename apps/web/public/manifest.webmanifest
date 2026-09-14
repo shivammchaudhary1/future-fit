@@ -7,5 +7,12 @@
   "background_color": "#FAFCFD",
   "theme_color": "#173B57",
   "lang": "en",
-  "icons": []
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
 }

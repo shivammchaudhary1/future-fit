@@ -12,63 +12,63 @@ import {
   Sparkles,
   Target,
   Users,
-} from 'lucide-react';
+} from "lucide-react";
 
 const assessments = [
   {
     icon: Compass,
-    title: 'Interest Assessment',
-    text: 'What excites you?',
-    tone: 'mint',
+    title: "Interest Assessment",
+    text: "What excites you?",
+    tone: "mint",
   },
   {
     icon: BrainCircuit,
-    title: 'Personality Assessment',
-    text: 'How you think & work',
-    tone: 'violet',
+    title: "Personality Assessment",
+    text: "How you think & work",
+    tone: "violet",
   },
   {
     icon: BarChart3,
-    title: 'Aptitude Assessment',
-    text: 'Find your core strengths',
-    tone: 'yellow',
+    title: "Aptitude Assessment",
+    text: "Find your core strengths",
+    tone: "yellow",
   },
   {
     icon: HeartHandshake,
-    title: 'Career Recommendations',
-    text: 'Best careers for you',
-    tone: 'coral',
+    title: "Career Recommendations",
+    text: "Best careers for you",
+    tone: "coral",
   },
   {
     icon: GraduationCap,
-    title: 'Education Path',
-    text: 'Courses, exams & colleges',
-    tone: 'blue',
+    title: "Education Path",
+    text: "Courses, exams & colleges",
+    tone: "blue",
   },
   {
     icon: Sparkles,
-    title: 'AI-Powered Insights',
-    text: 'Personalized & actionable',
-    tone: 'violet',
+    title: "AI-Powered Insights",
+    text: "Personalized & actionable",
+    tone: "violet",
   },
 ];
 
 const steps = [
-  ['01', 'Take Assessments', 'Answer thoughtful, research-based questions.'],
+  ["01", "Take Assessments", "Answer thoughtful, research-based questions."],
   [
-    '02',
-    'Understand Your Profile',
-    'See your interests, strengths, values and personality.',
+    "02",
+    "Understand Your Profile",
+    "See your interests, strengths, values and personality.",
   ],
   [
-    '03',
-    'Explore Career Matches',
-    'Discover suitable careers with clear reasoning.',
+    "03",
+    "Explore Career Matches",
+    "Discover suitable careers with clear reasoning.",
   ],
   [
-    '04',
-    'Plan Your Next Steps',
-    'Choose subjects, courses, exams and skills confidently.',
+    "04",
+    "Plan Your Next Steps",
+    "Choose subjects, courses, exams and skills confidently.",
   ],
 ];
 
