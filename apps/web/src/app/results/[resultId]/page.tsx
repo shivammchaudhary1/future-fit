@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import {
   ClipboardCheck,
   Compass,
+  CreditCard,
   Download,
   FileText,
   LayoutDashboard,
@@ -45,6 +46,7 @@ const navItems = [
   { label: "Assessments", href: "/assessments", icon: ClipboardCheck },
   { label: "Results", href: "/results", icon: FileText },
   { label: "Career Library", href: "/careers", icon: Compass },
+  { label: "Access & Payments", href: "/payments", icon: CreditCard },
   { label: "Profile", href: "/student/profile", icon: UserRound },
 ] as const;
 

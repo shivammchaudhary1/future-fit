@@ -1,8 +1,24 @@
-const CACHE = "future-fit-static-v1";
-const STATIC = ["/offline.html", "/icon.svg"];
+const CACHE_NAME = "future-fit-static-v1";
+
+const OFFLINE_URL = "/offline";
+
+const PRECACHE = [
+  OFFLINE_URL,
+  "/manifest.webmanifest",
+  "/assets/brand/favicon_io/android-chrome-192x192.png",
+  "/assets/brand/favicon_io/android-chrome-512x512.png",
+  "/assets/brand/favicon_io/apple-touch-icon.png"
+];
+
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(STATIC)));
+  event.waitUntil(
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => cache.addAll(PRECACHE))
+      .then(() => self.skipWaiting())
+  );
 });
+
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches
@@ -10,19 +26,67 @@ self.addEventListener("activate", (event) => {
       .then((keys) =>
         Promise.all(
           keys
-            .filter(
-              (key) => key.startsWith("future-fit-static-") && key !== CACHE,
-            )
-            .map((key) => caches.delete(key)),
-        ),
-      ),
+            .filter((key) => key !== CACHE_NAME)
+            .map((key) => caches.delete(key))
+        )
+      )
+      .then(() => self.clients.claim())
   );
 });
+
 self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET" || event.request.mode !== "navigate")
+  const request = event.request;
+
+  if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+
+  if (url.origin !== self.location.origin) return;
+
+  // Never cache authenticated API responses.
+  if (url.pathname.startsWith("/api/")) {
+    event.respondWith(fetch(request));
     return;
-  // Never cache authentication, API responses, or private student/report pages.
+  }
+
+  // For page navigation prefer live content, then fall back to the offline page.
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request).catch(async () => {
+        const cache = await caches.open(CACHE_NAME);
+        return (
+          (await cache.match(OFFLINE_URL)) ||
+          new Response("Future Fit is offline.", {
+            status: 503,
+            headers: { "Content-Type": "text/plain; charset=utf-8" }
+          })
+        );
+      })
+    );
+    return;
+  }
+
+  const isStaticAsset =
+    url.pathname.startsWith("/_next/static/") ||
+    url.pathname.startsWith("/assets/") ||
+    url.pathname === "/manifest.webmanifest";
+
+  if (!isStaticAsset) return;
+
   event.respondWith(
-    fetch(event.request).catch(() => caches.match("/offline.html")),
+    caches.match(request).then((cached) => {
+      if (cached) return cached;
+
+      return fetch(request).then((response) => {
+        if (!response || response.status !== 200) return response;
+
+        const clone = response.clone();
+        void caches
+          .open(CACHE_NAME)
+          .then((cache) => cache.put(request, clone));
+
+        return response;
+      });
+    })
   );
 });

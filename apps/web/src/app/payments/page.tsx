@@ -37,7 +37,7 @@ interface Product {
 interface Payment {
   _id: string;
   productId?: string;
-  status: "CREATING" | "CREATED" | "PAID" | "RECONCILIATION_REQUIRED" | string;
+  status: string;
   amount: number;
   currency: string;
   durationDays?: number;

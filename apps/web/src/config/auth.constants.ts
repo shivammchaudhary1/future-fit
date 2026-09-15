@@ -13,7 +13,13 @@ export const AUTH_LINKS = {
   forgotPassword: "/forgot-password",
   resetPassword: "/reset-password",
   verifyEmail: "/verify-email",
-  dashboard: "/student/dashboard",
+
+  /*
+   * Never hard-code login to the student dashboard.
+   * /workspace resolves the authenticated account's real workspace:
+   * SUPER_ADMIN, SCHOOL_ADMIN, TEACHER, USER/STUDENT or GUARDIAN.
+   */
+  dashboard: "/workspace",
 } as const;
 
 export const API_URL =

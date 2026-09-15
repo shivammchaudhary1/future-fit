@@ -36,6 +36,8 @@ function displayValue(value: unknown) {
 
 type Question = ReturnType<typeof publicQuestion>;
 
+const EMPTY_QUESTIONS: Question[] = [];
+
 interface Attempt {
   revision: number;
   status: string;
@@ -261,7 +263,7 @@ export default function AttemptPage({
     }
   }
 
-  const questions = payload?.version.questions ?? [];
+  const questions = payload?.version.questions ?? EMPTY_QUESTIONS;
   const question = questions[currentIndex];
   const progress = questions.length
     ? Math.round(((currentIndex + 1) / questions.length) * 100)

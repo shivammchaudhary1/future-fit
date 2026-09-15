@@ -1,0 +1,9 @@
+| Test type    | Email                  | Password               | App role                       |
+| ------------ | ---------------------- | ---------------------- | ------------------------------ |
+| Super Admin  | `superadmin@gmail.com` | `superadmin@gmail.com` | `SUPER_ADMIN`                  |
+| School Admin | `admin@gmail.com`      | `admin@gmail.com`      | `SCHOOL_ADMIN`                 |
+| Principal    | `principal@gmail.com`  | `principal@gmail.com`  | `SCHOOL_ADMIN`                 |
+| Teacher      | `teacher@gmail.com`    | `teacher@gmail.com`    | `TEACHER`                      |
+| Student      | `student@gmail.com`    | `student@gmail.com`    | `STUDENT`                      |
+| Guardian     | `guardian@gmail.com`   | `guardian@gmail.com`   | Approved guardian relationship |
+| Normal user  | `user@gmail.com`       | `user@gmail.com`       | No special role                |

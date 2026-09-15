@@ -212,6 +212,7 @@ export default function HomePage() {
               <source media="(max-width: 720px)" srcSet={mobileHero.srcSet} />
               <img
                 {...desktopImageProps}
+                alt="Indian senior-school student exploring future career possibilities"
                 srcSet={desktopSrcSet}
                 className={styles.heroImage}
               />

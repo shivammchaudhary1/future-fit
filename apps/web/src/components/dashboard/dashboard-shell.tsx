@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import type { ReactNode } from "react";
 
+import { NotificationBell } from "@/components/notifications/notification-bell";
 import { ASSETS } from "@/config/assets";
 import { AUTH_LINKS } from "@/config/auth.constants";
 import { useAuthStore } from "@/stores/auth.store";
@@ -92,7 +93,11 @@ export function DashboardShell({
             Public website
           </Link>
 
-          <button type="button" className={styles.signOut} onClick={() => void signOut()}>
+          <button
+            type="button"
+            className={styles.signOut}
+            onClick={() => void signOut()}
+          >
             <LogOut size={17} />
             Sign out
           </button>
@@ -102,7 +107,11 @@ export function DashboardShell({
       <section className={styles.workspace}>
         <header className={styles.topbar}>
           <div className={styles.mobileBar}>
-            <Link href="/" className={styles.mobileBrand} aria-label="Future Fit home">
+            <Link
+              href="/"
+              className={styles.mobileBrand}
+              aria-label="Future Fit home"
+            >
               <Image
                 src={ASSETS.brand.logoIcon}
                 alt="Future Fit"
@@ -142,12 +151,16 @@ export function DashboardShell({
             <strong>{title}</strong>
           </div>
 
+          <NotificationBell />
+
           <div className={styles.userChip}>
             <span className={styles.avatar}>{initials}</span>
 
             <div>
               <strong>
-                {user ? `${user.firstName} ${user.lastName}`.trim() : "Future Fit"}
+                {user
+                  ? `${user.firstName} ${user.lastName}`.trim()
+                  : "Future Fit"}
               </strong>
               <small>{user?.email ?? roleLabel}</small>
             </div>
