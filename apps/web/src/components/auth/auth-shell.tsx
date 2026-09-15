@@ -1,6 +1,15 @@
-import { ArrowLeft, CheckCircle2, Sparkles } from "lucide-react";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Compass,
+  Sparkles,
+  Target,
+} from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+
+import { ASSETS } from "@/config/assets";
 
 export function AuthShell({
   title,
@@ -14,28 +23,40 @@ export function AuthShell({
   return (
     <main className="auth-page">
       <section className="auth-story">
-        <Link href="/" className="back">
-          <ArrowLeft /> Back to home
-        </Link>
-        <div className="auth-brand">
-          <span className="brand-mark">F</span>
-          <strong>
-            Future<span>Fit</span>
-          </strong>
+        <div className="auth-story-top">
+          <Link href="/" className="auth-back">
+            <ArrowLeft />
+            Back to home
+          </Link>
+
+          <Link href="/" className="auth-brand" aria-label="Future Fit home">
+            <Image
+              src={ASSETS.brand.logoPrimary}
+              alt="Future Fit"
+              width={250}
+              height={76}
+              priority
+            />
+          </Link>
         </div>
-        <div>
-          <p className="eyebrow">
-            <Sparkles /> Career guidance that feels personal
+
+        <div className="auth-story-content">
+          <p className="auth-eyebrow">
+            <Sparkles />
+            Career guidance that feels personal
           </p>
+
           <h1>
-            Same student.
-            <br />
-            <span>A brighter future.</span>
+            Discover your path.
+            <span> Build with confidence.</span>
           </h1>
-          <p>
-            Scientific assessments meet practical guidance for Indian students.
+
+          <p className="auth-story-copy">
+            Structured assessments, practical guidance and a clear next-step
+            plan for Indian students.
           </p>
-          <ul>
+
+          <ul className="auth-benefits">
             <li>
               <CheckCircle2 />
               Understand your unique strengths
@@ -46,16 +67,44 @@ export function AuthShell({
             </li>
             <li>
               <CheckCircle2 />
-              Build a clear education action plan
+              Build a clearer education action plan
             </li>
           </ul>
+
+          <div className="auth-mini-cards" aria-hidden="true">
+            <span>
+              <Compass />
+              Explore
+            </span>
+            <span>
+              <Target />
+              Plan
+            </span>
+          </div>
         </div>
-        <small>Designed for Classes 9–12 • English & Hindi</small>
+
+        <p className="auth-story-note">
+          Designed for Classes 9–12 · English & Hindi
+        </p>
       </section>
+
       <section className="auth-panel">
         <div className="auth-card">
-          <h2>{title}</h2>
-          <p className="auth-subtitle">{subtitle}</p>
+          <div className="auth-mobile-brand">
+            <Image
+              src={ASSETS.brand.logoPrimary}
+              alt="Future Fit"
+              width={220}
+              height={68}
+              priority
+            />
+          </div>
+
+          <div className="auth-card-heading">
+            <h2>{title}</h2>
+            <p className="auth-subtitle">{subtitle}</p>
+          </div>
+
           {children}
         </div>
       </section>

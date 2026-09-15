@@ -7,22 +7,11 @@ import { ASSETS } from "@/config/assets";
 import styles from "./site-header.module.css";
 
 const navigation = [
-  {
-    label: "Assessments",
-    href: "#assessments",
-  },
-  {
-    label: "Career Library",
-    href: "/careers",
-  },
-  {
-    label: "For Schools",
-    href: "#schools",
-  },
-  {
-    label: "How It Works",
-    href: "#how",
-  },
+  { label: "Home", href: "/" },
+  { label: "Assessments", href: "#assessments" },
+  { label: "For Schools", href: "#schools" },
+  { label: "Career Library", href: "/careers" },
+  { label: "How It Works", href: "#how" },
 ] as const;
 
 export function SiteHeader() {
@@ -33,8 +22,8 @@ export function SiteHeader() {
           <Image
             src={ASSETS.brand.logoPrimary}
             alt="Future Fit"
-            width={230}
-            height={72}
+            width={250}
+            height={76}
             priority
             className={styles.logo}
           />
@@ -54,15 +43,13 @@ export function SiteHeader() {
             className={styles.language}
             aria-label="Change language"
           >
-            <Languages size={17} />
-
+            <Languages size={16} />
             <span>EN</span>
-
             <span className={styles.hindi}>हिंदी</span>
           </button>
 
           <Link href="/login" className={styles.login}>
-            Log in
+            Login
           </Link>
 
           <Link href="/register" className={styles.getStarted}>
@@ -72,7 +59,7 @@ export function SiteHeader() {
 
         <details className={styles.mobileMenu}>
           <summary aria-label="Open navigation">
-            <Menu size={24} />
+            <Menu size={23} />
           </summary>
 
           <div className={styles.mobileMenuPanel}>
@@ -85,8 +72,9 @@ export function SiteHeader() {
             </nav>
 
             <div className={styles.mobileActions}>
-              <Link href="/login">Log in</Link>
-
+              <Link href="/login" className={styles.mobileLogin}>
+                Login
+              </Link>
               <Link href="/register" className={styles.mobileCta}>
                 Get Started
               </Link>
