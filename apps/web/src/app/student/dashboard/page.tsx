@@ -6,6 +6,7 @@ import {
   BookOpen,
   ClipboardCheck,
   Compass,
+  CreditCard,
   FileText,
   GraduationCap,
   LayoutDashboard,
@@ -17,11 +18,10 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+import styles from "@/components/dashboard/dashboard.module.css";
 import { AUTH_LINKS } from "@/config/auth.constants";
 import { apiRequest } from "@/lib/api-client";
 import { useAuthStore } from "@/stores/auth.store";
-
-import styles from "@/components/dashboard/dashboard.module.css";
 
 interface Attempt {
   _id: string;
@@ -42,6 +42,7 @@ const navItems = [
   { label: "Assessments", href: "/assessments", icon: ClipboardCheck },
   { label: "Results", href: "/results", icon: FileText },
   { label: "Career Library", href: "/careers", icon: Compass },
+  { label: "Access & Payments", href: "/payments", icon: CreditCard },
   { label: "Profile", href: "/student/profile", icon: UserRound },
 ] as const;
 
@@ -71,10 +72,16 @@ export default function StudentDashboard() {
 
   const attemptList = attempts.data ?? [];
   const resultList = results.data ?? [];
-  const inProgress = attemptList.filter((attempt) => attempt.status === "IN_PROGRESS");
-  const schoolAttempts = attemptList.filter((attempt) => attempt.context === "SCHOOL");
+  const inProgress = attemptList.filter(
+    (attempt) => attempt.status === "IN_PROGRESS",
+  );
+  const schoolAttempts = attemptList.filter(
+    (attempt) => attempt.context === "SCHOOL",
+  );
   const readyReports = resultList.filter(
-    (result) => result.reportStatus === "READY" || result.reportStatus === "RESULT_READY",
+    (result) =>
+      result.reportStatus === "READY" ||
+      result.reportStatus === "RESULT_READY",
   );
 
   return (
@@ -151,11 +158,16 @@ export default function StudentDashboard() {
 
             <div className={styles.cardBody}>
               {attempts.isLoading ? (
-                <p className={styles.notice}>Loading your assessment progress…</p>
+                <p className={styles.notice}>
+                  Loading your assessment progress…
+                </p>
               ) : inProgress.length > 0 ? (
                 <div className={styles.progressList}>
                   {inProgress.slice(0, 4).map((attempt) => {
-                    const progress = Math.max(0, Math.min(100, attempt.progress ?? 0));
+                    const progress = Math.max(
+                      0,
+                      Math.min(100, attempt.progress ?? 0),
+                    );
 
                     return (
                       <Link
@@ -218,6 +230,14 @@ export default function StudentDashboard() {
                   <div>
                     <strong>Your Results</strong>
                     <span>Open available assessment reports.</span>
+                  </div>
+                </Link>
+
+                <Link href="/payments" className={styles.quickCard}>
+                  <CreditCard />
+                  <div>
+                    <strong>Access & Payments</strong>
+                    <span>Purchase and review paid assessment access.</span>
                   </div>
                 </Link>
 
