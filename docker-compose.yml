@@ -31,7 +31,7 @@ services:
     environment:
       MONGODB_URI: mongodb://mongo:27017/future-fit
       REDIS_URL: redis://redis:6379
-    ports: ["4000:4000"]
+    ports: ["8080:8080"]
     depends_on:
       mongo: { condition: service_healthy }
       redis: { condition: service_healthy }
