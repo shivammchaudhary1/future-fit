@@ -40,8 +40,8 @@ export default function WorkspaceResolverPage() {
       <div className={styles.loader} />
       <strong>Opening your workspace…</strong>
       <span>
-        Future Fit is checking whether this account is a platform admin, school
-        admin, teacher, student/user or guardian.
+        Future Fit is checking whether this account is a super admin,
+        principal/school admin, teacher, student or guardian.
       </span>
 
       {access.error ? (

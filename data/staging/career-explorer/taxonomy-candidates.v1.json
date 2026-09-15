@@ -1,0 +1,1949 @@
+{
+  "schemaVersion": "1.0.0",
+  "items": [
+    {
+      "domain": null,
+      "cluster": "Agriculture, Food & Natural Resources",
+      "subCluster": "Agribusiness Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": null,
+      "cluster": "Agriculture, Food & Natural Resources",
+      "subCluster": "Animal Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": null,
+      "cluster": "Agriculture, Food & Natural Resources",
+      "subCluster": "Environmental Service Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 8
+    },
+    {
+      "domain": null,
+      "cluster": "Agriculture, Food & Natural Resources",
+      "subCluster": "Food Products and Processing Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": null,
+      "cluster": "Agriculture, Food & Natural Resources",
+      "subCluster": "Natural Resources Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 13
+    },
+    {
+      "domain": null,
+      "cluster": "Agriculture, Food & Natural Resources",
+      "subCluster": "Natural Resources Systems; Science and Mathematics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Agriculture, Food & Natural Resources",
+      "subCluster": "Plant Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": null,
+      "cluster": "Agriculture, Food & Natural Resources",
+      "subCluster": "Power, Structural & Technical Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": null,
+      "cluster": "Architecture & Construction",
+      "subCluster": "Construction",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 61
+    },
+    {
+      "domain": null,
+      "cluster": "Architecture & Construction",
+      "subCluster": "Construction; Transportation Operations",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": null,
+      "cluster": "Architecture & Construction",
+      "subCluster": "Design/Pre-Construction",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 11
+    },
+    {
+      "domain": null,
+      "cluster": "Architecture & Construction",
+      "subCluster": "Maintenance/Operations",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 19
+    },
+    {
+      "domain": null,
+      "cluster": "Arts, Audio/Video Technology & Communications",
+      "subCluster": "Journalism and Broadcasting",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 14
+    },
+    {
+      "domain": null,
+      "cluster": "Arts, Audio/Video Technology & Communications",
+      "subCluster": "Journalism and Broadcasting; Administrative Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Arts, Audio/Video Technology & Communications",
+      "subCluster": "Performing Arts",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 14
+    },
+    {
+      "domain": null,
+      "cluster": "Arts, Audio/Video Technology & Communications",
+      "subCluster": "Performing Arts; Journalism and Broadcasting",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Arts, Audio/Video Technology & Communications",
+      "subCluster": "Printing Technology",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": null,
+      "cluster": "Arts, Audio/Video Technology & Communications",
+      "subCluster": "Telecommunications",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": null,
+      "cluster": "Arts, Audio/Video Technology & Communications",
+      "subCluster": "Visual Arts",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 11
+    },
+    {
+      "domain": null,
+      "cluster": "Business Management & Administration",
+      "subCluster": "Administrative Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 31
+    },
+    {
+      "domain": null,
+      "cluster": "Business Management & Administration",
+      "subCluster": "Administrative Support; Information Support and Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Business Management & Administration",
+      "subCluster": "Business Information Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Business Management & Administration",
+      "subCluster": "General Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 15
+    },
+    {
+      "domain": null,
+      "cluster": "Business Management & Administration",
+      "subCluster": "General Management; Operations Management; Information Support and Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Business Management & Administration",
+      "subCluster": "Human Resources Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 7
+    },
+    {
+      "domain": null,
+      "cluster": "Business Management & Administration",
+      "subCluster": "Operations Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 20
+    },
+    {
+      "domain": null,
+      "cluster": "Education & Training",
+      "subCluster": "Administration and Administrative Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": null,
+      "cluster": "Education & Training",
+      "subCluster": "Professional Support Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 8
+    },
+    {
+      "domain": null,
+      "cluster": "Education & Training",
+      "subCluster": "Teaching/Training",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 63
+    },
+    {
+      "domain": null,
+      "cluster": "Finance",
+      "subCluster": "Accounting",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Finance",
+      "subCluster": "Banking Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": null,
+      "cluster": "Finance",
+      "subCluster": "Banking Services; Consumer Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Finance",
+      "subCluster": "Business Finance",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": null,
+      "cluster": "Finance",
+      "subCluster": "Insurance",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": null,
+      "cluster": "Finance",
+      "subCluster": "Securities & Investments",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": null,
+      "cluster": "Finance",
+      "subCluster": "Securities & Investments; Business Finance",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": null,
+      "cluster": "Finance",
+      "subCluster": "Securities & Investments; Professional Sales",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Government & Public Administration",
+      "subCluster": "Governance",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 11
+    },
+    {
+      "domain": null,
+      "cluster": "Government & Public Administration",
+      "subCluster": "National Security",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 20
+    },
+    {
+      "domain": null,
+      "cluster": "Government & Public Administration",
+      "subCluster": "National Security; Manufacturing Production Process Development",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Government & Public Administration",
+      "subCluster": "Planning",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": null,
+      "cluster": "Government & Public Administration",
+      "subCluster": "Planning; Science and Mathematics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Government & Public Administration",
+      "subCluster": "Public Management and Administration",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": null,
+      "cluster": "Government & Public Administration",
+      "subCluster": "Regulation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": null,
+      "cluster": "Government & Public Administration",
+      "subCluster": "Revenue and Taxation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": null,
+      "cluster": "Health Science",
+      "subCluster": "Biotechnology Research and Development",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Health Science",
+      "subCluster": "Biotechnology Research and Development; Engineering and Technology",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Health Science",
+      "subCluster": "Diagnostic Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 16
+    },
+    {
+      "domain": null,
+      "cluster": "Health Science",
+      "subCluster": "Health Informatics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": null,
+      "cluster": "Health Science",
+      "subCluster": "Support Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 9
+    },
+    {
+      "domain": null,
+      "cluster": "Health Science",
+      "subCluster": "Therapeutic Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 83
+    },
+    {
+      "domain": null,
+      "cluster": "Health Science",
+      "subCluster": "Therapeutic Services; Diagnostic Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": null,
+      "cluster": "Health Science",
+      "subCluster": "Therapeutic Services; Health Informatics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Hospitality & Tourism",
+      "subCluster": "Lodging",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 8
+    },
+    {
+      "domain": null,
+      "cluster": "Hospitality & Tourism",
+      "subCluster": "Recreation, Amusements & Attractions",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 15
+    },
+    {
+      "domain": null,
+      "cluster": "Hospitality & Tourism",
+      "subCluster": "Restaurants and Food/Beverage Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 20
+    },
+    {
+      "domain": null,
+      "cluster": "Hospitality & Tourism",
+      "subCluster": "Travel & Tourism",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": null,
+      "cluster": "Human Services",
+      "subCluster": "Consumer Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Human Services",
+      "subCluster": "Counseling & Mental Health Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 12
+    },
+    {
+      "domain": null,
+      "cluster": "Human Services",
+      "subCluster": "Early Childhood Development & Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": null,
+      "cluster": "Human Services",
+      "subCluster": "Family & Community Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 11
+    },
+    {
+      "domain": null,
+      "cluster": "Human Services",
+      "subCluster": "Personal Care Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 22
+    },
+    {
+      "domain": null,
+      "cluster": "Human Services",
+      "subCluster": "Personal Care Services; Transportation Operations",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Information Technology",
+      "subCluster": "Information Support and Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 10
+    },
+    {
+      "domain": null,
+      "cluster": "Information Technology",
+      "subCluster": "Information Support and Services; Programming and Software Development",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Information Technology",
+      "subCluster": "Information Support and Services; Web and Digital Communications",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Information Technology",
+      "subCluster": "Network Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": null,
+      "cluster": "Information Technology",
+      "subCluster": "Network Systems; Information Support and Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Information Technology",
+      "subCluster": "Programming and Software Development",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": null,
+      "cluster": "Information Technology",
+      "subCluster": "Web and Digital Communications",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Law, Public Safety, Corrections & Security",
+      "subCluster": "Correction Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": null,
+      "cluster": "Law, Public Safety, Corrections & Security",
+      "subCluster": "Emergency and Fire Management Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 7
+    },
+    {
+      "domain": null,
+      "cluster": "Law, Public Safety, Corrections & Security",
+      "subCluster": "Law Enforcement Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 12
+    },
+    {
+      "domain": null,
+      "cluster": "Law, Public Safety, Corrections & Security",
+      "subCluster": "Legal Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 10
+    },
+    {
+      "domain": null,
+      "cluster": "Law, Public Safety, Corrections & Security",
+      "subCluster": "Security & Protective Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 10
+    },
+    {
+      "domain": null,
+      "cluster": "Manufacturing",
+      "subCluster": "Maintenance, Installation & Repair",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 24
+    },
+    {
+      "domain": null,
+      "cluster": "Manufacturing",
+      "subCluster": "Manufacturing Production Process Development",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 18
+    },
+    {
+      "domain": null,
+      "cluster": "Manufacturing",
+      "subCluster": "Production",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 104
+    },
+    {
+      "domain": null,
+      "cluster": "Manufacturing",
+      "subCluster": "Quality Assurance",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": null,
+      "cluster": "Marketing",
+      "subCluster": "Marketing Communications",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Marketing",
+      "subCluster": "Marketing Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": null,
+      "cluster": "Marketing",
+      "subCluster": "Marketing Research",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": null,
+      "cluster": "Marketing",
+      "subCluster": "Merchandising",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": null,
+      "cluster": "Marketing",
+      "subCluster": "Professional Sales",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 19
+    },
+    {
+      "domain": null,
+      "cluster": "Science, Technology, Engineering & Mathematics",
+      "subCluster": "Engineering and Technology",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 31
+    },
+    {
+      "domain": null,
+      "cluster": "Science, Technology, Engineering & Mathematics",
+      "subCluster": "Science and Mathematics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 46
+    },
+    {
+      "domain": null,
+      "cluster": "Transportation, Distribution & Logistics",
+      "subCluster": "Facility and Mobile Equipment Maintenance",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 19
+    },
+    {
+      "domain": null,
+      "cluster": "Transportation, Distribution & Logistics",
+      "subCluster": "Logistics Planning and Management Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": null,
+      "cluster": "Transportation, Distribution & Logistics",
+      "subCluster": "Sales and Service",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": null,
+      "cluster": "Transportation, Distribution & Logistics",
+      "subCluster": "Transportation Operations",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 38
+    },
+    {
+      "domain": null,
+      "cluster": "Transportation, Distribution & Logistics",
+      "subCluster": "Transportation Systems/Infrastructure Planning, Management and Regulation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_OCCUPATION"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "AI, Data Science & Machine Learning",
+      "subCluster": "Data Analysis & Analytics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "AI, Data Science & Machine Learning",
+      "subCluster": "Data Engineering & Infrastructure",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "AI, Data Science & Machine Learning",
+      "subCluster": "Emerging AI Roles",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "AI, Data Science & Machine Learning",
+      "subCluster": "Machine Learning & AI",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "Cloud Computing & Infrastructure",
+      "subCluster": "Cloud Architecture & Solutions",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "Cloud Computing & Infrastructure",
+      "subCluster": "Cloud Support & Help Desk",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "Cloud Computing & Infrastructure",
+      "subCluster": "DevOps & Automation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "Cloud Computing & Infrastructure",
+      "subCluster": "Systems & Infrastructure Administration",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "Cybersecurity & Digital Forensics",
+      "subCluster": "Information Security & Threat Analysis",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "Cybersecurity & Digital Forensics",
+      "subCluster": "Penetration Testing & Forensics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "Cybersecurity & Digital Forensics",
+      "subCluster": "Security Engineering & Architecture",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "AI-Resilient & High-Growth Sectors",
+      "cluster": "Cybersecurity & Digital Forensics",
+      "subCluster": "Security Operations & Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Aerospace Engineering - Avionics & Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Aerospace Engineering - Structures & Aerodynamics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Chemical Engineering - Process & Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Chemical Engineering - Water, Pharma & Environmental",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Civil Engineering - Geotechnical & Infrastructure",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Civil Engineering - Structural & Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Electrical Engineering - Power & Control",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Electrical Engineering - Telecommunications & Avionics",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Environmental & Biomedical Engineering",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Materials Engineering",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Mechanical Engineering - Automotive & HVAC",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Advanced Engineering & Technical Specialisations",
+      "cluster": "Advanced Engineering (Civil, Mechanical, Electrical, Chemical, Aerospace & Specialised)",
+      "subCluster": "Mechanical Engineering - Design & Thermal",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": "Advanced Manufacturing & Industry 4.0",
+      "cluster": "Manufacturing (Advanced & Industry 4.0)",
+      "subCluster": "Advanced Manufacturing & Programming",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Advanced Manufacturing & Industry 4.0",
+      "cluster": "Manufacturing (Advanced & Industry 4.0)",
+      "subCluster": "Maintenance & Equipment",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Advanced Manufacturing & Industry 4.0",
+      "cluster": "Manufacturing (Advanced & Industry 4.0)",
+      "subCluster": "Manufacturing Engineering",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Advanced Manufacturing & Industry 4.0",
+      "cluster": "Manufacturing (Advanced & Industry 4.0)",
+      "subCluster": "Production Operations",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Advanced Manufacturing & Industry 4.0",
+      "cluster": "Manufacturing (Advanced & Industry 4.0)",
+      "subCluster": "Quality & Process Control",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Architecture & Built Environment",
+      "subCluster": "Architectural Practice & Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Architecture & Built Environment",
+      "subCluster": "Architectural Technical Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Architecture & Built Environment",
+      "subCluster": "Landscape & Urban Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Fashion Design & Style",
+      "subCluster": "Fashion Business & Buying",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Fashion Design & Style",
+      "subCluster": "Fashion Design & Creation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Fashion Design & Style",
+      "subCluster": "Fashion Styling & Illustration",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Fashion Design & Style",
+      "subCluster": "Pattern Making & Production",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Graphic Design & Visual Communication",
+      "subCluster": "Brand & Communication Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Graphic Design & Visual Communication",
+      "subCluster": "Digital Design & Web",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Graphic Design & Visual Communication",
+      "subCluster": "Graphic Design & Visual Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Graphic Design & Visual Communication",
+      "subCluster": "Motion & Animation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Industrial & Product Design",
+      "subCluster": "CAD & Technical Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Industrial & Product Design",
+      "subCluster": "Materials & Process Engineering",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Industrial & Product Design",
+      "subCluster": "Product Design & Development",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Industrial & Product Design",
+      "subCluster": "User Experience & Research",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Interior Design & Spatial Planning",
+      "subCluster": "Commercial & Specialty Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Interior Design & Spatial Planning",
+      "subCluster": "Residential Interior Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Interior Design & Spatial Planning",
+      "subCluster": "Specialized Interior Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Media, Broadcasting & Digital Communication",
+      "subCluster": "Content Creation & Media Production",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Media, Broadcasting & Digital Communication",
+      "subCluster": "Content Strategy & Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Media, Broadcasting & Digital Communication",
+      "subCluster": "Digital Marketing & Broadcast",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Design & Creative Excellence",
+      "cluster": "Media, Broadcasting & Digital Communication",
+      "subCluster": "Journalism & Data Communication",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Circular Economy & Sustainable Innovation",
+      "subCluster": "ESG & Sustainability Coordination",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Circular Economy & Sustainable Innovation",
+      "subCluster": "Lifecycle & Supply Chain Sustainability",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Circular Economy & Sustainable Innovation",
+      "subCluster": "Waste Management & Circular Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Environmental Science & Sustainability",
+      "subCluster": "Environmental Compliance & Science",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Environmental Science & Sustainability",
+      "subCluster": "Environmental Consulting & Analysis",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Environmental Science & Sustainability",
+      "subCluster": "Environmental Engineering",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Environmental Science & Sustainability",
+      "subCluster": "Environmental Monitoring & Field Work",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Renewable Energy & Clean Technology",
+      "subCluster": "Energy Analysis & Planning",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Renewable Energy & Clean Technology",
+      "subCluster": "Energy Storage & Systems",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Renewable Energy & Clean Technology",
+      "subCluster": "Renewable Energy Project Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Green & Sustainability Economy",
+      "cluster": "Renewable Energy & Clean Technology",
+      "subCluster": "Solar & Wind Installation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Cruise, Travel & Holiday Representation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Entertainment, Venues & Gaming",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Events, Conferences & Activities",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Fitness, Gym & Wellness",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Food & Beverage Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 10
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Hospitality Management & Strategy",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 5
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Hotel Operations & Guest Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 7
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Leisure, Recreation & Activities",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Outdoor Activities & Adventure",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Sports, Coaching & Athletic Training",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 10
+    },
+    {
+      "domain": "Hospitality, Leisure & Sports",
+      "cluster": "Hospitality, Leisure & Sports",
+      "subCluster": "Tourism, Travel & Destinations",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Allied Health & Therapeutic Services",
+      "subCluster": "Dental & Oral Health",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Allied Health & Therapeutic Services",
+      "subCluster": "Emergency & Therapeutic Professionals",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Allied Health & Therapeutic Services",
+      "subCluster": "Surgical & Laboratory Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Allied Health & Therapeutic Services",
+      "subCluster": "Therapy Support & Assistance",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Education & Teaching (All Levels & Specialisations)",
+      "subCluster": "Corporate & Higher Education Training",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Education & Teaching (All Levels & Specialisations)",
+      "subCluster": "Curriculum & Instructional Design",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Education & Teaching (All Levels & Specialisations)",
+      "subCluster": "Early Years & Primary Education",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Education & Teaching (All Levels & Specialisations)",
+      "subCluster": "Educational Support & Counseling",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Education & Teaching (All Levels & Specialisations)",
+      "subCluster": "Secondary & Specialist Teaching",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Healthcare & Clinical Practice",
+      "subCluster": "Clinical Support & Patient Care",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Healthcare & Clinical Practice",
+      "subCluster": "Medical & Clinical Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Healthcare & Clinical Practice",
+      "subCluster": "Nursing Practice",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Psychology, Counselling & Social Impact",
+      "subCluster": "Clinical Psychology",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Psychology, Counselling & Social Impact",
+      "subCluster": "Counseling Support & Mentoring",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Psychology, Counselling & Social Impact",
+      "subCluster": "Mental Health & Substance Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Human-Centered & Irreplaceable Skills",
+      "cluster": "Psychology, Counselling & Social Impact",
+      "subCluster": "Social Services & Community Work",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Consulting & Professional Advisory Services",
+      "subCluster": "Business & Management Consulting",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Consulting & Professional Advisory Services",
+      "subCluster": "Change Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Consulting & Professional Advisory Services",
+      "subCluster": "Specialized Consulting",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Consulting & Professional Advisory Services",
+      "subCluster": "Strategy & Transformation",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Entrepreneurship & Innovation Management",
+      "subCluster": "Intrapreneurship",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Entrepreneurship & Innovation Management",
+      "subCluster": "Product & Innovation Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Entrepreneurship & Innovation Management",
+      "subCluster": "Startup & Business Development",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Entrepreneurship & Innovation Management",
+      "subCluster": "Venture & Strategic Partnerships",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Finance & Banking (Strategic & Fintech)",
+      "subCluster": "Banking Services & Customer Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Finance & Banking (Strategic & Fintech)",
+      "subCluster": "Financial Analysis & Advisory",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Finance & Banking (Strategic & Fintech)",
+      "subCluster": "Fintech & Blockchain",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Finance & Banking (Strategic & Fintech)",
+      "subCluster": "Trading & Quantitative Finance",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Human Resources & Organisational Development",
+      "subCluster": "Employee Relations & Development",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Human Resources & Organisational Development",
+      "subCluster": "HR Administration & Coordination",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Human Resources & Organisational Development",
+      "subCluster": "Organizational Development & Strategy",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Human Resources & Organisational Development",
+      "subCluster": "Talent Acquisition & Recruitment",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Law, Governance, Compliance & Legal Services",
+      "subCluster": "Compliance & Regulatory Services",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Law, Governance, Compliance & Legal Services",
+      "subCluster": "Governance & Legal Operations",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Law, Governance, Compliance & Legal Services",
+      "subCluster": "Legal Support & Administration",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Law, Governance, Compliance & Legal Services",
+      "subCluster": "Policy, Privacy & Legal Research",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Operations, Supply Chain & Logistics",
+      "subCluster": "Inventory & Warehouse Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Operations, Supply Chain & Logistics",
+      "subCluster": "Management & Continuous Improvement",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Operations, Supply Chain & Logistics",
+      "subCluster": "Operations & Project Coordination",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Operations, Supply Chain & Logistics",
+      "subCluster": "Supply Chain & Procurement",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Research & Development (Advanced Technology)",
+      "subCluster": "Applied Science & Materials Research",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Research & Development (Advanced Technology)",
+      "subCluster": "Data Science & Analytics Research",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Research & Development (Advanced Technology)",
+      "subCluster": "Engineering & Innovation Research",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Research & Development (Advanced Technology)",
+      "subCluster": "Laboratory & Technical Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Sales, Business Development & Account Management",
+      "subCluster": "Business Development & Sales Support",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 1
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Sales, Business Development & Account Management",
+      "subCluster": "Direct Sales & Account Management",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 3
+    },
+    {
+      "domain": "Resilient Professional Services",
+      "cluster": "Sales, Business Development & Account Management",
+      "subCluster": "Sales Operations & Success",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 2
+    },
+    {
+      "domain": "Science, Research & Humanities",
+      "cluster": "Science, Research & Humanities",
+      "subCluster": "Academic & Research Roles",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 8
+    },
+    {
+      "domain": "Science, Research & Humanities",
+      "cluster": "Science, Research & Humanities",
+      "subCluster": "Applied & Clinical Research",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 4
+    },
+    {
+      "domain": "Science, Research & Humanities",
+      "cluster": "Science, Research & Humanities",
+      "subCluster": "Heritage & Archaeology",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 6
+    },
+    {
+      "domain": "Science, Research & Humanities",
+      "cluster": "Science, Research & Humanities",
+      "subCluster": "Physical & Space Sciences",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 13
+    },
+    {
+      "domain": "Science, Research & Humanities",
+      "cluster": "Science, Research & Humanities",
+      "subCluster": "Social Sciences",
+      "sources": [
+        "LEGACY_CAREER_EXPLORER_MODERN"
+      ],
+      "careerCount": 9
+    }
+  ]
+}

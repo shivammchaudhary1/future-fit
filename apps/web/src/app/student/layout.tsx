@@ -8,7 +8,7 @@ export default function StudentLayout({
   children: ReactNode;
 }) {
   return (
-    <WorkspaceBoundary workspace="USER">
+    <WorkspaceBoundary workspace="STUDENT">
       {children}
     </WorkspaceBoundary>
   );

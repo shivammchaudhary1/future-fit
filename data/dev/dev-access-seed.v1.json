@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "environment": "development",
+  "purpose": "Future Fit development access seed. No passwords are stored here.",
+  "school": {
+    "name": "Future Fit Demo School",
+    "type": "SCHOOL",
+    "board": "CBSE",
+    "address": {
+      "city": "New Delhi",
+      "state": "Delhi",
+      "country": "India"
+    },
+    "settings": {
+      "supportedLanguages": [
+        "en",
+        "hi"
+      ],
+      "allowStudentSelfAssessment": true,
+      "allowPersonalReportSharing": true
+    },
+    "academicYear": {
+      "name": "2026-27",
+      "startDate": "2026-04-01T00:00:00.000Z",
+      "endDate": "2027-03-31T23:59:59.999Z"
+    },
+    "demoClass": {
+      "grade": "10",
+      "section": "A"
+    }
+  },
+  "users": [
+    {
+      "key": "superAdmin",
+      "email": "superadmin@futurefit.dev",
+      "firstName": "Future",
+      "lastName": "Super Admin",
+      "accessType": "SUPER_ADMIN",
+      "storage": "users.globalRoles",
+      "globalRoles": [
+        "SUPER_ADMIN"
+      ]
+    },
+    {
+      "key": "principal",
+      "email": "principal@futurefit.dev",
+      "firstName": "Demo",
+      "lastName": "Principal",
+      "accessType": "SCHOOL_ADMIN",
+      "storage": "organization_memberships.role",
+      "globalRoles": []
+    },
+    {
+      "key": "teacher",
+      "email": "teacher@futurefit.dev",
+      "firstName": "Demo",
+      "lastName": "Teacher",
+      "accessType": "TEACHER",
+      "storage": "organization_memberships.role",
+      "globalRoles": []
+    },
+    {
+      "key": "student",
+      "email": "student@futurefit.dev",
+      "firstName": "Demo",
+      "lastName": "Student",
+      "accessType": "STUDENT",
+      "storage": "organization_memberships.role + class_enrollments",
+      "globalRoles": []
+    },
+    {
+      "key": "guardian",
+      "email": "guardian@futurefit.dev",
+      "firstName": "Demo",
+      "lastName": "Guardian",
+      "accessType": "GUARDIAN",
+      "storage": "guardian_links",
+      "globalRoles": []
+    }
+  ],
+  "deprecatedSeedAccounts": [
+    "schooladmin@futurefit.dev",
+    "user@futurefit.dev"
+  ]
+}

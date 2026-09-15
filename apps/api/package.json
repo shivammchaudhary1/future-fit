@@ -9,7 +9,10 @@
     "lint": "eslint src --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "test": "pnpm build && node --test test/*.test.cjs",
-    "test:integration": "pnpm build && node --test test/integration/database.cjs"
+    "test:integration": "pnpm build && node --test test/integration/database.cjs",
+    "data:careers:check": "node scripts/import-career-source-data.mjs --dry-run",
+    "data:careers:import": "node --env-file=../../.env scripts/import-career-source-data.mjs",
+    "dev:seed:users": "node --env-file=../../.env scripts/seed-dev-users.mjs"
   },
   "dependencies": {
     "zod": "catalog:",

@@ -1,7 +1,10 @@
 import { z } from "zod";
+
 export * from "./assessment.js";
 export * from "./assessment.constants.js";
 export * from "./career.js";
+export * from "./future-fit-model.js";
+export * from "./future-fit-model.constants.js";
 
 export const localeSchema = z.enum(["en", "hi"]);
 
@@ -17,9 +20,16 @@ export const registerSchema = loginSchema.extend({
 });
 
 export const forgotPasswordSchema = z.object({ email: z.email() });
+
 export const resetPasswordSchema = z.object({
   token: z.string().min(32),
   password: z.string().min(8).max(128),
 });
-export const verifyEmailSchema = z.object({ token: z.string().min(32) });
-export const googleAuthSchema = z.object({ credential: z.string().min(20) });
+
+export const verifyEmailSchema = z.object({
+  token: z.string().min(32),
+});
+
+export const googleAuthSchema = z.object({
+  credential: z.string().min(20),
+});

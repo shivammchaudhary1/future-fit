@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "1.0.0",
+  "country": "IN",
+  "schoolStage": [
+    "CLASS_9",
+    "CLASS_10",
+    "CLASS_11",
+    "CLASS_12"
+  ],
+  "schoolStreams": [
+    {
+      "code": "PCM",
+      "labelEn": "Physics, Chemistry, Mathematics"
+    },
+    {
+      "code": "PCB",
+      "labelEn": "Physics, Chemistry, Biology"
+    },
+    {
+      "code": "PCMB",
+      "labelEn": "Physics, Chemistry, Mathematics, Biology"
+    },
+    {
+      "code": "COMMERCE",
+      "labelEn": "Commerce"
+    },
+    {
+      "code": "HUMANITIES",
+      "labelEn": "Humanities / Arts"
+    },
+    {
+      "code": "VOCATIONAL",
+      "labelEn": "Vocational"
+    },
+    {
+      "code": "ANY",
+      "labelEn": "Any / Flexible"
+    }
+  ],
+  "routeTypes": [
+    "UNDERGRADUATE_DEGREE",
+    "DIPLOMA",
+    "ITI",
+    "APPRENTICESHIP",
+    "PROFESSIONAL_QUALIFICATION",
+    "DEFENCE_ENTRY",
+    "GOVERNMENT_EXAM",
+    "SKILL_CERTIFICATION",
+    "ENTREPRENEURSHIP"
+  ],
+  "note": "This file defines Future Fit product taxonomy only. It does not assert eligibility for any specific career."
+}

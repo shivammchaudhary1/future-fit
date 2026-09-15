@@ -29,7 +29,7 @@ type WorkspaceKind =
   | "SUPER_ADMIN"
   | "SCHOOL_ADMIN"
   | "TEACHER"
-  | "USER"
+  | "STUDENT"
   | "GUARDIAN";
 
 interface WorkspaceSummary {
@@ -93,22 +93,21 @@ export class UsersController {
     const isGuardian = guardianLinks.length > 0;
 
     /*
-     * USER is the normal Future Fit account workspace.
+     * STUDENT is the normal Future Fit assessment workspace.
      *
-     * A USER can be:
-     * - completely independent, or
+     * A student can be:
+     * - independent (no school membership yet), or
      * - linked to a school with STUDENT membership.
      *
      * Staff/guardian-only accounts do not automatically receive the student
-     * assessment workspace. This prevents teachers/admins/guardians from being
-     * dropped into student assessments just because every account is a User.
+     * workspace simply because every account is stored in the users collection.
      */
     const hasStaffWorkspace =
       isSuperAdmin ||
       schoolAdminOrganizationIds.length > 0 ||
       teacherOrganizationIds.length > 0;
 
-    const hasUserWorkspace =
+    const hasStudentWorkspace =
       studentOrganizationIds.length > 0 ||
       (!hasStaffWorkspace && !isGuardian);
 
@@ -126,7 +125,7 @@ export class UsersController {
     if (schoolAdminOrganizationIds.length > 0) {
       workspaces.push({
         kind: "SCHOOL_ADMIN",
-        label: "School Admin",
+        label: "Principal / School Admin",
         href: "/school/dashboard",
         organizationIds: schoolAdminOrganizationIds,
       });
@@ -141,13 +140,10 @@ export class UsersController {
       });
     }
 
-    if (hasUserWorkspace) {
+    if (hasStudentWorkspace) {
       workspaces.push({
-        kind: "USER",
-        label:
-          studentOrganizationIds.length > 0
-            ? "Student / User"
-            : "My Future Fit",
+        kind: "STUDENT",
+        label: "Student",
         href: "/student/dashboard",
         organizationIds: studentOrganizationIds,
       });
@@ -162,7 +158,7 @@ export class UsersController {
       });
     }
 
-    let defaultWorkspace: WorkspaceKind = "USER";
+    let defaultWorkspace: WorkspaceKind = "STUDENT";
 
     if (isSuperAdmin) {
       defaultWorkspace = "SUPER_ADMIN";
@@ -171,7 +167,7 @@ export class UsersController {
     } else if (teacherOrganizationIds.length > 0) {
       defaultWorkspace = "TEACHER";
     } else if (studentOrganizationIds.length > 0) {
-      defaultWorkspace = "USER";
+      defaultWorkspace = "STUDENT";
     } else if (isGuardian) {
       defaultWorkspace = "GUARDIAN";
     }
@@ -183,7 +179,7 @@ export class UsersController {
     return {
       success: true,
       data: {
-        defaultWorkspace: defaultEntry?.kind ?? "USER",
+        defaultWorkspace: defaultEntry?.kind ?? "STUDENT",
         defaultHref: defaultEntry?.href ?? "/student/dashboard",
         workspaces,
         memberships: memberships.map((membership) => ({

@@ -1,0 +1,41 @@
+{
+  "sourceDatabase": "ce_live2",
+  "included": [
+    {
+      "collection": "career_clusters",
+      "recordCount": 364,
+      "reason": "Modern/curated career candidates with taxonomy and legacy RIASEC/DISC hints."
+    },
+    {
+      "collection": "careerclusters",
+      "recordCount": 1011,
+      "reason": "Legacy occupation/title/pathway reference records."
+    },
+    {
+      "collection": "surveyquestions",
+      "recordCount": 7,
+      "reason": "Historical survey concepts; retained only for rewrite/reference."
+    }
+  ],
+  "notImportedToFutureFitRuntime": [
+    "users",
+    "userdetails",
+    "payments",
+    "subscriptionpayment",
+    "resumes",
+    "userhistories",
+    "reportdatas",
+    "interestprofiles",
+    "surveys",
+    "discprofiles",
+    "discprofilequestions",
+    "videos",
+    "podcasts",
+    "playlists",
+    "likes",
+    "followers",
+    "ratings",
+    "universitydirectory"
+  ],
+  "rule": "Raw data is immutable archive/reference. Staging data is unverified. Only reviewed curated data may become authoritative Future Fit career data."
+}

@@ -4,7 +4,7 @@ export type WorkspaceKind =
   | "SUPER_ADMIN"
   | "SCHOOL_ADMIN"
   | "TEACHER"
-  | "USER"
+  | "STUDENT"
   | "GUARDIAN";
 
 export interface WorkspaceSummary {
