@@ -1,0 +1,124 @@
+:root {
+  /* =========================================
+     FUTURE FIT — BRAND COLORS
+     Change brand colors here only.
+     ========================================= */
+
+  --ff-navy: #173b57;
+  --ff-navy-dark: #0d3152;
+
+  --ff-teal: #2bb7a9;
+  --ff-teal-dark: #15998e;
+  --ff-teal-light: #dff8f4;
+
+  --ff-yellow: #f6b73c;
+  --ff-yellow-light: #fff2d2;
+
+  --ff-coral: #f26b5e;
+  --ff-coral-light: #ffe8e4;
+
+  --ff-sky: #eaf7f7;
+  --ff-off-white: #fafcfd;
+
+  /* =========================================
+     TEXT
+     ========================================= */
+
+  --ff-text-primary: #24313d;
+  --ff-text-heading: #173b57;
+  --ff-text-secondary: #526979;
+  --ff-text-muted: #708593;
+
+  /* =========================================
+     SURFACES
+     ========================================= */
+
+  --ff-background: #fafcfd;
+  --ff-surface: #ffffff;
+  --ff-surface-soft: #f5fbfb;
+
+  /* =========================================
+     BORDER
+     ========================================= */
+
+  --ff-border: #dce8ec;
+  --ff-border-soft: #edf3f5;
+
+  /* =========================================
+     GRADIENTS
+     ========================================= */
+
+  --ff-gradient-primary: linear-gradient(
+    135deg,
+    var(--ff-navy),
+    var(--ff-navy-dark)
+  );
+
+  --ff-gradient-teal: linear-gradient(135deg, #36c9bb, var(--ff-teal));
+
+  --ff-gradient-hero:
+    radial-gradient(
+      circle at 78% 20%,
+      rgba(43, 183, 169, 0.14),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 12% 88%,
+      rgba(246, 183, 60, 0.12),
+      transparent 30%
+    ),
+    linear-gradient(115deg, #fffef9 0%, #f2fbfa 56%, #eef8fb 100%);
+
+  /* =========================================
+     RADIUS
+     ========================================= */
+
+  --ff-radius-sm: 10px;
+  --ff-radius-md: 14px;
+  --ff-radius-lg: 20px;
+  --ff-radius-xl: 28px;
+  --ff-radius-2xl: 36px;
+  --ff-radius-pill: 999px;
+
+  /* =========================================
+     SHADOWS
+     ========================================= */
+
+  --ff-shadow-sm: 0 4px 14px rgba(23, 59, 87, 0.06);
+
+  --ff-shadow-md: 0 12px 36px rgba(23, 59, 87, 0.1);
+
+  --ff-shadow-lg: 0 26px 70px rgba(23, 59, 87, 0.14);
+
+  /* =========================================
+     LAYOUT
+     ========================================= */
+
+  --ff-container: 1200px;
+
+  --ff-header-height: 78px;
+
+  /* =========================================
+     MOTION
+     ========================================= */
+
+  --ff-transition-fast: 160ms ease;
+  --ff-transition-normal: 240ms ease;
+
+  /*
+   * Temporary compatibility aliases.
+   * Existing pages currently use these names.
+   * We can remove them after redesigning
+   * auth/dashboard pages.
+   */
+
+  --navy: var(--ff-navy);
+  --navy-dark: var(--ff-navy-dark);
+  --teal: var(--ff-teal);
+  --yellow: var(--ff-yellow);
+  --coral: var(--ff-coral);
+  --sky: var(--ff-sky);
+  --off: var(--ff-off-white);
+  --ink: var(--ff-text-primary);
+  --muted: var(--ff-text-muted);
+}
