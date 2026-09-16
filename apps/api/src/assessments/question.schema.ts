@@ -12,6 +12,7 @@ export class Question {
   })
   status!: (typeof QUESTION_STATUSES)[number];
   @Prop({ default: 0, min: 0 }) revision!: number;
+  @Prop({ type: SchemaTypes.Mixed }) source?: Record<string, unknown>;
   @Prop({ type: SchemaTypes.Mixed, required: true }) content!: QuestionContent;
 }
 export type QuestionDocument = HydratedDocument<Question>;

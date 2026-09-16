@@ -38,6 +38,9 @@ export const questionSchema = z
         min: z.number().finite().optional(),
         max: z.number().finite().optional(),
         onetOrder: z.number().int().min(1).max(60).optional(),
+        sourceItemId: key.optional(),
+        sourceOrder: z.number().int().min(1).max(L.questions).optional(),
+        scoringDirection: z.enum(["POSITIVE", "REVERSE"]).optional(),
       })
       .strict()
       .default({}),
@@ -211,7 +214,10 @@ export function scoreAnswers(
   config: VersionContent["scoringConfiguration"],
 ) {
   validateAnswers(questions, responses, true);
-  if (config.scoringModel !== "OPTION_SUM_V1")
+  if (
+    config.scoringModel !== "OPTION_SUM_V1" &&
+    config.scoringModel !== "IPIP_BIG_FIVE_50_V1"
+  )
     throw new Error("External scoring provider required");
   const dimensions: Record<string, number> = Object.fromEntries(
     config.dimensions.map((d) => [d, 0]),

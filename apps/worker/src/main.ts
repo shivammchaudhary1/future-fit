@@ -204,7 +204,20 @@ const worker = new Worker<AssessmentScoringJob>(
                 Math.round((value / 40) * 10000) / 100,
               ]),
             )
-          : undefined;
+          : scoringModel === "IPIP_BIG_FIVE_50_V1"
+            ? Object.fromEntries(
+                Object.entries(dimensions).map(([key, value]) => {
+                  const normalized = ((value - 10) / 40) * 100;
+
+                  return [
+                    key,
+                    Math.round(
+                      Math.max(0, Math.min(100, normalized)) * 100,
+                    ) / 100,
+                  ];
+                }),
+              )
+            : undefined;
 
       const scoringVersion =
         version.version +
