@@ -10,7 +10,13 @@
     "typecheck": "turbo typecheck",
     "test": "turbo test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "db:bootstrap": "pnpm --filter @future-fit/api db:bootstrap",
+    "db:verify": "pnpm --filter @future-fit/api db:verify",
+    "build:all": "turbo build",
+    "start:built": "node scripts/check-built.mjs && pnpm -r --parallel --filter @future-fit/api --filter @future-fit/worker --filter @future-fit/web run start",
+    "build:start": "pnpm build:all && pnpm start:built",
+    "check:all": "pnpm db:verify && pnpm lint && pnpm typecheck && pnpm build:all"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",
