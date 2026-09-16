@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import {
   ArrowRight,
+  Brain,
   CheckCircle2,
   ClipboardCheck,
   Compass,
@@ -10,6 +11,7 @@ import {
   Download,
   FileText,
   LayoutDashboard,
+  Sparkles,
   UserRound,
 } from "lucide-react";
 import Link from "next/link";
@@ -23,6 +25,11 @@ import {
   isCurrentInterestResult,
   normalizedInterestScores,
 } from "@/config/interest-result.constants";
+import {
+  isPersonalityResult,
+  normalizedPersonalityScores,
+  PERSONALITY_RESULT_COPY,
+} from "@/config/personality-result.constants";
 import { apiRequest } from "@/lib/api-client";
 import { useAuthStore } from "@/stores/auth.store";
 
@@ -65,6 +72,21 @@ const navItems = [
   { label: "Profile", href: "/student/profile", icon: UserRound },
 ] as const;
 
+const UNKNOWN_COPY = {
+  en: {
+    title: "Assessment result",
+    description:
+      "This older result is not part of the current assessment set.",
+    action: "Go to assessments",
+  },
+  hi: {
+    title: "आकलन परिणाम",
+    description:
+      "यह पुराना परिणाम वर्तमान आकलन सेट का हिस्सा नहीं है।",
+    action: "आकलनों पर जाएँ",
+  },
+} as const;
+
 export default function ResultPage({
   params,
 }: {
@@ -73,7 +95,6 @@ export default function ResultPage({
   const { resultId } = use(params);
   const user = useAuthStore((state) => state.user);
   const language = user?.preferredLanguage === "hi" ? "hi" : "en";
-  const copy = INTEREST_RESULT_COPY[language];
   const [downloadError, setDownloadError] = useState("");
 
   const result = useQuery({
@@ -86,6 +107,27 @@ export default function ResultPage({
       return data?.resultStatus === "READY" ? false : 5_000;
     },
   });
+
+  const personality = result.data
+    ? isPersonalityResult(result.data)
+    : false;
+  const interest = result.data
+    ? isCurrentInterestResult(result.data)
+    : false;
+  const supported = personality || interest;
+
+  const copy = personality
+    ? PERSONALITY_RESULT_COPY[language]
+    : INTEREST_RESULT_COPY[language];
+
+  const scores =
+    result.data && personality
+      ? normalizedPersonalityScores(result.data)
+      : result.data && interest
+        ? normalizedInterestScores(result.data)
+        : [];
+
+  const ProfileIcon = personality ? Brain : Sparkles;
 
   async function download() {
     setDownloadError("");
@@ -108,8 +150,16 @@ export default function ResultPage({
   return (
     <DashboardShell
       roleLabel="Student Dashboard"
-      title={copy.resultsTitle}
-      description={copy.resultsDescription}
+      title={
+        supported
+          ? copy.resultsTitle
+          : UNKNOWN_COPY[language].title
+      }
+      description={
+        supported
+          ? copy.resultsDescription
+          : UNKNOWN_COPY[language].description
+      }
       navItems={[...navItems]}
     >
       {!result.data && !result.error ? (
@@ -128,24 +178,22 @@ export default function ResultPage({
         </p>
       ) : null}
 
-      {result.data &&
-      !isCurrentInterestResult(result.data) ? (
+      {result.data && !supported ? (
         <section className={resultStyles.legacyCard}>
-          <h2>{copy.legacyTitle}</h2>
-          <p>{copy.legacyDescription}</p>
+          <h2>{UNKNOWN_COPY[language].title}</h2>
+          <p>{UNKNOWN_COPY[language].description}</p>
 
           <Link
             href="/assessments"
             className={styles.primaryButton}
           >
-            {copy.goToAssessment}
+            {UNKNOWN_COPY[language].action}
             <ArrowRight size={15} />
           </Link>
         </section>
       ) : null}
 
-      {result.data &&
-      isCurrentInterestResult(result.data) ? (
+      {result.data && supported ? (
         <div className={styles.pageStack}>
           <section className={resultStyles.hero}>
             <div>
@@ -191,74 +239,72 @@ export default function ResultPage({
             </div>
 
             <div className={resultStyles.scoreGrid}>
-              {normalizedInterestScores(result.data).map(
-                (item) => {
-                  const text = item[language];
-                  const displayScore =
-                    item.normalized.toFixed(
-                      Number.isInteger(item.normalized)
-                        ? 0
-                        : 2,
-                    );
+              {scores.map((item) => {
+                const text = item[language];
+                const displayScore =
+                  item.normalized.toFixed(
+                    Number.isInteger(item.normalized)
+                      ? 0
+                      : 2,
+                  );
 
-                  return (
-                    <article
-                      className={resultStyles.scoreCard}
-                      key={item.key}
-                    >
-                      <div className={resultStyles.scoreHeader}>
-                        <div>
-                          <span
-                            className={
-                              resultStyles.dimensionMarker
-                            }
-                          />
-                          <h3>{text.name}</h3>
-                        </div>
+                return (
+                  <article
+                    className={resultStyles.scoreCard}
+                    key={item.key}
+                  >
+                    <div className={resultStyles.scoreHeader}>
+                      <div>
+                        <span
+                          className={
+                            resultStyles.dimensionMarker
+                          }
+                        />
+                        <h3>{text.name}</h3>
+                      </div>
 
-                        <strong
-                          className={resultStyles.percentage}
-                        >
-                          {Math.round(item.normalized)}%
+                      <strong
+                        className={resultStyles.percentage}
+                      >
+                        {Math.round(item.normalized)}%
+                      </strong>
+                    </div>
+
+                    <p>{text.description}</p>
+
+                    <div className={resultStyles.scoreValueRow}>
+                      <div>
+                        <span>{copy.score}</span>
+                        <strong>
+                          {displayScore}
+                          <small> / 100</small>
                         </strong>
                       </div>
 
-                      <p>{text.description}</p>
-
-                      <div className={resultStyles.scoreValueRow}>
-                        <div>
-                          <span>{copy.score}</span>
-                          <strong>
-                            {displayScore}
-                            <small> / 100</small>
-                          </strong>
-                        </div>
-
-                        <div>
-                          <span>{copy.percent}</span>
-                          <strong>
-                            {Math.round(item.normalized)}%
-                          </strong>
-                        </div>
+                      <div>
+                        <span>{copy.percent}</span>
+                        <strong>
+                          {Math.round(item.normalized)}%
+                        </strong>
                       </div>
+                    </div>
 
-                      <div className={resultStyles.scoreTrack}>
-                        <span
-                          style={{
-                            width: `${item.normalized}%`,
-                          }}
-                        />
-                      </div>
-                    </article>
-                  );
-                },
-              )}
+                    <div className={resultStyles.scoreTrack}>
+                      <span
+                        style={{
+                          width: `${item.normalized}%`,
+                        }}
+                      />
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           </section>
 
           <section className={resultStyles.nextStepCard}>
             <span className={resultStyles.nextStepIcon}>
-              <Compass size={21} />
+              <ProfileIcon size={21} />
             </span>
 
             <div>

@@ -28,6 +28,7 @@ import { AssessmentLanguageToggle } from "@/components/assessment/language-toggl
 import { SYNC_INTERVAL_MS } from "@/config/assessment.constants";
 import { ASSETS } from "@/config/assets";
 import {
+  questionnaireKindFromVersion,
   questionnaireMessages,
   type QuestionnaireLanguage,
 } from "@/config/questionnaire.constants";
@@ -67,7 +68,7 @@ interface Attempt {
 
 interface Payload {
   attempt: Attempt;
-  version: { questions: Question[] };
+  version: { version: string; questions: Question[] };
 }
 
 function questionText(question: Question, language: QuestionnaireLanguage) {
@@ -108,7 +109,10 @@ export default function AttemptPage({
   const syncing = useRef<Promise<void> | null>(null);
   const storage = useRef(Promise.resolve());
 
-  const messages = questionnaireMessages(language);
+  const assessmentKind = questionnaireKindFromVersion(
+    payload?.version.version,
+  );
+  const messages = questionnaireMessages(language, assessmentKind);
 
   const persist = useCallback(() => {
     const draft = {
