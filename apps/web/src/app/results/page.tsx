@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import {
   ArrowRight,
+  Brain,
   ClipboardCheck,
   Compass,
   CreditCard,
@@ -20,6 +21,11 @@ import {
   isCurrentInterestResult,
   normalizedInterestScores,
 } from "@/config/interest-result.constants";
+import {
+  isPersonalityResult,
+  normalizedPersonalityScores,
+  PERSONALITY_RESULT_COPY,
+} from "@/config/personality-result.constants";
 import { apiRequest } from "@/lib/api-client";
 import { useAuthStore } from "@/stores/auth.store";
 
@@ -56,10 +62,33 @@ const navItems = [
   { label: "Profile", href: "/student/profile", icon: UserRound },
 ] as const;
 
+const PAGE_COPY = {
+  en: {
+    title: "Your results",
+    description:
+      "Review your completed Future Fit assessments and normalized profiles.",
+    empty: "No current assessment results yet",
+    emptyDescription:
+      "Complete an assessment and your scored result will appear here.",
+    go: "Go to assessments",
+    complete: "Scoring complete",
+  },
+  hi: {
+    title: "आपके परिणाम",
+    description:
+      "अपने पूरे किए गए Future Fit आकलनों और सामान्यीकृत प्रोफ़ाइल देखें।",
+    empty: "अभी कोई वर्तमान आकलन परिणाम नहीं है",
+    emptyDescription:
+      "कोई आकलन पूरा करें। स्कोरिंग के बाद उसका परिणाम यहाँ दिखाई देगा।",
+    go: "आकलनों पर जाएँ",
+    complete: "स्कोरिंग पूरी",
+  },
+} as const;
+
 export default function ResultsPage() {
   const user = useAuthStore((state) => state.user);
   const language = user?.preferredLanguage === "hi" ? "hi" : "en";
-  const copy = INTEREST_RESULT_COPY[language];
+  const pageCopy = PAGE_COPY[language];
 
   const results = useQuery({
     queryKey: ["results", user?.id],
@@ -70,8 +99,10 @@ export default function ResultsPage() {
 
   const currentResults = useMemo(
     () =>
-      (results.data ?? []).filter((result) =>
-        isCurrentInterestResult(result),
+      (results.data ?? []).filter(
+        (result) =>
+          isCurrentInterestResult(result) ||
+          isPersonalityResult(result),
       ),
     [results.data],
   );
@@ -79,8 +110,8 @@ export default function ResultsPage() {
   return (
     <DashboardShell
       roleLabel="Student Dashboard"
-      title={copy.resultsTitle}
-      description={copy.resultsDescription}
+      title={pageCopy.title}
+      description={pageCopy.description}
       navItems={[...navItems]}
     >
       <div className={styles.pageStack}>
@@ -96,21 +127,29 @@ export default function ResultsPage() {
           </p>
         ) : currentResults.length === 0 ? (
           <div className={styles.empty}>
-            <strong>{copy.noResult}</strong>
-            <p>{copy.noResultDescription}</p>
+            <strong>{pageCopy.empty}</strong>
+            <p>{pageCopy.emptyDescription}</p>
 
             <Link
               href="/assessments"
               className={styles.primaryButton}
             >
-              {copy.goToAssessment}
+              {pageCopy.go}
               <ArrowRight size={15} />
             </Link>
           </div>
         ) : (
           <div className={resultStyles.resultList}>
             {currentResults.map((result) => {
-              const scores = normalizedInterestScores(result);
+              const personality =
+                isPersonalityResult(result);
+              const copy = personality
+                ? PERSONALITY_RESULT_COPY[language]
+                : INTEREST_RESULT_COPY[language];
+              const scores = personality
+                ? normalizedPersonalityScores(result)
+                : normalizedInterestScores(result);
+              const Icon = personality ? Brain : Sparkles;
 
               return (
                 <article
@@ -120,7 +159,7 @@ export default function ResultsPage() {
                   <div className={resultStyles.cardHeader}>
                     <div className={resultStyles.cardTitleWrap}>
                       <span className={resultStyles.resultIcon}>
-                        <Sparkles size={20} />
+                        <Icon size={20} />
                       </span>
 
                       <div>
@@ -132,14 +171,13 @@ export default function ResultsPage() {
                     </div>
 
                     <span className={resultStyles.readyBadge}>
-                      {copy.complete}
+                      {pageCopy.complete}
                     </span>
                   </div>
 
                   <div className={resultStyles.miniScoreGrid}>
                     {scores.map((item) => {
-                      const text =
-                        item[language];
+                      const text = item[language];
 
                       return (
                         <div

@@ -3,6 +3,7 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import {
   ArrowRight,
+  Brain,
   ClipboardCheck,
   Compass,
   CreditCard,
@@ -39,26 +40,33 @@ interface Attempt {
   progress: number;
 }
 
-const INTEREST_ASSESSMENT_COPY = {
-  en: {
-    name: "Interest Assessment",
-    description:
-      "A 60-question assessment that helps you understand the activities and work styles you naturally enjoy.",
+const ASSESSMENT_COPY = {
+  INTEREST: {
+    en: {
+      name: "Interest Assessment",
+      description:
+        "A 60-question assessment that helps you understand the activities and work styles you naturally enjoy.",
+    },
+    hi: {
+      name: "रुचि आकलन",
+      description:
+        "60 प्रश्नों का आकलन जो यह समझने में मदद करता है कि आपको स्वाभाविक रूप से कौन-सी गतिविधियाँ और काम करने के तरीके पसंद हैं।",
+    },
   },
-  hi: {
-    name: "रुचि आकलन",
-    description:
-      "60 प्रश्नों का आकलन जो यह समझने में मदद करता है कि आपको स्वाभाविक रूप से कौन-सी गतिविधियाँ और काम करने के तरीके पसंद हैं।",
+  PERSONALITY: {
+    en: {
+      name: "Personality Assessment",
+      description:
+        "A 50-question assessment that helps you understand how you typically interact, organize yourself, think and respond to situations.",
+    },
+    hi: {
+      name: "व्यक्तित्व आकलन",
+      description:
+        "50 प्रश्नों का आकलन जो यह समझने में मदद करता है कि आप आमतौर पर लोगों से कैसे जुड़ते हैं, काम को कैसे व्यवस्थित करते हैं, सोचते हैं और परिस्थितियों पर प्रतिक्रिया देते हैं।",
+    },
   },
 } as const;
 
-/**
- * The old 24-question Future Fit development pilot is intentionally hidden.
- *
- * It is not part of the production student experience. Historical data can
- * remain in MongoDB, but students must only see the 60-question Interest
- * Assessment.
- */
 function isObsoleteInterestPilot(assessment: Assessment) {
   if (assessment.type !== "INTEREST") return false;
 
@@ -79,8 +87,11 @@ function frontendAssessmentCopy(
   assessment: Assessment,
   language: QuestionnaireLanguage,
 ) {
-  if (assessment.type === "INTEREST") {
-    return INTEREST_ASSESSMENT_COPY[language];
+  if (
+    assessment.type === "INTEREST" ||
+    assessment.type === "PERSONALITY"
+  ) {
+    return ASSESSMENT_COPY[assessment.type][language];
   }
 
   return {
@@ -273,6 +284,8 @@ export default function AssessmentsPage() {
                           <span className={styles.cardIcon}>
                             {assessment.type === "INTEREST" ? (
                               <Compass />
+                            ) : assessment.type === "PERSONALITY" ? (
+                              <Brain />
                             ) : index % 2 === 0 ? (
                               <ClipboardCheck />
                             ) : (
