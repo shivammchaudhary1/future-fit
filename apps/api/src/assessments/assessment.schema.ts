@@ -3,6 +3,7 @@ import { HydratedDocument, SchemaTypes, Types } from "mongoose";
 
 @Schema({ timestamps: true, collection: "assessments" })
 export class Assessment {
+  @Prop({ trim: true }) stableKey?: string;
   @Prop({ default: false }) isPaid!: boolean;
   @Prop({ required: true }) name!: string;
   @Prop({
@@ -32,3 +33,4 @@ export class Assessment {
 export type AssessmentDocument = HydratedDocument<Assessment>;
 export const AssessmentSchema = SchemaFactory.createForClass(Assessment);
 AssessmentSchema.index({ status: 1, type: 1 });
+AssessmentSchema.index({ stableKey: 1 }, { sparse: true });

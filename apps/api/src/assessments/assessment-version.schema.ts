@@ -14,6 +14,8 @@ export class AssessmentVersion {
   >;
   @Prop({ type: SchemaTypes.Mixed, required: true })
   scoringConfiguration!: Record<string, unknown>;
+  @Prop({ type: SchemaTypes.Mixed })
+  provenance?: Record<string, unknown>;
   @Prop({
     type: String,
     enum: ["DRAFT", "PUBLISHED", "ARCHIVED"],

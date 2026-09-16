@@ -27,4 +27,5 @@ export const SCORING_MODELS = [
   "OPTION_SUM_V1",
   "ONET_MINI_IP_V2",
   "ONET_IP_60_V1",
+  "IPIP_BIG_FIVE_50_V1",
 ] as const;
