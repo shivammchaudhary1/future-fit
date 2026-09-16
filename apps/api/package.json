@@ -13,8 +13,9 @@
     "data:careers:check": "node scripts/import-career-source-data.mjs --dry-run",
     "data:careers:import": "node --env-file=../../.env scripts/import-career-source-data.mjs",
     "dev:seed:users": "node --env-file=../../.env scripts/seed-dev-users.mjs",
-    "dev:seed:student-pilot": "node --env-file=../../.env scripts/seed-student-assessment-pilot.mjs",
-    "dev:verify:student-core": "node --env-file=../../.env scripts/verify-student-assessment-core.mjs"
+    "dev:verify:student-core": "node --env-file=../../.env scripts/verify-student-assessment-core.mjs",
+    "db:bootstrap": "node --env-file=../../.env scripts/bootstrap-initial-data.mjs",
+    "db:verify": "node --env-file=../../.env scripts/verify-initial-data.mjs"
   },
   "dependencies": {
     "zod": "catalog:",

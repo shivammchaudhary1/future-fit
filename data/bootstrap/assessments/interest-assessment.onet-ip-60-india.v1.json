@@ -1,0 +1,1385 @@
+{
+  "schemaVersion": 1,
+  "assessment": {
+    "stableKey": "FUTURE_FIT_RIASEC_ONET_60",
+    "name": "Interest Assessment",
+    "type": "INTEREST",
+    "description": "A 60-question assessment that helps you understand the activities and work styles you naturally enjoy.",
+    "version": "onet-ip-60-india-bilingual-v1",
+    "scoringModel": "ONET_IP_60_V1",
+    "dimensions": [
+      "R",
+      "I",
+      "A",
+      "S",
+      "E",
+      "C"
+    ],
+    "source": {
+      "provider": "ONET",
+      "instrument": "Interest Profiler",
+      "sourceVersion": "api-v2",
+      "sourceRevision": "2018-05-01",
+      "adaptationVersion": "future-fit-india-bilingual-v2"
+    }
+  },
+  "responseOptions": [
+    {
+      "id": "1",
+      "translations": {
+        "en": "Strongly dislike",
+        "hi": "बिल्कुल पसंद नहीं"
+      }
+    },
+    {
+      "id": "2",
+      "translations": {
+        "en": "Dislike",
+        "hi": "पसंद नहीं"
+      }
+    },
+    {
+      "id": "3",
+      "translations": {
+        "en": "Unsure",
+        "hi": "निश्चित नहीं"
+      }
+    },
+    {
+      "id": "4",
+      "translations": {
+        "en": "Like",
+        "hi": "पसंद है"
+      }
+    },
+    {
+      "id": "5",
+      "translations": {
+        "en": "Strongly like",
+        "hi": "बहुत पसंद है"
+      }
+    }
+  ],
+  "items": [
+    {
+      "order": 1,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 1,
+        "onetArea": "realistic",
+        "originalText": "Build kitchen cabinets",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Build useful wooden furniture or cabinets.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "लकड़ी से उपयोगी फर्नीचर या कैबिनेट बनाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 2,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 2,
+        "onetArea": "realistic",
+        "originalText": "Lay brick or tile",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Lay bricks or tiles while constructing or improving a space.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "किसी जगह को बनाने या सुधारने के लिए ईंट या टाइल लगाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 3,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 3,
+        "onetArea": "investigative",
+        "originalText": "Develop a new medicine",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Help develop a new medicine or medical treatment.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "नई दवा या मेडिकल उपचार विकसित करने में काम करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 4,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 4,
+        "onetArea": "investigative",
+        "originalText": "Study ways to reduce water pollution",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Study ways to reduce pollution in rivers, lakes, or other water sources.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "नदियों, झीलों या अन्य जल स्रोतों में प्रदूषण कम करने के तरीके खोजना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 5,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 5,
+        "onetArea": "artistic",
+        "originalText": "Write books or plays",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Write stories, books, scripts, or plays.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "कहानियाँ, किताबें, स्क्रिप्ट या नाटक लिखना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 6,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 6,
+        "onetArea": "artistic",
+        "originalText": "Play a musical instrument",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Play a musical instrument for an audience or recording.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "दर्शकों या रिकॉर्डिंग के लिए कोई संगीत वाद्ययंत्र बजाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 7,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 7,
+        "onetArea": "social",
+        "originalText": "Teach an individual an exercise routine",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Teach someone how to follow an exercise or fitness routine.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "किसी व्यक्ति को एक्सरसाइज या फिटनेस रूटीन करना सिखाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 8,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 8,
+        "onetArea": "social",
+        "originalText": "Help people with personal or emotional problems",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Help people deal with personal or emotional difficulties.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "लोगों को व्यक्तिगत या भावनात्मक कठिनाइयों से निपटने में मदद करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 9,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 9,
+        "onetArea": "enterprising",
+        "originalText": "Buy and sell stocks and bonds",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Buy and sell investments such as shares or bonds.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "शेयर या बॉन्ड जैसे निवेश खरीदना और बेचना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 10,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 10,
+        "onetArea": "enterprising",
+        "originalText": "Manage a retail store",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Manage the day-to-day work of a retail shop or store.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "किसी रिटेल दुकान या स्टोर का रोज़ का काम संभालना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 11,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 11,
+        "onetArea": "conventional",
+        "originalText": "Develop a spreadsheet using computer software",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Create and organise a spreadsheet using computer software.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "कंप्यूटर सॉफ्टवेयर का उपयोग करके स्प्रेडशीट बनाना और व्यवस्थित करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 12,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 12,
+        "onetArea": "conventional",
+        "originalText": "Proofread records or forms",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Check records, forms, or documents carefully for errors.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "रिकॉर्ड, फॉर्म या दस्तावेज़ों में गलती है या नहीं, इसे ध्यान से जाँचना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 13,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 13,
+        "onetArea": "realistic",
+        "originalText": "Repair household appliances",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Repair household electrical or electronic appliances.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "घर के बिजली या इलेक्ट्रॉनिक उपकरणों की मरम्मत करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 14,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 14,
+        "onetArea": "realistic",
+        "originalText": "Raise fish in a fish hatchery",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Raise and care for fish in a fish farm or hatchery.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "फिश फार्म या हैचरी में मछलियों को पालना और उनकी देखभाल करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 15,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 15,
+        "onetArea": "investigative",
+        "originalText": "Conduct chemical experiments",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Carry out chemistry experiments in a laboratory.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "प्रयोगशाला में रसायन विज्ञान के प्रयोग करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 16,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 16,
+        "onetArea": "investigative",
+        "originalText": "Study the movement of planets",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Study how planets, stars, or other objects move in space.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "अंतरिक्ष में ग्रहों, तारों या अन्य खगोलीय पिंडों की गति का अध्ययन करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 17,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 17,
+        "onetArea": "artistic",
+        "originalText": "Compose or arrange music",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Compose or arrange music.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "संगीत की रचना या अरेंजमेंट करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 18,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 18,
+        "onetArea": "artistic",
+        "originalText": "Draw pictures",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Draw, sketch, or create illustrations.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "ड्रॉइंग, स्केच या इलस्ट्रेशन बनाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 19,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 19,
+        "onetArea": "social",
+        "originalText": "Give career guidance to people",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Guide people in choosing education or career options.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "लोगों को शिक्षा या करियर विकल्प चुनने में मार्गदर्शन देना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 20,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 20,
+        "onetArea": "social",
+        "originalText": "Perform rehabilitation therapy",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Help people recover abilities through rehabilitation therapy.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "रिहैबिलिटेशन थेरेपी के माध्यम से लोगों को अपनी क्षमताएँ वापस पाने में मदद करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 21,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 21,
+        "onetArea": "enterprising",
+        "originalText": "Operate a beauty salon or barber shop",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Run and manage a salon or grooming business.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "सैलून या ग्रूमिंग बिज़नेस चलाना और मैनेज करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 22,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 22,
+        "onetArea": "enterprising",
+        "originalText": "Manage a department within a large company",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Manage a department or team in a large company.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "किसी बड़ी कंपनी में विभाग या टीम को मैनेज करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 23,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 23,
+        "onetArea": "conventional",
+        "originalText": "Install software across computers on a large network",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Install or deploy software across many computers in a network.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "नेटवर्क में कई कंप्यूटरों पर सॉफ्टवेयर इंस्टॉल या डिप्लॉय करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 24,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 24,
+        "onetArea": "conventional",
+        "originalText": "Operate a calculator",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Use a calculator or digital tool to perform routine calculations accurately.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "नियमित गणनाएँ सही तरीके से करने के लिए कैलकुलेटर या डिजिटल टूल का उपयोग करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 25,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 25,
+        "onetArea": "realistic",
+        "originalText": "Assemble electronic parts",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Assemble electronic components to make a working device.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "इलेक्ट्रॉनिक पार्ट्स को जोड़कर काम करने वाला उपकरण बनाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 26,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 26,
+        "onetArea": "realistic",
+        "originalText": "Drive a truck to deliver packages to offices and homes",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Drive a delivery vehicle to transport packages to homes or offices.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "घरों या ऑफिसों तक पार्सल पहुँचाने के लिए डिलीवरी वाहन चलाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 27,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 27,
+        "onetArea": "investigative",
+        "originalText": "Examine blood samples using a microscope",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Examine blood samples using a microscope.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "माइक्रोस्कोप से रक्त के नमूनों की जाँच करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 28,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 28,
+        "onetArea": "investigative",
+        "originalText": "Investigate the cause of a fire",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Investigate evidence to find the cause of a fire.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "सबूतों की जाँच करके आग लगने का कारण पता करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 29,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 29,
+        "onetArea": "artistic",
+        "originalText": "Create special effects for movies",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Create visual or special effects for films or digital media.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "फिल्मों या डिजिटल मीडिया के लिए विजुअल या स्पेशल इफेक्ट्स बनाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 30,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 30,
+        "onetArea": "artistic",
+        "originalText": "Paint sets for plays",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Design and paint stage sets for a play, event, or performance.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "नाटक, कार्यक्रम या परफॉर्मेंस के लिए स्टेज सेट डिज़ाइन और पेंट करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 31,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 31,
+        "onetArea": "social",
+        "originalText": "Do volunteer work at a non-profit organization",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Volunteer for an NGO or community-service organisation.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "किसी NGO या सामुदायिक सेवा संस्था के लिए स्वयंसेवा करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 32,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 32,
+        "onetArea": "social",
+        "originalText": "Teach children how to play sports",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Teach children how to play a sport.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "बच्चों को कोई खेल खेलना सिखाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 33,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 33,
+        "onetArea": "enterprising",
+        "originalText": "Start your own business",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Start and run your own business.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "अपना व्यवसाय शुरू करना और चलाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 34,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 34,
+        "onetArea": "enterprising",
+        "originalText": "Negotiate business contracts",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Negotiate business agreements or contracts.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "बिज़नेस एग्रीमेंट या कॉन्ट्रैक्ट पर बातचीत और नेगोशिएशन करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 35,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 35,
+        "onetArea": "conventional",
+        "originalText": "Keep shipping and receiving records",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Maintain accurate records of goods being sent and received.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "भेजे और प्राप्त किए जाने वाले सामान का सही रिकॉर्ड रखना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 36,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 36,
+        "onetArea": "conventional",
+        "originalText": "Calculate the wages of employees",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Calculate employee salaries or wages from work records.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "काम के रिकॉर्ड के आधार पर कर्मचारियों की सैलरी या वेतन की गणना करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 37,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 37,
+        "onetArea": "realistic",
+        "originalText": "Test the quality of parts before shipment",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Check manufactured parts carefully to make sure their quality is correct.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "बनाए गए पार्ट्स की गुणवत्ता सही है या नहीं, इसे ध्यान से जाँचना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 38,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 38,
+        "onetArea": "realistic",
+        "originalText": "Repair and install locks",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Repair and install locks or similar mechanical fittings.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "ताले या इसी तरह की मैकेनिकल फिटिंग की मरम्मत और इंस्टॉलेशन करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 39,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 39,
+        "onetArea": "investigative",
+        "originalText": "Develop a way to better predict the weather",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Develop better methods to predict weather conditions.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "मौसम का बेहतर अनुमान लगाने के तरीके विकसित करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 40,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 40,
+        "onetArea": "investigative",
+        "originalText": "Work in a biology lab",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Work in a biology laboratory and study living organisms.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "बायोलॉजी लैब में काम करना और जीवित चीज़ों का अध्ययन करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 41,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 41,
+        "onetArea": "artistic",
+        "originalText": "Write scripts for movies or television shows",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Write scripts for films, web series, television, or online videos.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "फिल्म, वेब सीरीज़, टेलीविजन या ऑनलाइन वीडियो के लिए स्क्रिप्ट लिखना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 42,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 42,
+        "onetArea": "artistic",
+        "originalText": "Perform jazz or tap dance",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Perform a dance style on stage or for an audience.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "स्टेज या दर्शकों के सामने किसी नृत्य शैली का प्रदर्शन करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 43,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 43,
+        "onetArea": "social",
+        "originalText": "Teach sign language to people who are deaf or hard of hearing",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Teach sign language to people who need it for communication.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "जिन लोगों को संवाद के लिए ज़रूरत है, उन्हें सांकेतिक भाषा सिखाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 44,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 44,
+        "onetArea": "social",
+        "originalText": "Help conduct a group therapy session",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Assist in a professionally supervised group counselling or therapy session.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "प्रशिक्षित विशेषज्ञ की निगरानी में समूह काउंसलिंग या थेरेपी सत्र में सहायता करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 45,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 45,
+        "onetArea": "enterprising",
+        "originalText": "Represent a client in a lawsuit",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Represent a client in a legal case or court matter.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "किसी कानूनी मामले या अदालत में क्लाइंट का प्रतिनिधित्व करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 46,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 46,
+        "onetArea": "enterprising",
+        "originalText": "Market a new line of clothing",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Plan how to market and promote a new clothing or fashion line.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "नई कपड़ों या फैशन लाइन की मार्केटिंग और प्रमोशन की योजना बनाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 47,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 47,
+        "onetArea": "conventional",
+        "originalText": "Inventory supplies using a hand-held computer",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Count and record stock or supplies using a digital device.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "डिजिटल डिवाइस का उपयोग करके स्टॉक या सप्लाई गिनना और रिकॉर्ड करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 48,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 48,
+        "onetArea": "conventional",
+        "originalText": "Record rent payments",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Record rent or other regular payments accurately.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "किराया या अन्य नियमित भुगतानों का सही रिकॉर्ड रखना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 49,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 49,
+        "onetArea": "realistic",
+        "originalText": "Set up and operate machines to make products",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Set up and operate machines used to make products.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "उत्पाद बनाने वाली मशीनों को सेट करना और चलाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 50,
+      "dimension": "R",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 50,
+        "onetArea": "realistic",
+        "originalText": "Put out forest fires",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Work as part of a team that controls and puts out fires.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "आग पर काबू पाने और उसे बुझाने वाली टीम के साथ काम करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 51,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 51,
+        "onetArea": "investigative",
+        "originalText": "Invent a replacement for sugar",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Research and develop a healthier substitute for sugar.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "चीनी के लिए बेहतर या स्वास्थ्यकर विकल्प पर शोध और विकास करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 52,
+      "dimension": "I",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 52,
+        "onetArea": "investigative",
+        "originalText": "Do laboratory tests to identify diseases",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Perform laboratory tests that help identify diseases.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "बीमारियों की पहचान में मदद करने वाले लैब टेस्ट करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 53,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 53,
+        "onetArea": "artistic",
+        "originalText": "Sing in a band",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Sing as part of a band or music group.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "बैंड या म्यूज़िक ग्रुप के साथ गाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 54,
+      "dimension": "A",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 54,
+        "onetArea": "artistic",
+        "originalText": "Edit movies",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Edit films or videos to shape the final story.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "फिल्म या वीडियो को एडिट करके अंतिम कहानी तैयार करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 55,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 55,
+        "onetArea": "social",
+        "originalText": "Take care of children at a day-care center",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Take care of young children in a day-care or child-care centre.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "डे-केयर या चाइल्ड-केयर सेंटर में छोटे बच्चों की देखभाल करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 56,
+      "dimension": "S",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 56,
+        "onetArea": "social",
+        "originalText": "Teach a high-school class",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Teach a class of secondary-school students.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "माध्यमिक या हाई-स्कूल के विद्यार्थियों की कक्षा पढ़ाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 57,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 57,
+        "onetArea": "enterprising",
+        "originalText": "Sell merchandise at a department store",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Sell products directly to customers in a large store.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "किसी बड़े स्टोर में ग्राहकों को सीधे उत्पाद बेचना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 58,
+      "dimension": "E",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 58,
+        "onetArea": "enterprising",
+        "originalText": "Manage a clothing store",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Manage a clothing or fashion retail store.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "कपड़ों या फैशन की रिटेल दुकान को मैनेज करना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 59,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 59,
+        "onetArea": "conventional",
+        "originalText": "Keep inventory records",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Maintain organised inventory records for products or supplies.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "उत्पादों या सप्लाई का व्यवस्थित इन्वेंटरी रिकॉर्ड रखना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    },
+    {
+      "order": 60,
+      "dimension": "C",
+      "source": {
+        "provider": "ONET",
+        "onetIndex": 60,
+        "onetArea": "conventional",
+        "originalText": "Stamp, sort, and distribute mail for an organization",
+        "sourceVersion": "api-v2",
+        "sourceRevision": "2018-05-01"
+      },
+      "translations": {
+        "en": {
+          "question": "Sort and distribute letters, documents, or office deliveries.",
+          "helperText": "Choose how much you would enjoy doing this activity."
+        },
+        "hi": {
+          "question": "पत्र, दस्तावेज़ या ऑफिस डिलीवरी को छाँटना और सही जगह पहुँचाना।",
+          "helperText": "चुनें कि आपको यह गतिविधि करना कितना पसंद आएगा।"
+        }
+      }
+    }
+  ]
+}
