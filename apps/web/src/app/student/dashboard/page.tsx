@@ -8,9 +8,9 @@ import {
   Compass,
   CreditCard,
   FileText,
-  GraduationCap,
   LayoutDashboard,
   PlayCircle,
+  ScanSearch,
   UserRound,
 } from "lucide-react";
 import Link from "next/link";
@@ -35,6 +35,12 @@ interface Result {
   _id: string;
   reportStatus: string;
   scoringVersion: string;
+}
+
+interface FitProfile {
+  coverage: number;
+  completedGroups: string[];
+  sources: Array<{ assessmentType: string }>;
 }
 
 const navItems = [
@@ -66,6 +72,12 @@ export default function StudentDashboard() {
     enabled: !!user,
   });
 
+  const fit = useQuery({
+    queryKey: ["student-fit-profile", user?.id],
+    queryFn: () => apiRequest<FitProfile>("/students/me/fit-profile"),
+    enabled: !!user,
+  });
+
   if (!initialized || !user) {
     return <main className="dashboard-loading">Preparing your dashboard…</main>;
   }
@@ -74,9 +86,6 @@ export default function StudentDashboard() {
   const resultList = results.data ?? [];
   const inProgress = attemptList.filter(
     (attempt) => attempt.status === "IN_PROGRESS",
-  );
-  const schoolAttempts = attemptList.filter(
-    (attempt) => attempt.context === "SCHOOL",
   );
   const readyReports = resultList.filter(
     (result) =>
@@ -88,7 +97,7 @@ export default function StudentDashboard() {
     <DashboardShell
       roleLabel="Student Dashboard"
       title={`Welcome, ${user.firstName}!`}
-      description="Discover your strengths, continue assessments and keep your next steps in one place."
+      description="Complete your profile, take assessments and build your Future Fit profile step by step."
       navItems={[...navItems]}
       accent={
         <Link href="/assessments" className={styles.primaryAction}>
@@ -97,9 +106,9 @@ export default function StudentDashboard() {
         </Link>
       }
     >
-      {(attempts.error || results.error) && (
+      {(attempts.error || results.error || fit.error) && (
         <p className={styles.error} role="alert">
-          {(attempts.error ?? results.error)?.message}
+          {(attempts.error ?? results.error ?? fit.error)?.message}
         </p>
       )}
 
@@ -127,11 +136,11 @@ export default function StudentDashboard() {
         <article className={styles.statCard}>
           <div className={styles.statHeader}>
             <span className={styles.statIcon}>
-              <GraduationCap />
+              <ScanSearch />
             </span>
           </div>
-          <strong>{schoolAttempts.length}</strong>
-          <span>School assessment attempts</span>
+          <strong>{fit.data?.coverage ?? 0}%</strong>
+          <span>Future Fit profile coverage</span>
         </article>
 
         <article className={styles.statCard}>
@@ -151,7 +160,7 @@ export default function StudentDashboard() {
             <header className={styles.cardHeader}>
               <div>
                 <h2>Your assessment journey</h2>
-                <p>Continue where you left off.</p>
+                <p>Continue exactly where you left off.</p>
               </div>
               <Link href="/assessments">View all assessments</Link>
             </header>
@@ -176,11 +185,7 @@ export default function StudentDashboard() {
                         className={styles.progressItem}
                       >
                         <div className={styles.progressItemTop}>
-                          <strong>
-                            {attempt.context === "SCHOOL"
-                              ? "School-assigned assessment"
-                              : "Personal assessment"}
-                          </strong>
+                          <strong>Personal assessment</strong>
                           <span>{progress}% complete</span>
                         </div>
 
@@ -195,8 +200,8 @@ export default function StudentDashboard() {
                 <div className={styles.emptyState}>
                   <strong>No assessment currently in progress</strong>
                   <p>
-                    Start an assessment when you are ready. Your answers can be
-                    saved and continued later.
+                    Start when you are ready. Your answers can be saved and
+                    continued later.
                   </p>
                   <Link href="/assessments" className={styles.primaryAction}>
                     Explore assessments
@@ -210,53 +215,25 @@ export default function StudentDashboard() {
           <article className={styles.card}>
             <header className={styles.cardHeader}>
               <div>
-                <h2>Explore your next step</h2>
-                <p>Useful places to continue your Future Fit journey.</p>
+                <h2>Your Future Fit profile</h2>
+                <p>
+                  Each completed assessment adds one evidence layer to your
+                  combined profile.
+                </p>
               </div>
             </header>
 
             <div className={styles.cardBody}>
-              <div className={styles.quickGrid}>
-                <Link href="/careers" className={styles.quickCard}>
-                  <Compass />
-                  <div>
-                    <strong>Career Library</strong>
-                    <span>Explore career paths and possibilities.</span>
-                  </div>
-                </Link>
-
-                <Link href="/results" className={styles.quickCard}>
-                  <FileText />
-                  <div>
-                    <strong>Your Results</strong>
-                    <span>Open available assessment reports.</span>
-                  </div>
-                </Link>
-
-                <Link href="/payments" className={styles.quickCard}>
-                  <CreditCard />
-                  <div>
-                    <strong>Access & Payments</strong>
-                    <span>Purchase and review paid assessment access.</span>
-                  </div>
-                </Link>
-
-                <Link href="/student/profile" className={styles.quickCard}>
-                  <UserRound />
-                  <div>
-                    <strong>Your Profile</strong>
-                    <span>Keep your student profile up to date.</span>
-                  </div>
-                </Link>
-
-                <Link href="/assessments" className={styles.quickCard}>
-                  <BookOpen />
-                  <div>
-                    <strong>Assessments</strong>
-                    <span>Start or continue your assessment journey.</span>
-                  </div>
-                </Link>
-              </div>
+              <p className={styles.notice}>
+                {fit.data?.completedGroups.length
+                  ? `Completed profile groups: ${fit.data.completedGroups.join(", ")}.`
+                  : "No profile group is complete yet. Start with the Interest pilot."}
+              </p>
+              <p className={styles.notice}>
+                Career ranking will only be enabled after reviewed career
+                requirement profiles are connected. We are not generating fake
+                match percentages from incomplete data.
+              </p>
             </div>
           </article>
         </div>
@@ -265,52 +242,62 @@ export default function StudentDashboard() {
           <article className={styles.card}>
             <header className={styles.cardHeader}>
               <div>
-                <h2>Reports</h2>
-                <p>Your submitted assessment results.</p>
+                <h2>Student setup</h2>
+                <p>Keep your Class, Board and education context current.</p>
               </div>
-              <Link href="/results">Open results</Link>
+              <Link href="/student/profile">Open profile</Link>
             </header>
 
             <div className={styles.cardBody}>
-              {results.isLoading ? (
-                <p className={styles.notice}>Checking your reports…</p>
-              ) : resultList.length > 0 ? (
-                <div className={styles.progressList}>
-                  {resultList.slice(0, 4).map((result) => (
-                    <Link
-                      href={`/results/${result._id}`}
-                      key={result._id}
-                      className={styles.progressItem}
-                    >
-                      <div className={styles.progressItemTop}>
-                        <strong>Assessment report</strong>
-                        <span>{result.reportStatus}</span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              ) : (
-                <div className={styles.emptyState}>
-                  <strong>No reports yet</strong>
-                  <p>Your submitted assessment reports will appear here.</p>
-                </div>
-              )}
+              <div className={styles.quickGrid}>
+                <Link href="/student/profile" className={styles.quickCard}>
+                  <UserRound />
+                  <div>
+                    <strong>Your Profile</strong>
+                    <span>Class, board, stream, subjects and location.</span>
+                  </div>
+                </Link>
+
+                <Link href="/assessments" className={styles.quickCard}>
+                  <BookOpen />
+                  <div>
+                    <strong>Assessments</strong>
+                    <span>Start or continue your self-discovery journey.</span>
+                  </div>
+                </Link>
+
+                <Link href="/results" className={styles.quickCard}>
+                  <FileText />
+                  <div>
+                    <strong>Your Results</strong>
+                    <span>Review completed assessment reports.</span>
+                  </div>
+                </Link>
+
+                <Link href="/careers" className={styles.quickCard}>
+                  <Compass />
+                  <div>
+                    <strong>Career Library</strong>
+                    <span>Explore careers while the matching model matures.</span>
+                  </div>
+                </Link>
+              </div>
             </div>
           </article>
 
           <article className={styles.card}>
             <header className={styles.cardHeader}>
               <div>
-                <h2>Your Future Fit reminder</h2>
-                <p>Good decisions begin with understanding yourself.</p>
+                <h2>Important</h2>
+                <p>Assessment scores are guidance inputs, not a verdict.</p>
               </div>
             </header>
 
             <div className={styles.cardBody}>
               <p className={styles.notice}>
-                Career guidance is a process, not a one-time answer. Use your
-                assessment results as a starting point to explore, discuss and
-                plan.
+                Future Fit separates psychological/profile alignment from
+                academic eligibility and education pathways. A score should not
+                be presented as a probability of career success.
               </p>
             </div>
           </article>

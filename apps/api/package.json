@@ -12,7 +12,9 @@
     "test:integration": "pnpm build && node --test test/integration/database.cjs",
     "data:careers:check": "node scripts/import-career-source-data.mjs --dry-run",
     "data:careers:import": "node --env-file=../../.env scripts/import-career-source-data.mjs",
-    "dev:seed:users": "node --env-file=../../.env scripts/seed-dev-users.mjs"
+    "dev:seed:users": "node --env-file=../../.env scripts/seed-dev-users.mjs",
+    "dev:seed:student-pilot": "node --env-file=../../.env scripts/seed-student-assessment-pilot.mjs",
+    "dev:verify:student-core": "node --env-file=../../.env scripts/verify-student-assessment-core.mjs"
   },
   "dependencies": {
     "zod": "catalog:",

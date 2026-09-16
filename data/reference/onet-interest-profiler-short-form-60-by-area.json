@@ -1,0 +1,78 @@
+{
+  "source": "O*NET Interest Profiler Short Form",
+  "revision": "2018-05-01",
+  "areas": {
+    "realistic": [
+      "Build kitchen cabinets",
+      "Lay brick or tile",
+      "Repair household appliances",
+      "Raise fish in a fish hatchery",
+      "Assemble electronic parts",
+      "Drive a truck to deliver packages to offices and homes",
+      "Test the quality of parts before shipment",
+      "Repair and install locks",
+      "Set up and operate machines to make products",
+      "Put out forest fires"
+    ],
+    "investigative": [
+      "Develop a new medicine",
+      "Study ways to reduce water pollution",
+      "Conduct chemical experiments",
+      "Study the movement of planets",
+      "Examine blood samples using a microscope",
+      "Investigate the cause of a fire",
+      "Develop a way to better predict the weather",
+      "Work in a biology lab",
+      "Invent a replacement for sugar",
+      "Do laboratory tests to identify diseases"
+    ],
+    "artistic": [
+      "Write books or plays",
+      "Play a musical instrument",
+      "Compose or arrange music",
+      "Draw pictures",
+      "Create special effects for movies",
+      "Paint sets for plays",
+      "Write scripts for movies or television shows",
+      "Perform jazz or tap dance",
+      "Sing in a band",
+      "Edit movies"
+    ],
+    "social": [
+      "Teach an individual an exercise routine",
+      "Help people with personal or emotional problems",
+      "Give career guidance to people",
+      "Perform rehabilitation therapy",
+      "Do volunteer work at a non-profit organization",
+      "Teach children how to play sports",
+      "Teach sign language to people who are deaf or hard of hearing",
+      "Help conduct a group therapy session",
+      "Take care of children at a day-care center",
+      "Teach a high-school class"
+    ],
+    "enterprising": [
+      "Buy and sell stocks and bonds",
+      "Manage a retail store",
+      "Operate a beauty salon or barber shop",
+      "Manage a department within a large company",
+      "Start your own business",
+      "Negotiate business contracts",
+      "Represent a client in a lawsuit",
+      "Market a new line of clothing",
+      "Sell merchandise at a department store",
+      "Manage a clothing store"
+    ],
+    "conventional": [
+      "Develop a spreadsheet using computer software",
+      "Proofread records or forms",
+      "Install software across computers on a large network",
+      "Operate a calculator",
+      "Keep shipping and receiving records",
+      "Calculate the wages of employees",
+      "Inventory supplies using a hand-held computer",
+      "Record rent payments",
+      "Keep inventory records",
+      "Stamp, sort, and distribute mail for an organization"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "careers": "https://api-v2.onetcenter.org/mnm/interestprofiler/careers?realistic=20&investigative=20&artistic=20&social=20&enterprising=20&conventional=20",
+  "result": [
+    {
+      "href": "https://api-v2.onetcenter.org/mnm/interestprofiler/interests/realistic",
+      "code": "realistic",
+      "title": "Realistic",
+      "description": "People with Realistic interests like work that includes practical, hands-on problems and answers. Often people with Realistic interests do not like careers that involve paperwork or working closely with others. They like working with plants and animals; real-world materials like wood, tools, and machinery; and outside work.",
+      "score": 20
+    },
+    {
+      "href": "https://api-v2.onetcenter.org/mnm/interestprofiler/interests/investigative",
+      "code": "investigative",
+      "title": "Investigative",
+      "description": "People with Investigative interests like work that has to do with ideas and thinking rather than physical activity or leading people. They like searching for facts and figuring out problems.",
+      "score": 20
+    },
+    {
+      "href": "https://api-v2.onetcenter.org/mnm/interestprofiler/interests/artistic",
+      "code": "artistic",
+      "title": "Artistic",
+      "description": "People with Artistic interests like work that deals with the artistic side of things, such as acting, music, art, and design. They like creativity in their work and work that can be done without following a set of rules.",
+      "score": 20
+    },
+    {
+      "href": "https://api-v2.onetcenter.org/mnm/interestprofiler/interests/social",
+      "code": "social",
+      "title": "Social",
+      "description": "People with Social interests like working with others to help them learn and grow. They like working with people more than working with objects, machines, or information. Theylike teaching, giving advice, and helping and being of service to people.",
+      "score": 20
+    },
+    {
+      "href": "https://api-v2.onetcenter.org/mnm/interestprofiler/interests/enterprising",
+      "code": "enterprising",
+      "title": "Enterprising",
+      "description": "People with Enterprising interests like work that has to do with starting up and carrying out business projects. These people like taking action rather than thinking about things. They like persuading and leading people, making decisions, andtaking risks for profits.",
+      "score": 20
+    },
+    {
+      "href": "https://api-v2.onetcenter.org/mnm/interestprofiler/interests/conventional",
+      "code": "conventional",
+      "title": "Conventional",
+      "description": "People with Conventional interests like work that follows set procedures and routines. They prefer working with information and paying attention to details rather than working with ideas. They like working with clear rules and following a strong leader.",
+      "score": 20
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+{
+  "schemaVersion": "1.0.0",
+  "mappingVersion": "future-fit-india-bilingual-v1",
+  "source": "O*NET Interest Profiler Short Form 60",
+  "purpose": "Student-friendly English and Hindi display wording mapped to immutable O*NET item indexes.",
+  "rules": {
+    "preserveOnetIndex": true,
+    "preserveOnetArea": true,
+    "scoringAnswerOrder": "onetIndex ascending 1..60",
+    "displayLanguages": [
+      "en",
+      "hi"
+    ]
+  },
+  "items": [
+    {
+      "onetIndex": 1,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Build useful wooden furniture or cabinets.",
+        "hi": "लकड़ी से उपयोगी फर्नीचर या कैबिनेट बनाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 2,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Lay bricks or tiles while constructing or improving a space.",
+        "hi": "किसी जगह को बनाने या सुधारने के लिए ईंट या टाइल लगाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 3,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Repair household electrical or electronic appliances.",
+        "hi": "घर के बिजली या इलेक्ट्रॉनिक उपकरणों की मरम्मत करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 4,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Raise and care for fish in a fish farm or hatchery.",
+        "hi": "फिश फार्म या हैचरी में मछलियों को पालना और उनकी देखभाल करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 5,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Assemble electronic components to make a working device.",
+        "hi": "इलेक्ट्रॉनिक पार्ट्स को जोड़कर काम करने वाला उपकरण बनाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 6,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Drive a delivery vehicle to transport packages to homes or offices.",
+        "hi": "घरों या ऑफिसों तक पार्सल पहुँचाने के लिए डिलीवरी वाहन चलाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 7,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Check manufactured parts carefully to make sure their quality is correct.",
+        "hi": "बनाए गए पार्ट्स की गुणवत्ता सही है या नहीं, इसे ध्यान से जाँचना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 8,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Repair and install locks or similar mechanical fittings.",
+        "hi": "ताले या इसी तरह की मैकेनिकल फिटिंग की मरम्मत और इंस्टॉलेशन करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 9,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Set up and operate machines used to make products.",
+        "hi": "उत्पाद बनाने वाली मशीनों को सेट करना और चलाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 10,
+      "onetArea": "R",
+      "adaptedText": {
+        "en": "Work as part of a team that controls and puts out fires.",
+        "hi": "आग पर काबू पाने और उसे बुझाने वाली टीम के साथ काम करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 11,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Help develop a new medicine or medical treatment.",
+        "hi": "नई दवा या मेडिकल उपचार विकसित करने में काम करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 12,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Study ways to reduce pollution in rivers, lakes, or other water sources.",
+        "hi": "नदियों, झीलों या अन्य जल स्रोतों में प्रदूषण कम करने के तरीके खोजना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 13,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Carry out chemistry experiments in a laboratory.",
+        "hi": "प्रयोगशाला में रसायन विज्ञान के प्रयोग करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 14,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Study how planets, stars, or other objects move in space.",
+        "hi": "अंतरिक्ष में ग्रहों, तारों या अन्य खगोलीय पिंडों की गति का अध्ययन करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 15,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Examine blood samples using a microscope.",
+        "hi": "माइक्रोस्कोप से रक्त के नमूनों की जाँच करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 16,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Investigate evidence to find the cause of a fire.",
+        "hi": "सबूतों की जाँच करके आग लगने का कारण पता करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 17,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Develop better methods to predict weather conditions.",
+        "hi": "मौसम का बेहतर अनुमान लगाने के तरीके विकसित करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 18,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Work in a biology laboratory and study living organisms.",
+        "hi": "बायोलॉजी लैब में काम करना और जीवित चीज़ों का अध्ययन करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 19,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Research and develop a healthier substitute for sugar.",
+        "hi": "चीनी के लिए बेहतर या स्वास्थ्यकर विकल्प पर शोध और विकास करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 20,
+      "onetArea": "I",
+      "adaptedText": {
+        "en": "Perform laboratory tests that help identify diseases.",
+        "hi": "बीमारियों की पहचान में मदद करने वाले लैब टेस्ट करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 21,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Write stories, books, scripts, or plays.",
+        "hi": "कहानियाँ, किताबें, स्क्रिप्ट या नाटक लिखना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 22,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Play a musical instrument for an audience or recording.",
+        "hi": "दर्शकों या रिकॉर्डिंग के लिए कोई संगीत वाद्ययंत्र बजाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 23,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Compose or arrange music.",
+        "hi": "संगीत की रचना या अरेंजमेंट करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 24,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Draw, sketch, or create illustrations.",
+        "hi": "ड्रॉइंग, स्केच या इलस्ट्रेशन बनाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 25,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Create visual or special effects for films or digital media.",
+        "hi": "फिल्मों या डिजिटल मीडिया के लिए विजुअल या स्पेशल इफेक्ट्स बनाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 26,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Design and paint stage sets for a play, event, or performance.",
+        "hi": "नाटक, कार्यक्रम या परफॉर्मेंस के लिए स्टेज सेट डिज़ाइन और पेंट करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 27,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Write scripts for films, web series, television, or online videos.",
+        "hi": "फिल्म, वेब सीरीज़, टेलीविजन या ऑनलाइन वीडियो के लिए स्क्रिप्ट लिखना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 28,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Perform a dance style on stage or for an audience.",
+        "hi": "स्टेज या दर्शकों के सामने किसी नृत्य शैली का प्रदर्शन करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 29,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Sing as part of a band or music group.",
+        "hi": "बैंड या म्यूज़िक ग्रुप के साथ गाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 30,
+      "onetArea": "A",
+      "adaptedText": {
+        "en": "Edit films or videos to shape the final story.",
+        "hi": "फिल्म या वीडियो को एडिट करके अंतिम कहानी तैयार करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 31,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Teach someone how to follow an exercise or fitness routine.",
+        "hi": "किसी व्यक्ति को एक्सरसाइज या फिटनेस रूटीन करना सिखाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 32,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Help people deal with personal or emotional difficulties.",
+        "hi": "लोगों को व्यक्तिगत या भावनात्मक कठिनाइयों से निपटने में मदद करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 33,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Guide people in choosing education or career options.",
+        "hi": "लोगों को शिक्षा या करियर विकल्प चुनने में मार्गदर्शन देना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 34,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Help people recover abilities through rehabilitation therapy.",
+        "hi": "रिहैबिलिटेशन थेरेपी के माध्यम से लोगों को अपनी क्षमताएँ वापस पाने में मदद करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 35,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Volunteer for an NGO or community-service organisation.",
+        "hi": "किसी NGO या सामुदायिक सेवा संस्था के लिए स्वयंसेवा करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 36,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Teach children how to play a sport.",
+        "hi": "बच्चों को कोई खेल खेलना सिखाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 37,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Teach sign language to people who need it for communication.",
+        "hi": "जिन लोगों को संवाद के लिए ज़रूरत है, उन्हें सांकेतिक भाषा सिखाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 38,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Assist in a professionally supervised group counselling or therapy session.",
+        "hi": "प्रशिक्षित विशेषज्ञ की निगरानी में समूह काउंसलिंग या थेरेपी सत्र में सहायता करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 39,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Take care of young children in a day-care or child-care centre.",
+        "hi": "डे-केयर या चाइल्ड-केयर सेंटर में छोटे बच्चों की देखभाल करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 40,
+      "onetArea": "S",
+      "adaptedText": {
+        "en": "Teach a class of secondary-school students.",
+        "hi": "माध्यमिक या हाई-स्कूल के विद्यार्थियों की कक्षा पढ़ाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 41,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Buy and sell investments such as shares or bonds.",
+        "hi": "शेयर या बॉन्ड जैसे निवेश खरीदना और बेचना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 42,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Manage the day-to-day work of a retail shop or store.",
+        "hi": "किसी रिटेल दुकान या स्टोर का रोज़ का काम संभालना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 43,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Run and manage a salon or grooming business.",
+        "hi": "सैलून या ग्रूमिंग बिज़नेस चलाना और मैनेज करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 44,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Manage a department or team in a large company.",
+        "hi": "किसी बड़ी कंपनी में विभाग या टीम को मैनेज करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 45,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Start and run your own business.",
+        "hi": "अपना व्यवसाय शुरू करना और चलाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 46,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Negotiate business agreements or contracts.",
+        "hi": "बिज़नेस एग्रीमेंट या कॉन्ट्रैक्ट पर बातचीत और नेगोशिएशन करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 47,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Represent a client in a legal case or court matter.",
+        "hi": "किसी कानूनी मामले या अदालत में क्लाइंट का प्रतिनिधित्व करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 48,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Plan how to market and promote a new clothing or fashion line.",
+        "hi": "नई कपड़ों या फैशन लाइन की मार्केटिंग और प्रमोशन की योजना बनाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 49,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Sell products directly to customers in a large store.",
+        "hi": "किसी बड़े स्टोर में ग्राहकों को सीधे उत्पाद बेचना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 50,
+      "onetArea": "E",
+      "adaptedText": {
+        "en": "Manage a clothing or fashion retail store.",
+        "hi": "कपड़ों या फैशन की रिटेल दुकान को मैनेज करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 51,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Create and organise a spreadsheet using computer software.",
+        "hi": "कंप्यूटर सॉफ्टवेयर का उपयोग करके स्प्रेडशीट बनाना और व्यवस्थित करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 52,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Check records, forms, or documents carefully for errors.",
+        "hi": "रिकॉर्ड, फॉर्म या दस्तावेज़ों में गलती है या नहीं, इसे ध्यान से जाँचना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 53,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Install or deploy software across many computers in a network.",
+        "hi": "नेटवर्क में कई कंप्यूटरों पर सॉफ्टवेयर इंस्टॉल या डिप्लॉय करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 54,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Use a calculator or digital tool to perform routine calculations accurately.",
+        "hi": "नियमित गणनाएँ सही तरीके से करने के लिए कैलकुलेटर या डिजिटल टूल का उपयोग करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 55,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Maintain accurate records of goods being sent and received.",
+        "hi": "भेजे और प्राप्त किए जाने वाले सामान का सही रिकॉर्ड रखना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 56,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Calculate employee salaries or wages from work records.",
+        "hi": "काम के रिकॉर्ड के आधार पर कर्मचारियों की सैलरी या वेतन की गणना करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 57,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Count and record stock or supplies using a digital device.",
+        "hi": "डिजिटल डिवाइस का उपयोग करके स्टॉक या सप्लाई गिनना और रिकॉर्ड करना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 58,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Record rent or other regular payments accurately.",
+        "hi": "किराया या अन्य नियमित भुगतानों का सही रिकॉर्ड रखना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 59,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Maintain organised inventory records for products or supplies.",
+        "hi": "उत्पादों या सप्लाई का व्यवस्थित इन्वेंटरी रिकॉर्ड रखना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    },
+    {
+      "onetIndex": 60,
+      "onetArea": "C",
+      "adaptedText": {
+        "en": "Sort and distribute letters, documents, or office deliveries.",
+        "hi": "पत्र, दस्तावेज़ या ऑफिस डिलीवरी को छाँटना और सही जगह पहुँचाना।"
+      },
+      "adaptationStatus": "READY_FOR_REVIEW"
+    }
+  ]
+}

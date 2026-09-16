@@ -37,7 +37,7 @@ export const questionSchema = z
         difficulty: z.number().min(0).max(1).optional(),
         min: z.number().finite().optional(),
         max: z.number().finite().optional(),
-        onetOrder: z.number().int().min(1).max(30).optional(),
+        onetOrder: z.number().int().min(1).max(60).optional(),
       })
       .strict()
       .default({}),
