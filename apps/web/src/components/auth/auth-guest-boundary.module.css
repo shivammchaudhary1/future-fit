@@ -1,0 +1,36 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 9px;
+  padding: 24px;
+  color: var(--ff-text-muted);
+  background: var(--ff-gradient-hero);
+  text-align: center;
+}
+
+.page strong {
+  color: var(--ff-navy);
+  font-size: 14px;
+}
+
+.page > span:not(.loader) {
+  font-size: 11px;
+}
+
+.loader {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 5px;
+  border: 3px solid rgba(43, 183, 169, 0.18);
+  border-top-color: var(--ff-teal);
+  border-radius: 50%;
+  animation: spin 750ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
