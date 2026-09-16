@@ -4,10 +4,13 @@ import type { Answer, publicQuestion } from "@future-fit/validation";
 import {
   ArrowLeft,
   ArrowRight,
+  Check,
   CheckCircle2,
   Cloud,
+  LockKeyhole,
   Save,
   Send,
+  Sparkles,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,17 +24,34 @@ import {
   useState,
 } from "react";
 
+import { AssessmentLanguageToggle } from "@/components/assessment/language-toggle";
 import { SYNC_INTERVAL_MS } from "@/config/assessment.constants";
 import { ASSETS } from "@/config/assets";
+import {
+  questionnaireMessages,
+  type QuestionnaireLanguage,
+} from "@/config/questionnaire.constants";
 import { ApiClientError, apiRequest } from "@/lib/api-client";
 import { readDraft, writeDraft } from "@/lib/offline-assessment";
 import { useAuthStore } from "@/stores/auth.store";
-import styles from "@/styles/student-experience.module.css";
+
+import styles from "@/styles/questionnaire.module.css";
 
 function displayValue(value: unknown) {
   return typeof value === "string" || typeof value === "number"
     ? String(value)
     : "";
+}
+
+function isAnswered(value: unknown) {
+  if (Array.isArray(value)) return value.length > 0;
+
+  if (value && typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    return Boolean(record.most) && Boolean(record.least);
+  }
+
+  return value !== undefined && value !== null && value !== "";
 }
 
 type Question = ReturnType<typeof publicQuestion>;
@@ -42,12 +62,26 @@ interface Attempt {
   revision: number;
   status: string;
   responses: Answer[];
-  language: "en" | "hi";
+  language: QuestionnaireLanguage;
 }
 
 interface Payload {
   attempt: Attempt;
   version: { questions: Question[] };
+}
+
+function questionText(question: Question, language: QuestionnaireLanguage) {
+  return (
+    question.translations[language]?.question ??
+    question.translations.en.question
+  );
+}
+
+function optionText(
+  option: Question["options"][number],
+  language: QuestionnaireLanguage,
+) {
+  return option.translations[language] ?? option.translations.en;
 }
 
 export default function AttemptPage({
@@ -66,11 +100,15 @@ export default function AttemptPage({
   const [pending, setPending] = useState(0);
   const [submitting, setSubmitting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [language, setLanguage] =
+    useState<QuestionnaireLanguage>("en");
 
   const dirty = useRef(new Map<string, unknown>());
   const revision = useRef(0);
   const syncing = useRef<Promise<void> | null>(null);
   const storage = useRef(Promise.resolve());
+
+  const messages = questionnaireMessages(language);
 
   const persist = useCallback(() => {
     const draft = {
@@ -104,9 +142,11 @@ export default function AttemptPage({
         revision.current = data.attempt.revision;
 
         dirty.current = new Map(
-          (data.attempt.status === "IN_PROGRESS" ? draft?.answers ?? [] : []).map(
-            (answer) => [answer.questionId, answer.answer],
-          ),
+          (
+            data.attempt.status === "IN_PROGRESS"
+              ? draft?.answers ?? []
+              : []
+          ).map((answer) => [answer.questionId, answer.answer]),
         );
 
         setAnswers(
@@ -118,12 +158,24 @@ export default function AttemptPage({
           ]),
         );
 
+        const storedLanguage = window.localStorage.getItem(
+          `ff:questionnaire-language:${attemptId}`,
+        );
+
+        setLanguage(
+          storedLanguage === "en" || storedLanguage === "hi"
+            ? storedLanguage
+            : data.attempt.language,
+        );
+
         setPending(dirty.current.size);
         setPayload(data);
       })
       .catch((caught: unknown) => {
         if (active) {
-          setError(caught instanceof Error ? caught.message : "Loading failed");
+          setError(
+            caught instanceof Error ? caught.message : "Loading failed",
+          );
         }
       });
 
@@ -163,7 +215,9 @@ export default function AttemptPage({
           throw caught;
         }
 
-        const latest = await apiRequest<Payload>(`/attempts/${attemptId}`);
+        const latest = await apiRequest<Payload>(
+          `/attempts/${attemptId}`,
+        );
 
         if (latest.attempt.status !== "IN_PROGRESS") {
           throw caught;
@@ -193,10 +247,11 @@ export default function AttemptPage({
 
   useEffect(() => {
     const run = () => {
-      void sync().catch(() => setError("Your latest answers could not sync."));
+      void sync().catch(() => setError(messages.syncingFailed));
     };
 
     const timer = window.setInterval(run, SYNC_INTERVAL_MS);
+
     window.addEventListener("online", run);
     document.addEventListener("visibilitychange", run);
 
@@ -212,7 +267,7 @@ export default function AttemptPage({
       document.removeEventListener("visibilitychange", run);
       window.removeEventListener("beforeunload", beforeUnload);
     };
-  }, [sync]);
+  }, [messages.syncingFailed, sync]);
 
   function change(questionId: string, answer: unknown) {
     const incomplete =
@@ -225,23 +280,43 @@ export default function AttemptPage({
         (!("most" in answer) || !("least" in answer)));
 
     dirty.current.set(questionId, incomplete ? null : answer);
-    setAnswers((previous) => ({ ...previous, [questionId]: answer }));
+
+    setAnswers((previous) => ({
+      ...previous,
+      [questionId]: answer,
+    }));
+
     setPending(dirty.current.size);
 
-    void persist().catch(() =>
-      setError(
-        "Device storage failed. Keep this page open until your answers sync.",
-      ),
+    void persist().catch(() => setError(messages.storageFailed));
+  }
+
+  function chooseLanguage(nextLanguage: QuestionnaireLanguage) {
+    setLanguage(nextLanguage);
+    window.localStorage.setItem(
+      `ff:questionnaire-language:${attemptId}`,
+      nextLanguage,
     );
   }
 
+  function goToQuestion(index: number) {
+    setCurrentIndex(
+      Math.max(0, Math.min(index, Math.max(0, questions.length - 1))),
+    );
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   async function finish(submit: boolean) {
-    if (
-      submit &&
-      !window.confirm(
-        "Submit this assessment? You will not be able to change your answers afterward.",
-      )
-    ) {
+    if (submit && requiredRemaining > 0) {
+      setError(messages.incomplete);
+      return;
+    }
+
+    if (submit && !window.confirm(messages.submitConfirm)) {
       return;
     }
 
@@ -249,15 +324,22 @@ export default function AttemptPage({
 
     try {
       await sync();
-      if (dirty.current.size) await sync();
+
+      if (dirty.current.size) {
+        await sync();
+      }
 
       if (submit) {
-        await apiRequest(`/attempts/${attemptId}/submit`, { method: "POST" });
+        await apiRequest(`/attempts/${attemptId}/submit`, {
+          method: "POST",
+        });
       }
 
       router.push(submit ? "/results" : "/assessments");
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Action failed");
+      setError(
+        caught instanceof Error ? caught.message : "Action failed",
+      );
     } finally {
       setSubmitting(false);
     }
@@ -265,75 +347,300 @@ export default function AttemptPage({
 
   const questions = payload?.version.questions ?? EMPTY_QUESTIONS;
   const question = questions[currentIndex];
-  const progress = questions.length
-    ? Math.round(((currentIndex + 1) / questions.length) * 100)
-    : 0;
 
   const answeredCount = useMemo(
     () =>
-      questions.filter((item) => {
-        const value = answers[item.questionId];
-        if (Array.isArray(value)) return value.length > 0;
-        if (value && typeof value === "object") {
-          const record = value as Record<string, unknown>;
-          return Boolean(record.most) && Boolean(record.least);
-        }
-        return value !== undefined && value !== null && value !== "";
-      }).length,
+      questions.filter((item) =>
+        isAnswered(answers[item.questionId]),
+      ).length,
     [answers, questions],
   );
+
+  const requiredRemaining = useMemo(
+    () =>
+      questions.filter(
+        (item) =>
+          item.required && !isAnswered(answers[item.questionId]),
+      ).length,
+    [answers, questions],
+  );
+
+  const completion = questions.length
+    ? Math.round((answeredCount / questions.length) * 100)
+    : 0;
+
+  const currentValue = question
+    ? answers[question.questionId]
+    : undefined;
+
+  const currentAnswered = isAnswered(currentValue);
+
+  useEffect(() => {
+    if (!question) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      const target = event.target as HTMLElement | null;
+
+      if (
+        target?.tagName === "INPUT" ||
+        target?.tagName === "TEXTAREA" ||
+        target?.tagName === "SELECT" ||
+        target?.isContentEditable
+      ) {
+        return;
+      }
+
+      if (
+        (question.type === "LIKERT" ||
+          question.type === "SINGLE_SELECT") &&
+        /^[1-5]$/.test(event.key)
+      ) {
+        const option = question.options.find(
+          (entry) => entry.id === event.key,
+        );
+
+        if (option) {
+          event.preventDefault();
+          change(question.questionId, option.id);
+        }
+      }
+
+      if (
+        event.key === "ArrowLeft" &&
+        currentIndex > 0 &&
+        !event.metaKey &&
+        !event.ctrlKey
+      ) {
+        event.preventDefault();
+        goToQuestion(currentIndex - 1);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => window.removeEventListener("keydown", onKeyDown);
+  });
 
   if (!payload || !question) {
     return (
       <main className={styles.loadingPage}>
-        <p>{error || "Preparing your assessment…"}</p>
+        <span className={styles.loadingOrb} />
+        <p>{error || messages.loading}</p>
       </main>
     );
   }
 
-  const disabled = submitting || payload.attempt.status !== "IN_PROGRESS";
-  const value = answers[question.questionId];
-  const language = payload.attempt.language;
+  const disabled =
+    submitting || payload.attempt.status !== "IN_PROGRESS";
 
   const select = (part?: "most" | "least") => (
     <select
-      className={styles.questionSelect}
+      className={styles.select}
       disabled={disabled}
       value={
         part
           ? displayValue(
-              (value as Record<string, unknown> | undefined)?.[part],
+              (
+                currentValue as
+                  | Record<string, unknown>
+                  | undefined
+              )?.[part],
             )
-          : displayValue(value)
+          : displayValue(currentValue)
       }
       onChange={(event) =>
         change(
           question.questionId,
           part
             ? {
-                ...(typeof value === "object" && value ? value : {}),
+                ...(typeof currentValue === "object" &&
+                currentValue
+                  ? currentValue
+                  : {}),
                 [part]: event.target.value,
               }
             : event.target.value,
         )
       }
     >
-      <option value="">Select an option</option>
+      <option value="">{messages.selectOption}</option>
+
       {question.options.map((option) => (
         <option key={option.id} value={option.id}>
-          {option.translations[language]}
+          {optionText(option, language)}
         </option>
       ))}
     </select>
   );
 
+  const renderResponse = () => {
+    if (
+      question.type === "LIKERT" ||
+      question.type === "SINGLE_SELECT"
+    ) {
+      return (
+        <div
+          className={styles.scaleOptions}
+          aria-label={messages.responseScale}
+        >
+          {question.options.map((option, index) => {
+            const selected = currentValue === option.id;
+
+            return (
+              <button
+                type="button"
+                key={option.id}
+                className={`${styles.scaleOption} ${
+                  selected ? styles.scaleOptionSelected : ""
+                }`}
+                aria-pressed={selected}
+                disabled={disabled}
+                onClick={() =>
+                  change(question.questionId, option.id)
+                }
+              >
+                <span className={styles.optionShortcut}>
+                  {index + 1}
+                </span>
+
+                <span className={styles.optionLabel}>
+                  {optionText(option, language)}
+                </span>
+
+                <span className={styles.optionCheck}>
+                  {selected ? <Check size={16} /> : null}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      );
+    }
+
+    if (question.type === "TEXT") {
+      return (
+        <textarea
+          className={styles.textarea}
+          value={displayValue(currentValue)}
+          placeholder={messages.typeAnswer}
+          disabled={disabled}
+          onChange={(event) =>
+            change(question.questionId, event.target.value)
+          }
+        />
+      );
+    }
+
+    if (question.type === "NUMBER") {
+      return (
+        <input
+          className={styles.input}
+          type="number"
+          min={question.metadata.min}
+          max={question.metadata.max}
+          value={displayValue(currentValue)}
+          disabled={disabled}
+          onChange={(event) =>
+            change(
+              question.questionId,
+              event.target.valueAsNumber,
+            )
+          }
+        />
+      );
+    }
+
+    if (question.type === "MULTI_SELECT") {
+      return (
+        <div className={styles.multiOptions}>
+          {question.options.map((option) => {
+            const selected =
+              Array.isArray(currentValue) &&
+              currentValue.includes(option.id);
+
+            return (
+              <label
+                className={`${styles.multiOption} ${
+                  selected ? styles.multiOptionSelected : ""
+                }`}
+                key={option.id}
+              >
+                <input
+                  type="checkbox"
+                  disabled={disabled}
+                  checked={selected}
+                  onChange={(event) =>
+                    change(
+                      question.questionId,
+                      event.target.checked
+                        ? [
+                            ...(Array.isArray(currentValue)
+                              ? (currentValue as unknown[])
+                              : []),
+                            option.id,
+                          ]
+                        : (
+                            Array.isArray(currentValue)
+                              ? (currentValue as unknown[])
+                              : []
+                          ).filter(
+                            (id: unknown) => id !== option.id,
+                          ),
+                    )
+                  }
+                />
+
+                <span>{optionText(option, language)}</span>
+              </label>
+            );
+          })}
+        </div>
+      );
+    }
+
+    if (question.type === "MOST_LEAST") {
+      return (
+        <div className={styles.mostLeast}>
+          <label>
+            <span>{messages.mostLike}</span>
+            {select("most")}
+          </label>
+
+          <label>
+            <span>{messages.leastLike}</span>
+            {select("least")}
+          </label>
+        </div>
+      );
+    }
+
+    return select();
+  };
+
+  if (payload.attempt.status !== "IN_PROGRESS") {
+    return (
+      <main className={styles.completedPage}>
+        <div className={styles.completedCard}>
+          <span className={styles.completedIcon}>
+            <CheckCircle2 size={30} />
+          </span>
+          <h1>{messages.alreadySubmitted}</h1>
+          <Link href="/results" className={styles.primaryButton}>
+            {messages.viewResults}
+            <ArrowRight size={16} />
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
   return (
-    <main className={styles.assessmentPage}>
-      <header className={styles.assessmentTopbar}>
+    <main className={styles.page}>
+      <header className={styles.topbar}>
         <Link
           href="/assessments"
-          className={styles.assessmentBrand}
-          aria-label="Back to assessments"
+          className={styles.brand}
+          aria-label="Future Fit assessments"
         >
           <Image
             src={ASSETS.brand.logoPrimary}
@@ -344,163 +651,240 @@ export default function AttemptPage({
           />
         </Link>
 
-        <div className={styles.assessmentProgressWrap}>
-          <div className={styles.assessmentProgressMeta}>
+        <div className={styles.topProgress}>
+          <div className={styles.topProgressMeta}>
             <span>
-              Question {currentIndex + 1} of {questions.length}
+              {messages.question} {currentIndex + 1} {messages.of}{" "}
+              {questions.length}
             </span>
-            <strong>{progress}%</strong>
+            <strong>{completion}% {messages.complete}</strong>
           </div>
 
           <div className={styles.progressTrack}>
-            <span style={{ width: `${progress}%` }} />
+            <span style={{ width: `${completion}%` }} />
           </div>
         </div>
 
-        <div className={styles.assessmentStatus}>
-          {pending ? <Cloud size={15} /> : <CheckCircle2 size={15} />}
-          {pending ? `${pending} answer(s) waiting to sync` : "All answers saved"}
+        <div className={styles.topActions}>
+          <AssessmentLanguageToggle
+            value={language}
+            onChange={chooseLanguage}
+            disabled={submitting}
+            label={messages.language}
+          />
+
+          <div
+            className={`${styles.syncStatus} ${
+              pending ? styles.syncPending : styles.syncSaved
+            }`}
+          >
+            {pending ? (
+              <Cloud size={14} />
+            ) : (
+              <CheckCircle2 size={14} />
+            )}
+
+            <span>
+              {pending
+                ? pending === 1
+                  ? messages.pendingSingle
+                  : `${pending} ${messages.pendingMany}`
+                : messages.saved}
+            </span>
+          </div>
         </div>
       </header>
 
-      <div className={styles.assessmentContent}>
-        {error ? (
-          <p className={styles.error} role="alert">
-            {error}
-          </p>
-        ) : null}
+      <div className={styles.shell}>
+        <aside className={styles.sidebar}>
+          <div className={styles.sidebarHero}>
+            <span className={styles.sparkle}>
+              <Sparkles size={18} />
+            </span>
 
-        <div className={styles.questionMeta}>
-          <span>Discover your path</span>
-          <span>
-            {answeredCount}/{questions.length} answered
-          </span>
-        </div>
+            <span className={styles.eyebrow}>
+              {messages.pageEyebrow}
+            </span>
 
-        <article className={styles.questionCard}>
-          <fieldset disabled={disabled}>
-            <legend>
-              {question.translations[language].question}{" "}
+            <h1>{messages.pageTitle}</h1>
+
+            <p>{messages.pageDescription}</p>
+          </div>
+
+          <div className={styles.progressSummary}>
+            <div>
+              <strong>{answeredCount}</strong>
+              <span>{messages.answered}</span>
+            </div>
+
+            <div>
+              <strong>{questions.length - answeredCount}</strong>
+              <span>{messages.remaining}</span>
+            </div>
+          </div>
+
+          <div className={styles.navigatorHeader}>
+            <strong>{messages.navigatorTitle}</strong>
+            <span>{answeredCount}/{questions.length}</span>
+          </div>
+
+          <div className={styles.questionNavigator}>
+            {questions.map((item, index) => {
+              const answered = isAnswered(
+                answers[item.questionId],
+              );
+              const current = index === currentIndex;
+
+              return (
+                <button
+                  type="button"
+                  key={item.questionId}
+                  className={`${styles.questionDot} ${
+                    answered ? styles.questionDotAnswered : ""
+                  } ${
+                    current ? styles.questionDotCurrent : ""
+                  }`}
+                  aria-label={`${messages.question} ${index + 1}${
+                    answered ? `, ${messages.answered}` : ""
+                  }`}
+                  aria-current={current ? "step" : undefined}
+                  onClick={() => goToQuestion(index)}
+                >
+                  {answered && !current ? (
+                    <Check size={12} />
+                  ) : (
+                    index + 1
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className={styles.privacyNote}>
+            <LockKeyhole size={15} />
+            <span>{messages.secureDraft}</span>
+          </div>
+        </aside>
+
+        <section className={styles.workspace}>
+          {error ? (
+            <div className={styles.error} role="alert">
+              {error}
+            </div>
+          ) : null}
+
+          <div className={styles.questionStage}>
+            <div className={styles.questionHeading}>
+              <div>
+                <span className={styles.questionKicker}>
+                  {messages.currentQuestion}
+                </span>
+
+                <span className={styles.questionNumber}>
+                  {String(currentIndex + 1).padStart(2, "0")}
+                </span>
+              </div>
+
               {question.required ? (
-                <span className={styles.required}>Required</span>
+                <span className={styles.required}>
+                  {messages.required}
+                </span>
               ) : null}
-            </legend>
+            </div>
 
-            {question.type === "TEXT" ? (
-              <textarea
-                className={styles.questionTextarea}
-                value={displayValue(value)}
-                placeholder="Type your answer here"
-                onChange={(event) =>
-                  change(question.questionId, event.target.value)
-                }
-              />
-            ) : question.type === "NUMBER" ? (
-              <input
-                className={styles.questionInput}
-                type="number"
-                min={question.metadata.min}
-                max={question.metadata.max}
-                value={displayValue(value)}
-                onChange={(event) =>
-                  change(question.questionId, event.target.valueAsNumber)
-                }
-              />
-            ) : question.type === "MULTI_SELECT" ? (
-              <div className={styles.optionList}>
-                {question.options.map((option) => (
-                  <label className={styles.optionItem} key={option.id}>
-                    <input
-                      type="checkbox"
-                      checked={Array.isArray(value) && value.includes(option.id)}
-                      onChange={(event) =>
-                        change(
-                          question.questionId,
-                          event.target.checked
-                            ? [
-                                ...(Array.isArray(value)
-                                  ? (value as unknown[])
-                                  : []),
-                                option.id,
-                              ]
-                            : (Array.isArray(value) ? value : []).filter(
-                                (id: unknown) => id !== option.id,
-                              ),
-                        )
-                      }
-                    />
-                    {option.translations[language]}
-                  </label>
-                ))}
-              </div>
-            ) : question.type === "MOST_LEAST" ? (
-              <div className={styles.mostLeast}>
-                <label>
-                  <span>Most like me</span>
-                  {select("most")}
-                </label>
+            <h2>{questionText(question, language)}</h2>
 
-                <label>
-                  <span>Least like me</span>
-                  {select("least")}
-                </label>
-              </div>
-            ) : (
-              select()
-            )}
-          </fieldset>
-        </article>
+            <p className={styles.instruction}>
+              {question.type === "MULTI_SELECT"
+                ? messages.multiSelect
+                : messages.selectOne}
+            </p>
 
-        <div className={styles.questionActions}>
-          <div className={styles.questionActionsInner}>
+            <fieldset
+              className={styles.responseArea}
+              disabled={disabled}
+            >
+              <legend className={styles.srOnly}>
+                {messages.responseScale}
+              </legend>
+              {renderResponse()}
+            </fieldset>
+
+            {(question.type === "LIKERT" ||
+              question.type === "SINGLE_SELECT") &&
+            question.options.length <= 5 ? (
+              <p className={styles.keyboardHint}>
+                {messages.keyboardHint}
+              </p>
+            ) : null}
+          </div>
+
+          <footer className={styles.footer}>
             <button
               type="button"
-              className={styles.secondaryButton}
-              disabled={disabled}
+              className={styles.saveButton}
+              disabled={submitting}
               onClick={() => void finish(false)}
             >
-              <Save size={15} />
-              Save & exit
+              <Save size={16} />
+              {messages.saveExit}
             </button>
 
-            <div className={styles.actionGroup}>
+            <div className={styles.footerCenter}>
+              {question.required && !currentAnswered ? (
+                <span>{messages.chooseToContinue}</span>
+              ) : (
+                <span>
+                  {answeredCount}/{questions.length}{" "}
+                  {messages.answered}
+                </span>
+              )}
+            </div>
+
+            <div className={styles.navigation}>
               <button
                 type="button"
                 className={styles.secondaryButton}
-                disabled={currentIndex === 0}
-                onClick={() => setCurrentIndex((index) => Math.max(0, index - 1))}
+                disabled={currentIndex === 0 || submitting}
+                onClick={() =>
+                  goToQuestion(currentIndex - 1)
+                }
               >
-                <ArrowLeft size={15} />
-                Previous
+                <ArrowLeft size={16} />
+                {messages.previous}
               </button>
 
               {currentIndex < questions.length - 1 ? (
                 <button
                   type="button"
                   className={styles.primaryButton}
+                  disabled={
+                    submitting ||
+                    (question.required && !currentAnswered)
+                  }
                   onClick={() =>
-                    setCurrentIndex((index) =>
-                      Math.min(questions.length - 1, index + 1),
-                    )
+                    goToQuestion(currentIndex + 1)
                   }
                 >
-                  Next
-                  <ArrowRight size={15} />
+                  {messages.next}
+                  <ArrowRight size={16} />
                 </button>
               ) : (
                 <button
                   type="button"
                   className={styles.primaryButton}
-                  disabled={disabled}
+                  disabled={
+                    submitting || requiredRemaining > 0
+                  }
                   onClick={() => void finish(true)}
                 >
-                  Submit assessment
-                  <Send size={15} />
+                  {messages.submit}
+                  <Send size={16} />
                 </button>
               )}
             </div>
-          </div>
-        </div>
+          </footer>
+        </section>
       </div>
     </main>
   );

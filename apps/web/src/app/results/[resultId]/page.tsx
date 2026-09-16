@@ -2,51 +2,66 @@
 
 import { useQuery } from "@tanstack/react-query";
 import {
+  ArrowRight,
+  CheckCircle2,
   ClipboardCheck,
   Compass,
   CreditCard,
   Download,
   FileText,
   LayoutDashboard,
-  Sparkles,
   UserRound,
 } from "lucide-react";
-import { use, useMemo, useState } from "react";
+import Link from "next/link";
+import { use, useState } from "react";
 
 import { DashboardShell } from "@/components/dashboard/dashboard-shell";
 import { GuidanceNotes } from "@/components/guidance-notes";
 import { ResultSharing } from "@/components/result-sharing";
-import { AI_RESULT_LABELS } from "@/config/result.constants";
+import {
+  INTEREST_RESULT_COPY,
+  isCurrentInterestResult,
+  normalizedInterestScores,
+} from "@/config/interest-result.constants";
 import { apiRequest } from "@/lib/api-client";
 import { useAuthStore } from "@/stores/auth.store";
+
+import resultStyles from "@/styles/interest-result.module.css";
 import styles from "@/styles/student-experience.module.css";
 
 interface Result {
+  _id?: string;
   userId: string;
-  reportStatus: string;
-  dimensions: Record<string, number>;
-  careerMatches: Array<{ code?: string; title?: string }>;
-  aiInterpretation?: {
-    summary?: string;
-    actionPlan?: string[];
-    strengths?: string[];
-    growthAreas?: string[];
-    limitations?: string[];
-    evidence?: Array<{ dimension: string; value: number }>;
-    careerExplanations?: Array<{
-      careerCode: string;
-      explanation: string;
-    }>;
-  };
-  aiProvenance?: { promptVersion: string; model: string };
+  reportStatus?: string;
+  resultStatus?: string;
+  aiStatus?: string;
+  dimensions?: Record<string, number>;
+  normalizedDimensions?: Record<string, number>;
+  scoringVersion?: string;
+  careerMatches?: Array<{
+    code?: string;
+    title?: string;
+  }>;
 }
 
 const navItems = [
-  { label: "Overview", href: "/student/dashboard", icon: LayoutDashboard },
-  { label: "Assessments", href: "/assessments", icon: ClipboardCheck },
+  {
+    label: "Overview",
+    href: "/student/dashboard",
+    icon: LayoutDashboard,
+  },
+  {
+    label: "Assessments",
+    href: "/assessments",
+    icon: ClipboardCheck,
+  },
   { label: "Results", href: "/results", icon: FileText },
   { label: "Career Library", href: "/careers", icon: Compass },
-  { label: "Access & Payments", href: "/payments", icon: CreditCard },
+  {
+    label: "Access & Payments",
+    href: "/payments",
+    icon: CreditCard,
+  },
   { label: "Profile", href: "/student/profile", icon: UserRound },
 ] as const;
 
@@ -57,228 +72,212 @@ export default function ResultPage({
 }) {
   const { resultId } = use(params);
   const user = useAuthStore((state) => state.user);
-  const labels = AI_RESULT_LABELS[user?.preferredLanguage ?? "en"];
-  const [error, setError] = useState("");
+  const language = user?.preferredLanguage === "hi" ? "hi" : "en";
+  const copy = INTEREST_RESULT_COPY[language];
+  const [downloadError, setDownloadError] = useState("");
 
   const result = useQuery({
     queryKey: ["result", user?.id, resultId],
-    queryFn: () => apiRequest<Result>(`/results/${resultId}`),
-    enabled: !!user,
+    queryFn: () =>
+      apiRequest<Result>(`/results/${resultId}`),
+    enabled: Boolean(user),
+    refetchInterval: (query) => {
+      const data = query.state.data;
+      return data?.resultStatus === "READY" ? false : 5_000;
+    },
   });
 
-  const maxDimension = useMemo(() => {
-    if (!result.data) return 1;
-    return Math.max(1, ...Object.values(result.data.dimensions));
-  }, [result.data]);
-
   async function download() {
+    setDownloadError("");
+
     try {
       const report = await apiRequest<{ url: string }>(
         `/results/${resultId}/report`,
       );
+
       window.location.assign(report.url);
     } catch (caught) {
-      setError(caught instanceof Error ? caught.message : "Download failed");
+      setDownloadError(
+        caught instanceof Error
+          ? caught.message
+          : "Download failed",
+      );
     }
   }
 
   return (
     <DashboardShell
       roleLabel="Student Dashboard"
-      title="Assessment report"
-      description="Use this result as a starting point for exploration, discussion and planning."
+      title={copy.resultsTitle}
+      description={copy.resultsDescription}
       navItems={[...navItems]}
     >
       {!result.data && !result.error ? (
-        <p className={styles.notice}>Preparing your report…</p>
+        <div className={resultStyles.processingCard}>
+          <span className={resultStyles.processingIcon} />
+          <div>
+            <strong>{copy.scoring}</strong>
+            <p>{copy.scoringDescription}</p>
+          </div>
+        </div>
       ) : null}
 
-      {(error || result.error) && (
+      {result.error ? (
         <p className={styles.error} role="alert">
-          {error || result.error?.message}
+          {result.error.message}
         </p>
-      )}
+      ) : null}
 
-      {result.data ? (
+      {result.data &&
+      !isCurrentInterestResult(result.data) ? (
+        <section className={resultStyles.legacyCard}>
+          <h2>{copy.legacyTitle}</h2>
+          <p>{copy.legacyDescription}</p>
+
+          <Link
+            href="/assessments"
+            className={styles.primaryButton}
+          >
+            {copy.goToAssessment}
+            <ArrowRight size={15} />
+          </Link>
+        </section>
+      ) : null}
+
+      {result.data &&
+      isCurrentInterestResult(result.data) ? (
         <div className={styles.pageStack}>
-          <section className={styles.reportHero}>
-            <div className={styles.reportSummary}>
-              <span>Future Fit report</span>
-              <h2>Your assessment insights</h2>
-              <p>
-                {result.data.aiInterpretation?.summary ??
-                  "Your scoring is complete. Review your profile dimensions, career matches and next steps below."}
-              </p>
-            </div>
-
-            <aside className={styles.reportActions}>
-              <span className={styles.statusBadge}>
-                {result.data.reportStatus}
+          <section className={resultStyles.hero}>
+            <div>
+              <span className={resultStyles.heroEyebrow}>
+                {copy.complete}
               </span>
 
-              <button
-                type="button"
-                className={styles.primaryButton}
-                disabled={result.data.reportStatus !== "READY"}
-                onClick={() => void download()}
-              >
-                <Download size={15} />
-                Download PDF report
-              </button>
-
-              <span className={styles.provenance}>
-                PDF download becomes available when the report status is READY.
-              </span>
-            </aside>
-          </section>
-
-          <section className={styles.reportCard}>
-            <header className={styles.reportHeader}>
-              <div>
-                <h2>Your profile dimensions</h2>
-                <p>Relative scores produced by the assessment scoring engine.</p>
-              </div>
-            </header>
-
-            <div className={styles.reportBody}>
-              <div className={styles.dimensionGrid}>
-                {Object.entries(result.data.dimensions).map(([name, score]) => (
-                  <article className={styles.dimensionCard} key={name}>
-                    <div className={styles.dimensionTop}>
-                      <strong>{name}</strong>
-                      <span>{score}</span>
-                    </div>
-
-                    <div className={styles.dimensionBar}>
-                      <span
-                        style={{
-                          width: `${Math.max(
-                            4,
-                            Math.min(100, (score / maxDimension) * 100),
-                          )}%`,
-                        }}
-                      />
-                    </div>
-                  </article>
-                ))}
-              </div>
+              <h1>{copy.profileTitle}</h1>
+              <p>{copy.profileDescription}</p>
             </div>
-          </section>
 
-          {(["strengths", "growthAreas", "limitations"] as const).some(
-            (key) => result.data?.aiInterpretation?.[key]?.length,
-          ) ? (
-            <section className={styles.insightGrid}>
-              {(["strengths", "growthAreas", "limitations"] as const).map(
-                (key) =>
-                  result.data?.aiInterpretation?.[key]?.length ? (
-                    <article className={styles.insightCard} key={key}>
-                      <h3>{labels[key]}</h3>
-                      <ul>
-                        {result.data.aiInterpretation[key]?.map((line, index) => (
-                          <li key={`${key}-${index}`}>{line}</li>
-                        ))}
-                      </ul>
-                    </article>
-                  ) : null,
-              )}
-            </section>
-          ) : null}
+            <div className={resultStyles.heroActions}>
+              <span className={resultStyles.readyBadge}>
+                <CheckCircle2 size={14} />
+                {copy.ready}
+              </span>
 
-          <section className={styles.reportCard}>
-            <header className={styles.reportHeader}>
-              <div>
-                <h2>Career matches</h2>
-                <p>Career directions suggested by your profile.</p>
-              </div>
-              <Sparkles size={19} />
-            </header>
-
-            <div className={styles.reportBody}>
-              {result.data.careerMatches.length ? (
-                <div className={styles.careerMatchList}>
-                  {result.data.careerMatches.map((career, index) => (
-                    <div
-                      className={styles.careerMatch}
-                      key={career.code ?? `${index}`}
-                    >
-                      <span className={styles.careerRank}>{index + 1}</span>
-                      <strong>{career.title ?? career.code}</strong>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className={styles.empty}>
-                  <strong>No career matches available yet</strong>
-                </div>
-              )}
-
-              {result.data.aiInterpretation?.careerExplanations?.length ? (
-                <div className={styles.pageStack}>
-                  {result.data.aiInterpretation.careerExplanations.map(
-                    (career) => (
-                      <article className={styles.dimensionCard} key={career.careerCode}>
-                        <div className={styles.dimensionTop}>
-                          <strong>{career.careerCode}</strong>
-                        </div>
-                        <p>{career.explanation}</p>
-                      </article>
-                    ),
-                  )}
-                </div>
+              {result.data.reportStatus === "READY" ? (
+                <button
+                  type="button"
+                  className={styles.primaryButton}
+                  onClick={() => void download()}
+                >
+                  <Download size={15} />
+                  {copy.pdfReady}
+                </button>
               ) : null}
             </div>
           </section>
 
-          {result.data.aiInterpretation?.actionPlan?.length ? (
-            <section className={styles.reportCard}>
-              <header className={styles.reportHeader}>
-                <div>
-                  <h2>Suggested next steps</h2>
-                  <p>Use these actions as a practical starting point.</p>
-                </div>
-              </header>
-
-              <div className={styles.reportBody}>
-                <ol className={styles.actionPlan}>
-                  {result.data.aiInterpretation.actionPlan.map((step) => (
-                    <li key={step}>{step}</li>
-                  ))}
-                </ol>
-              </div>
-            </section>
-          ) : null}
-
-          {result.data.aiInterpretation?.evidence?.length ? (
-            <details className={styles.reportCard}>
-              <summary className={styles.reportHeader}>{labels.evidence}</summary>
-              <div className={styles.reportBody}>
-                <div className={styles.dimensionGrid}>
-                  {result.data.aiInterpretation.evidence.map((item) => (
-                    <article className={styles.dimensionCard} key={item.dimension}>
-                      <div className={styles.dimensionTop}>
-                        <strong>{item.dimension}</strong>
-                        <span>{item.value}</span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </details>
-          ) : null}
-
-          {result.data.aiProvenance ? (
-            <p className={styles.provenance}>
-              {labels.version}: {result.data.aiProvenance.promptVersion} (
-              {result.data.aiProvenance.model})
+          {downloadError ? (
+            <p className={styles.error} role="alert">
+              {downloadError}
             </p>
           ) : null}
 
+          <section className={resultStyles.profileSection}>
+            <div className={resultStyles.sectionHeading}>
+              <div>
+                <h2>{copy.profileTitle}</h2>
+                <p>{copy.profileDescription}</p>
+              </div>
+            </div>
+
+            <div className={resultStyles.scoreGrid}>
+              {normalizedInterestScores(result.data).map(
+                (item) => {
+                  const text = item[language];
+                  const displayScore =
+                    item.normalized.toFixed(
+                      Number.isInteger(item.normalized)
+                        ? 0
+                        : 2,
+                    );
+
+                  return (
+                    <article
+                      className={resultStyles.scoreCard}
+                      key={item.key}
+                    >
+                      <div className={resultStyles.scoreHeader}>
+                        <div>
+                          <span
+                            className={
+                              resultStyles.dimensionMarker
+                            }
+                          />
+                          <h3>{text.name}</h3>
+                        </div>
+
+                        <strong
+                          className={resultStyles.percentage}
+                        >
+                          {Math.round(item.normalized)}%
+                        </strong>
+                      </div>
+
+                      <p>{text.description}</p>
+
+                      <div className={resultStyles.scoreValueRow}>
+                        <div>
+                          <span>{copy.score}</span>
+                          <strong>
+                            {displayScore}
+                            <small> / 100</small>
+                          </strong>
+                        </div>
+
+                        <div>
+                          <span>{copy.percent}</span>
+                          <strong>
+                            {Math.round(item.normalized)}%
+                          </strong>
+                        </div>
+                      </div>
+
+                      <div className={resultStyles.scoreTrack}>
+                        <span
+                          style={{
+                            width: `${item.normalized}%`,
+                          }}
+                        />
+                      </div>
+                    </article>
+                  );
+                },
+              )}
+            </div>
+          </section>
+
+          <section className={resultStyles.nextStepCard}>
+            <span className={resultStyles.nextStepIcon}>
+              <Compass size={21} />
+            </span>
+
+            <div>
+              <h2>{copy.exploreNext}</h2>
+              <p>{copy.exploreNextDescription}</p>
+            </div>
+          </section>
+
           {result.data.userId === user?.id ? (
-            <ResultSharing key={resultId} resultId={resultId} />
+            <ResultSharing
+              key={resultId}
+              resultId={resultId}
+            />
           ) : null}
 
-          <GuidanceNotes key={`notes-${resultId}`} resultId={resultId} />
+          <GuidanceNotes
+            key={`notes-${resultId}`}
+            resultId={resultId}
+          />
         </div>
       ) : null}
     </DashboardShell>
