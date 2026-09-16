@@ -1,0 +1,662 @@
+[
+  {
+    "onetIndex": 1,
+    "onetArea": "realistic",
+    "withinAreaSequence": 1,
+    "originalText": "Build kitchen cabinets",
+    "adaptedText": {
+      "en": "Build useful wooden furniture or cabinets.",
+      "hi": "लकड़ी से उपयोगी फर्नीचर या कैबिनेट बनाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 2,
+    "onetArea": "realistic",
+    "withinAreaSequence": 2,
+    "originalText": "Lay brick or tile",
+    "adaptedText": {
+      "en": "Lay bricks or tiles while constructing or improving a space.",
+      "hi": "किसी जगह को बनाने या सुधारने के लिए ईंट या टाइल लगाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 3,
+    "onetArea": "investigative",
+    "withinAreaSequence": 1,
+    "originalText": "Develop a new medicine",
+    "adaptedText": {
+      "en": "Help develop a new medicine or medical treatment.",
+      "hi": "नई दवा या मेडिकल उपचार विकसित करने में काम करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 4,
+    "onetArea": "investigative",
+    "withinAreaSequence": 2,
+    "originalText": "Study ways to reduce water pollution",
+    "adaptedText": {
+      "en": "Study ways to reduce pollution in rivers, lakes, or other water sources.",
+      "hi": "नदियों, झीलों या अन्य जल स्रोतों में प्रदूषण कम करने के तरीके खोजना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 5,
+    "onetArea": "artistic",
+    "withinAreaSequence": 1,
+    "originalText": "Write books or plays",
+    "adaptedText": {
+      "en": "Write stories, books, scripts, or plays.",
+      "hi": "कहानियाँ, किताबें, स्क्रिप्ट या नाटक लिखना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 6,
+    "onetArea": "artistic",
+    "withinAreaSequence": 2,
+    "originalText": "Play a musical instrument",
+    "adaptedText": {
+      "en": "Play a musical instrument for an audience or recording.",
+      "hi": "दर्शकों या रिकॉर्डिंग के लिए कोई संगीत वाद्ययंत्र बजाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 7,
+    "onetArea": "social",
+    "withinAreaSequence": 1,
+    "originalText": "Teach an individual an exercise routine",
+    "adaptedText": {
+      "en": "Teach someone how to follow an exercise or fitness routine.",
+      "hi": "किसी व्यक्ति को एक्सरसाइज या फिटनेस रूटीन करना सिखाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 8,
+    "onetArea": "social",
+    "withinAreaSequence": 2,
+    "originalText": "Help people with personal or emotional problems",
+    "adaptedText": {
+      "en": "Help people deal with personal or emotional difficulties.",
+      "hi": "लोगों को व्यक्तिगत या भावनात्मक कठिनाइयों से निपटने में मदद करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 9,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 1,
+    "originalText": "Buy and sell stocks and bonds",
+    "adaptedText": {
+      "en": "Buy and sell investments such as shares or bonds.",
+      "hi": "शेयर या बॉन्ड जैसे निवेश खरीदना और बेचना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 10,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 2,
+    "originalText": "Manage a retail store",
+    "adaptedText": {
+      "en": "Manage the day-to-day work of a retail shop or store.",
+      "hi": "किसी रिटेल दुकान या स्टोर का रोज़ का काम संभालना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 11,
+    "onetArea": "conventional",
+    "withinAreaSequence": 1,
+    "originalText": "Develop a spreadsheet using computer software",
+    "adaptedText": {
+      "en": "Create and organise a spreadsheet using computer software.",
+      "hi": "कंप्यूटर सॉफ्टवेयर का उपयोग करके स्प्रेडशीट बनाना और व्यवस्थित करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 12,
+    "onetArea": "conventional",
+    "withinAreaSequence": 2,
+    "originalText": "Proofread records or forms",
+    "adaptedText": {
+      "en": "Check records, forms, or documents carefully for errors.",
+      "hi": "रिकॉर्ड, फॉर्म या दस्तावेज़ों में गलती है या नहीं, इसे ध्यान से जाँचना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 13,
+    "onetArea": "realistic",
+    "withinAreaSequence": 3,
+    "originalText": "Repair household appliances",
+    "adaptedText": {
+      "en": "Repair household electrical or electronic appliances.",
+      "hi": "घर के बिजली या इलेक्ट्रॉनिक उपकरणों की मरम्मत करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 14,
+    "onetArea": "realistic",
+    "withinAreaSequence": 4,
+    "originalText": "Raise fish in a fish hatchery",
+    "adaptedText": {
+      "en": "Raise and care for fish in a fish farm or hatchery.",
+      "hi": "फिश फार्म या हैचरी में मछलियों को पालना और उनकी देखभाल करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 15,
+    "onetArea": "investigative",
+    "withinAreaSequence": 3,
+    "originalText": "Conduct chemical experiments",
+    "adaptedText": {
+      "en": "Carry out chemistry experiments in a laboratory.",
+      "hi": "प्रयोगशाला में रसायन विज्ञान के प्रयोग करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 16,
+    "onetArea": "investigative",
+    "withinAreaSequence": 4,
+    "originalText": "Study the movement of planets",
+    "adaptedText": {
+      "en": "Study how planets, stars, or other objects move in space.",
+      "hi": "अंतरिक्ष में ग्रहों, तारों या अन्य खगोलीय पिंडों की गति का अध्ययन करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 17,
+    "onetArea": "artistic",
+    "withinAreaSequence": 3,
+    "originalText": "Compose or arrange music",
+    "adaptedText": {
+      "en": "Compose or arrange music.",
+      "hi": "संगीत की रचना या अरेंजमेंट करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 18,
+    "onetArea": "artistic",
+    "withinAreaSequence": 4,
+    "originalText": "Draw pictures",
+    "adaptedText": {
+      "en": "Draw, sketch, or create illustrations.",
+      "hi": "ड्रॉइंग, स्केच या इलस्ट्रेशन बनाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 19,
+    "onetArea": "social",
+    "withinAreaSequence": 3,
+    "originalText": "Give career guidance to people",
+    "adaptedText": {
+      "en": "Guide people in choosing education or career options.",
+      "hi": "लोगों को शिक्षा या करियर विकल्प चुनने में मार्गदर्शन देना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 20,
+    "onetArea": "social",
+    "withinAreaSequence": 4,
+    "originalText": "Perform rehabilitation therapy",
+    "adaptedText": {
+      "en": "Help people recover abilities through rehabilitation therapy.",
+      "hi": "रिहैबिलिटेशन थेरेपी के माध्यम से लोगों को अपनी क्षमताएँ वापस पाने में मदद करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 21,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 3,
+    "originalText": "Operate a beauty salon or barber shop",
+    "adaptedText": {
+      "en": "Run and manage a salon or grooming business.",
+      "hi": "सैलून या ग्रूमिंग बिज़नेस चलाना और मैनेज करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 22,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 4,
+    "originalText": "Manage a department within a large company",
+    "adaptedText": {
+      "en": "Manage a department or team in a large company.",
+      "hi": "किसी बड़ी कंपनी में विभाग या टीम को मैनेज करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 23,
+    "onetArea": "conventional",
+    "withinAreaSequence": 3,
+    "originalText": "Install software across computers on a large network",
+    "adaptedText": {
+      "en": "Install or deploy software across many computers in a network.",
+      "hi": "नेटवर्क में कई कंप्यूटरों पर सॉफ्टवेयर इंस्टॉल या डिप्लॉय करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 24,
+    "onetArea": "conventional",
+    "withinAreaSequence": 4,
+    "originalText": "Operate a calculator",
+    "adaptedText": {
+      "en": "Use a calculator or digital tool to perform routine calculations accurately.",
+      "hi": "नियमित गणनाएँ सही तरीके से करने के लिए कैलकुलेटर या डिजिटल टूल का उपयोग करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 25,
+    "onetArea": "realistic",
+    "withinAreaSequence": 5,
+    "originalText": "Assemble electronic parts",
+    "adaptedText": {
+      "en": "Assemble electronic components to make a working device.",
+      "hi": "इलेक्ट्रॉनिक पार्ट्स को जोड़कर काम करने वाला उपकरण बनाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 26,
+    "onetArea": "realistic",
+    "withinAreaSequence": 6,
+    "originalText": "Drive a truck to deliver packages to offices and homes",
+    "adaptedText": {
+      "en": "Drive a delivery vehicle to transport packages to homes or offices.",
+      "hi": "घरों या ऑफिसों तक पार्सल पहुँचाने के लिए डिलीवरी वाहन चलाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 27,
+    "onetArea": "investigative",
+    "withinAreaSequence": 5,
+    "originalText": "Examine blood samples using a microscope",
+    "adaptedText": {
+      "en": "Examine blood samples using a microscope.",
+      "hi": "माइक्रोस्कोप से रक्त के नमूनों की जाँच करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 28,
+    "onetArea": "investigative",
+    "withinAreaSequence": 6,
+    "originalText": "Investigate the cause of a fire",
+    "adaptedText": {
+      "en": "Investigate evidence to find the cause of a fire.",
+      "hi": "सबूतों की जाँच करके आग लगने का कारण पता करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 29,
+    "onetArea": "artistic",
+    "withinAreaSequence": 5,
+    "originalText": "Create special effects for movies",
+    "adaptedText": {
+      "en": "Create visual or special effects for films or digital media.",
+      "hi": "फिल्मों या डिजिटल मीडिया के लिए विजुअल या स्पेशल इफेक्ट्स बनाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 30,
+    "onetArea": "artistic",
+    "withinAreaSequence": 6,
+    "originalText": "Paint sets for plays",
+    "adaptedText": {
+      "en": "Design and paint stage sets for a play, event, or performance.",
+      "hi": "नाटक, कार्यक्रम या परफॉर्मेंस के लिए स्टेज सेट डिज़ाइन और पेंट करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 31,
+    "onetArea": "social",
+    "withinAreaSequence": 5,
+    "originalText": "Do volunteer work at a non-profit organization",
+    "adaptedText": {
+      "en": "Volunteer for an NGO or community-service organisation.",
+      "hi": "किसी NGO या सामुदायिक सेवा संस्था के लिए स्वयंसेवा करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 32,
+    "onetArea": "social",
+    "withinAreaSequence": 6,
+    "originalText": "Teach children how to play sports",
+    "adaptedText": {
+      "en": "Teach children how to play a sport.",
+      "hi": "बच्चों को कोई खेल खेलना सिखाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 33,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 5,
+    "originalText": "Start your own business",
+    "adaptedText": {
+      "en": "Start and run your own business.",
+      "hi": "अपना व्यवसाय शुरू करना और चलाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 34,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 6,
+    "originalText": "Negotiate business contracts",
+    "adaptedText": {
+      "en": "Negotiate business agreements or contracts.",
+      "hi": "बिज़नेस एग्रीमेंट या कॉन्ट्रैक्ट पर बातचीत और नेगोशिएशन करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 35,
+    "onetArea": "conventional",
+    "withinAreaSequence": 5,
+    "originalText": "Keep shipping and receiving records",
+    "adaptedText": {
+      "en": "Maintain accurate records of goods being sent and received.",
+      "hi": "भेजे और प्राप्त किए जाने वाले सामान का सही रिकॉर्ड रखना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 36,
+    "onetArea": "conventional",
+    "withinAreaSequence": 6,
+    "originalText": "Calculate the wages of employees",
+    "adaptedText": {
+      "en": "Calculate employee salaries or wages from work records.",
+      "hi": "काम के रिकॉर्ड के आधार पर कर्मचारियों की सैलरी या वेतन की गणना करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 37,
+    "onetArea": "realistic",
+    "withinAreaSequence": 7,
+    "originalText": "Test the quality of parts before shipment",
+    "adaptedText": {
+      "en": "Check manufactured parts carefully to make sure their quality is correct.",
+      "hi": "बनाए गए पार्ट्स की गुणवत्ता सही है या नहीं, इसे ध्यान से जाँचना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 38,
+    "onetArea": "realistic",
+    "withinAreaSequence": 8,
+    "originalText": "Repair and install locks",
+    "adaptedText": {
+      "en": "Repair and install locks or similar mechanical fittings.",
+      "hi": "ताले या इसी तरह की मैकेनिकल फिटिंग की मरम्मत और इंस्टॉलेशन करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 39,
+    "onetArea": "investigative",
+    "withinAreaSequence": 7,
+    "originalText": "Develop a way to better predict the weather",
+    "adaptedText": {
+      "en": "Develop better methods to predict weather conditions.",
+      "hi": "मौसम का बेहतर अनुमान लगाने के तरीके विकसित करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 40,
+    "onetArea": "investigative",
+    "withinAreaSequence": 8,
+    "originalText": "Work in a biology lab",
+    "adaptedText": {
+      "en": "Work in a biology laboratory and study living organisms.",
+      "hi": "बायोलॉजी लैब में काम करना और जीवित चीज़ों का अध्ययन करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 41,
+    "onetArea": "artistic",
+    "withinAreaSequence": 7,
+    "originalText": "Write scripts for movies or television shows",
+    "adaptedText": {
+      "en": "Write scripts for films, web series, television, or online videos.",
+      "hi": "फिल्म, वेब सीरीज़, टेलीविजन या ऑनलाइन वीडियो के लिए स्क्रिप्ट लिखना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 42,
+    "onetArea": "artistic",
+    "withinAreaSequence": 8,
+    "originalText": "Perform jazz or tap dance",
+    "adaptedText": {
+      "en": "Perform a dance style on stage or for an audience.",
+      "hi": "स्टेज या दर्शकों के सामने किसी नृत्य शैली का प्रदर्शन करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 43,
+    "onetArea": "social",
+    "withinAreaSequence": 7,
+    "originalText": "Teach sign language to people who are deaf or hard of hearing",
+    "adaptedText": {
+      "en": "Teach sign language to people who need it for communication.",
+      "hi": "जिन लोगों को संवाद के लिए ज़रूरत है, उन्हें सांकेतिक भाषा सिखाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 44,
+    "onetArea": "social",
+    "withinAreaSequence": 8,
+    "originalText": "Help conduct a group therapy session",
+    "adaptedText": {
+      "en": "Assist in a professionally supervised group counselling or therapy session.",
+      "hi": "प्रशिक्षित विशेषज्ञ की निगरानी में समूह काउंसलिंग या थेरेपी सत्र में सहायता करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 45,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 7,
+    "originalText": "Represent a client in a lawsuit",
+    "adaptedText": {
+      "en": "Represent a client in a legal case or court matter.",
+      "hi": "किसी कानूनी मामले या अदालत में क्लाइंट का प्रतिनिधित्व करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 46,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 8,
+    "originalText": "Market a new line of clothing",
+    "adaptedText": {
+      "en": "Plan how to market and promote a new clothing or fashion line.",
+      "hi": "नई कपड़ों या फैशन लाइन की मार्केटिंग और प्रमोशन की योजना बनाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 47,
+    "onetArea": "conventional",
+    "withinAreaSequence": 7,
+    "originalText": "Inventory supplies using a hand-held computer",
+    "adaptedText": {
+      "en": "Count and record stock or supplies using a digital device.",
+      "hi": "डिजिटल डिवाइस का उपयोग करके स्टॉक या सप्लाई गिनना और रिकॉर्ड करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 48,
+    "onetArea": "conventional",
+    "withinAreaSequence": 8,
+    "originalText": "Record rent payments",
+    "adaptedText": {
+      "en": "Record rent or other regular payments accurately.",
+      "hi": "किराया या अन्य नियमित भुगतानों का सही रिकॉर्ड रखना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 49,
+    "onetArea": "realistic",
+    "withinAreaSequence": 9,
+    "originalText": "Set up and operate machines to make products",
+    "adaptedText": {
+      "en": "Set up and operate machines used to make products.",
+      "hi": "उत्पाद बनाने वाली मशीनों को सेट करना और चलाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 50,
+    "onetArea": "realistic",
+    "withinAreaSequence": 10,
+    "originalText": "Put out forest fires",
+    "adaptedText": {
+      "en": "Work as part of a team that controls and puts out fires.",
+      "hi": "आग पर काबू पाने और उसे बुझाने वाली टीम के साथ काम करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 51,
+    "onetArea": "investigative",
+    "withinAreaSequence": 9,
+    "originalText": "Invent a replacement for sugar",
+    "adaptedText": {
+      "en": "Research and develop a healthier substitute for sugar.",
+      "hi": "चीनी के लिए बेहतर या स्वास्थ्यकर विकल्प पर शोध और विकास करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 52,
+    "onetArea": "investigative",
+    "withinAreaSequence": 10,
+    "originalText": "Do laboratory tests to identify diseases",
+    "adaptedText": {
+      "en": "Perform laboratory tests that help identify diseases.",
+      "hi": "बीमारियों की पहचान में मदद करने वाले लैब टेस्ट करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 53,
+    "onetArea": "artistic",
+    "withinAreaSequence": 9,
+    "originalText": "Sing in a band",
+    "adaptedText": {
+      "en": "Sing as part of a band or music group.",
+      "hi": "बैंड या म्यूज़िक ग्रुप के साथ गाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 54,
+    "onetArea": "artistic",
+    "withinAreaSequence": 10,
+    "originalText": "Edit movies",
+    "adaptedText": {
+      "en": "Edit films or videos to shape the final story.",
+      "hi": "फिल्म या वीडियो को एडिट करके अंतिम कहानी तैयार करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 55,
+    "onetArea": "social",
+    "withinAreaSequence": 9,
+    "originalText": "Take care of children at a day-care center",
+    "adaptedText": {
+      "en": "Take care of young children in a day-care or child-care centre.",
+      "hi": "डे-केयर या चाइल्ड-केयर सेंटर में छोटे बच्चों की देखभाल करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 56,
+    "onetArea": "social",
+    "withinAreaSequence": 10,
+    "originalText": "Teach a high-school class",
+    "adaptedText": {
+      "en": "Teach a class of secondary-school students.",
+      "hi": "माध्यमिक या हाई-स्कूल के विद्यार्थियों की कक्षा पढ़ाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 57,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 9,
+    "originalText": "Sell merchandise at a department store",
+    "adaptedText": {
+      "en": "Sell products directly to customers in a large store.",
+      "hi": "किसी बड़े स्टोर में ग्राहकों को सीधे उत्पाद बेचना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 58,
+    "onetArea": "enterprising",
+    "withinAreaSequence": 10,
+    "originalText": "Manage a clothing store",
+    "adaptedText": {
+      "en": "Manage a clothing or fashion retail store.",
+      "hi": "कपड़ों या फैशन की रिटेल दुकान को मैनेज करना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 59,
+    "onetArea": "conventional",
+    "withinAreaSequence": 9,
+    "originalText": "Keep inventory records",
+    "adaptedText": {
+      "en": "Maintain organised inventory records for products or supplies.",
+      "hi": "उत्पादों या सप्लाई का व्यवस्थित इन्वेंटरी रिकॉर्ड रखना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  },
+  {
+    "onetIndex": 60,
+    "onetArea": "conventional",
+    "withinAreaSequence": 10,
+    "originalText": "Stamp, sort, and distribute mail for an organization",
+    "adaptedText": {
+      "en": "Sort and distribute letters, documents, or office deliveries.",
+      "hi": "पत्र, दस्तावेज़ या ऑफिस डिलीवरी को छाँटना और सही जगह पहुँचाना।"
+    },
+    "adaptationVersion": "future-fit-india-bilingual-v2"
+  }
+]

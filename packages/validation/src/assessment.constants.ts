@@ -23,4 +23,8 @@ export const ASSESSMENT_TYPES = [
   "EDUCATIONAL_SURVEY",
   "ACADEMIC_PREFERENCE",
 ] as const;
-export const SCORING_MODELS = ["OPTION_SUM_V1", "ONET_MINI_IP_V2"] as const;
+export const SCORING_MODELS = [
+  "OPTION_SUM_V1",
+  "ONET_MINI_IP_V2",
+  "ONET_IP_60_V1",
+] as const;

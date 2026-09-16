@@ -1,0 +1,452 @@
+{
+  "source": "O*NET Interest Profiler",
+  "sourceVersion": "api-v2",
+  "sourcePath": "/mnm/interestprofiler/questions",
+  "sourceRevision": "2018-05-01",
+  "fetchedAt": "2026-09-16T08:19:32.604Z",
+  "total": 60,
+  "answerOptions": [
+    {
+      "value": 1,
+      "name": "Strongly Dislike"
+    },
+    {
+      "value": 2,
+      "name": "Dislike"
+    },
+    {
+      "value": 3,
+      "name": "Unsure"
+    },
+    {
+      "value": 4,
+      "name": "Like"
+    },
+    {
+      "value": 5,
+      "name": "Strongly Like"
+    }
+  ],
+  "questions": [
+    {
+      "onetIndex": 1,
+      "onetArea": "realistic",
+      "originalText": "Build kitchen cabinets",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 2,
+      "onetArea": "realistic",
+      "originalText": "Lay brick or tile",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 3,
+      "onetArea": "investigative",
+      "originalText": "Develop a new medicine",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 4,
+      "onetArea": "investigative",
+      "originalText": "Study ways to reduce water pollution",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 5,
+      "onetArea": "artistic",
+      "originalText": "Write books or plays",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 6,
+      "onetArea": "artistic",
+      "originalText": "Play a musical instrument",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 7,
+      "onetArea": "social",
+      "originalText": "Teach an individual an exercise routine",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 8,
+      "onetArea": "social",
+      "originalText": "Help people with personal or emotional problems",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 9,
+      "onetArea": "enterprising",
+      "originalText": "Buy and sell stocks and bonds",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 10,
+      "onetArea": "enterprising",
+      "originalText": "Manage a retail store",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 11,
+      "onetArea": "conventional",
+      "originalText": "Develop a spreadsheet using computer software",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 12,
+      "onetArea": "conventional",
+      "originalText": "Proofread records or forms",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 13,
+      "onetArea": "realistic",
+      "originalText": "Repair household appliances",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 14,
+      "onetArea": "realistic",
+      "originalText": "Raise fish in a fish hatchery",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 15,
+      "onetArea": "investigative",
+      "originalText": "Conduct chemical experiments",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 16,
+      "onetArea": "investigative",
+      "originalText": "Study the movement of planets",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 17,
+      "onetArea": "artistic",
+      "originalText": "Compose or arrange music",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 18,
+      "onetArea": "artistic",
+      "originalText": "Draw pictures",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 19,
+      "onetArea": "social",
+      "originalText": "Give career guidance to people",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 20,
+      "onetArea": "social",
+      "originalText": "Perform rehabilitation therapy",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 21,
+      "onetArea": "enterprising",
+      "originalText": "Operate a beauty salon or barber shop",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 22,
+      "onetArea": "enterprising",
+      "originalText": "Manage a department within a large company",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 23,
+      "onetArea": "conventional",
+      "originalText": "Install software across computers on a large network",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 24,
+      "onetArea": "conventional",
+      "originalText": "Operate a calculator",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 25,
+      "onetArea": "realistic",
+      "originalText": "Assemble electronic parts",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 26,
+      "onetArea": "realistic",
+      "originalText": "Drive a truck to deliver packages to offices and homes",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 27,
+      "onetArea": "investigative",
+      "originalText": "Examine blood samples using a microscope",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 28,
+      "onetArea": "investigative",
+      "originalText": "Investigate the cause of a fire",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 29,
+      "onetArea": "artistic",
+      "originalText": "Create special effects for movies",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 30,
+      "onetArea": "artistic",
+      "originalText": "Paint sets for plays",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 31,
+      "onetArea": "social",
+      "originalText": "Do volunteer work at a non-profit organization",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 32,
+      "onetArea": "social",
+      "originalText": "Teach children how to play sports",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 33,
+      "onetArea": "enterprising",
+      "originalText": "Start your own business",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 34,
+      "onetArea": "enterprising",
+      "originalText": "Negotiate business contracts",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 35,
+      "onetArea": "conventional",
+      "originalText": "Keep shipping and receiving records",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 36,
+      "onetArea": "conventional",
+      "originalText": "Calculate the wages of employees",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 37,
+      "onetArea": "realistic",
+      "originalText": "Test the quality of parts before shipment",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 38,
+      "onetArea": "realistic",
+      "originalText": "Repair and install locks",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 39,
+      "onetArea": "investigative",
+      "originalText": "Develop a way to better predict the weather",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 40,
+      "onetArea": "investigative",
+      "originalText": "Work in a biology lab",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 41,
+      "onetArea": "artistic",
+      "originalText": "Write scripts for movies or television shows",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 42,
+      "onetArea": "artistic",
+      "originalText": "Perform jazz or tap dance",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 43,
+      "onetArea": "social",
+      "originalText": "Teach sign language to people who are deaf or hard of hearing",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 44,
+      "onetArea": "social",
+      "originalText": "Help conduct a group therapy session",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 45,
+      "onetArea": "enterprising",
+      "originalText": "Represent a client in a lawsuit",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 46,
+      "onetArea": "enterprising",
+      "originalText": "Market a new line of clothing",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 47,
+      "onetArea": "conventional",
+      "originalText": "Inventory supplies using a hand-held computer",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 48,
+      "onetArea": "conventional",
+      "originalText": "Record rent payments",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 49,
+      "onetArea": "realistic",
+      "originalText": "Set up and operate machines to make products",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 50,
+      "onetArea": "realistic",
+      "originalText": "Put out forest fires",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 51,
+      "onetArea": "investigative",
+      "originalText": "Invent a replacement for sugar",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 52,
+      "onetArea": "investigative",
+      "originalText": "Do laboratory tests to identify diseases",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 53,
+      "onetArea": "artistic",
+      "originalText": "Sing in a band",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 54,
+      "onetArea": "artistic",
+      "originalText": "Edit movies",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 55,
+      "onetArea": "social",
+      "originalText": "Take care of children at a day-care center",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 56,
+      "onetArea": "social",
+      "originalText": "Teach a high-school class",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 57,
+      "onetArea": "enterprising",
+      "originalText": "Sell merchandise at a department store",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 58,
+      "onetArea": "enterprising",
+      "originalText": "Manage a clothing store",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 59,
+      "onetArea": "conventional",
+      "originalText": "Keep inventory records",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    },
+    {
+      "onetIndex": 60,
+      "onetArea": "conventional",
+      "originalText": "Stamp, sort, and distribute mail for an organization",
+      "adaptedText": null,
+      "adaptationStatus": "PENDING"
+    }
+  ]
+}
